@@ -29,10 +29,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'slim-rails'
 gem 'factory_girl_rails'
+gem 'kaminari'
+gem 'devise'
+gem 'slim-rails'
 gem 'settingslogic'
 gem 'simple_form'
+gem 'ransack'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'meta-tags'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'social-share-button'
+gem 'chosen-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ckeditor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
