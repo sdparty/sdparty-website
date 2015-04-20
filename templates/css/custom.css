@@ -563,6 +563,16 @@ a.overlay{
 .issue-top-tag a.active{
 	background:#eee;	
 	}
+.dlbtn-group{
+	overflow:hidden;}
+.dlbtn{
+	background:#f8c8c3;
+	border-radius:10px;
+	display:block;
+	min-width:80px;
+	padding:10px 20px;
+	float:left;
+	margin:0 10px 10px 0;}
 @media screen and (max-width: 992px) {
     .politics-02{
 		border:none;

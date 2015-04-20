@@ -53,8 +53,7 @@ a img{
 
 #side_menu h4{
 	font-size:13px;
-	height:24px;
-	line-height:24px;
+	line-height:1.5em;
 	padding-left:10px;}
 #side_menu li{
 	height:24px;
@@ -492,3 +491,11 @@ table.replay{
 	width:200px;}
 .banner-img{
 	width:600px;}
+	
+#google-login {
+	text-align:center;
+	padding:30px;}
+.login-note{
+	padding:15px;
+	font-size:18px;
+	color:#CD0003;}

@@ -5,82 +5,83 @@
 <title>管理後台:消息分類</title>
 <link href="css/reset.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-
 </head>
 
-
 <body>
-
 <div id="all">
-<div id="content_wrap">
-<div id="side_menu">
-<div class="side_block">
-<h4>首頁banner</h4>
-<ul>
-<li><a href="index_banner.html">廣告管理</a></li>
-<li><a href="index_banner_add.html">新增廣告</a></li>
-</ul>
-
-</div>
-<div class="side_block">
-  <h4>最新消息</h4>
-<ul>
-<li><a href="news_list.html">文章管理</a></li>
-<li><a href="news_add.html">新增文章</a></li>
-</ul>
-</div>
-<div class="side_block">
-<h4>關注議題</h4>
-<ul>
-<li><a href="issue_list.html">議題管理</a></li>
-<li><a href="issue_add.html">新增議題</a></li>
-<li class="select"><a href="issue_class.html">議題分類管理</a></li>
-<li><a href="issue_class_add.html">新增議題分類</a></li>
-</ul>
-</div>
-<div class="side_block">
-<h4><a href="pay_edit.html">捐款支持</a></h4>
-</div>
-</div>
-  <div id="main" class="inner">
-<div id="header">sdparty管理後台 - <a href="admin_login.html" class="logout">我要登出</a> 
-</div>
-    <h1>議題分類管理</h1>
-    <table width="100%" border="1" cellpadding="5">
-      <tr>
-        <th colspan="4"><em class="s_note">若該分類底下有議題，則不可刪除</em></th>
-      </tr>
-      <tr>
-        <th width="67">排序</th>
-        <th>分類名稱</th>
-        <th width="107">議題總數</th>
-        <th width="262">操作</th>
-      </tr>
-      <tr>
-        <td align="center"><input name="textfield" type="text" class="input_shot" id="textfield" value="1"/></td>
-        <td width="354">政治<br /></td>
-        <td align="center">10</td>
-        <td align="center"><a href="issue_class_add.html">編輯</a></td>
-      </tr>
-      <tr>
-        <td align="center"><input name="textfield2" type="text" class="input_shot" id="textfield2" value="2"/></td>
-        <td>社會<span class="s_note"></span></td>
-        <td align="center">0</td>
-        <td align="center"><a href="#">編輯</a>｜<a href="#">刪除</a><a href="#"></a></td>
-      </tr>
-      <tr>
-        <td align="center"><input name="textfield4" type="text" class="input_shot" id="textfield4" value="3"/></td>
-        <td>經濟</td>
-        <td align="center">0</td>
-        <td align="center"><a href="#">編輯</a>｜<a href="#">刪除</a><a href="#"></a></td>
-      </tr>
-  </table>
-    <div class="btn">
-  <input type="submit" name="button3" id="button3" value="儲存" class="submit"/>
-</div>
+  <div id="content_wrap">
+<!--------------後台選單start-------------->
+    <div id="side_menu">
+      <div class="side_block">
+        <h4>首頁banner</h4>
+        <ul>
+          <li><a href="index_banner.html">廣告管理</a></li>
+          <li><a href="index_banner_add.html">新增廣告</a></li>
+        </ul>
+      </div>
+      <div class="side_block">
+        <h4>最新消息&amp;<br/>
+          關注議題管理</h4>
+        <ul>
+          <li><a href="news_list.html">文章管理</a></li>
+          <li><a href="news_add.html">新增文章</a></li>
+          <li><a href="issue_class.html">議題分類管理</a></li>
+          <li><a href="issue_class_add.html">新增議題分類</a></li>
+        </ul>
+      </div>
+      <div class="side_block">
+        <h4>關注議題</h4>
+        <ul>
+          <li><a href="issue_list.html">議題管理</a></li>
+          <li><a href="issue_add.html">新增議題</a></li>
+          <li class="select"><a href="issue_class.html">議題分類管理</a></li>
+          <li><a href="issue_class_add.html">新增議題分類</a></li>
+        </ul>
+      </div>
+      <div class="side_block">
+        <h4><a href="pay_edit.html">捐款支持</a></h4>
+      </div>
+    </div>
+<!--------------後台選單end-------------->
+<!--------------後台管理界面start-------------->
+    <div id="main" class="inner">
+      <div id="header">sdparty管理後台 - <a href="admin_login.html" class="logout">我要登出</a> </div>
+      <h1>議題分類管理</h1>
+      <table width="100%" border="1" cellpadding="5">
+        <tr>
+          <th colspan="4"><em class="s_note">若該分類底下有議題，則不可刪除</em></th>
+        </tr>
+        <tr>
+          <th width="67">排序</th>
+          <th>分類名稱</th>
+          <th width="107">議題總數</th>
+          <th width="262">操作</th>
+        </tr>
+        <tr>
+          <td align="center"><input name="textfield" type="text" class="input_shot" id="textfield" value="1"/></td>
+          <td width="354">政治<br /></td>
+          <td align="center">10</td>
+          <td align="center"><a href="issue_class_add.html">編輯</a></td>
+        </tr>
+        <tr>
+          <td align="center"><input name="textfield2" type="text" class="input_shot" id="textfield2" value="2"/></td>
+          <td>社會<span class="s_note"></span></td>
+          <td align="center">0</td>
+          <td align="center"><a href="#">編輯</a>｜<a href="#">刪除</a><a href="#"></a></td>
+        </tr>
+        <tr>
+          <td align="center"><input name="textfield4" type="text" class="input_shot" id="textfield4" value="3"/></td>
+          <td>經濟</td>
+          <td align="center">0</td>
+          <td align="center"><a href="#">編輯</a>｜<a href="#">刪除</a><a href="#"></a></td>
+        </tr>
+      </table>
+      <div class="btn">
+        <input type="submit" name="button3" id="button3" value="儲存" class="submit"/>
+      </div>
+    </div>
+<!--------------後台管理界面end-------------->
   </div>
 </div>
-</div>
-
 </body>
 </html>
