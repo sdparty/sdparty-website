@@ -83,6 +83,14 @@ File Description: Place here your custom CSS styles
 	font-size:32px;
 	letter-spacing:1px;
 	}
+.candidates .image-box h4 span{
+	position:absolute;
+	top:2.5em;
+	width:100%;
+	font-size:16px;
+	letter-spacing:1px;
+	font-style:normal;
+	}
 .candidates .image-box h4 a{color:#fff;
 text-shadow:1px 1px 5px #000;}
 	
