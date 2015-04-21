@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420190225) do
+ActiveRecord::Schema.define(version: 20150421164345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,16 +19,16 @@ ActiveRecord::Schema.define(version: 20150420190225) do
   create_table "articles", force: :cascade do |t|
     t.string   "kind"
     t.integer  "user_id"
-    t.integer  "category_id"
-    t.boolean  "published"
+    t.integer  "issue_id"
+    t.boolean  "published",    default: true
     t.datetime "published_at"
     t.string   "image"
     t.string   "title"
     t.text     "content"
     t.string   "youtube_url"
     t.string   "youtube_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "articles_keywords", id: false, force: :cascade do |t|
@@ -42,18 +42,22 @@ ActiveRecord::Schema.define(version: 20150420190225) do
     t.integer "position"
     t.string  "image"
     t.string  "title"
+    t.string  "button_name"
     t.string  "link"
     t.boolean "published"
   end
 
   add_index "banners", ["position"], name: "index_banners_on_position", unique: true, using: :btree
 
-  create_table "categories", force: :cascade do |t|
-    t.integer "position"
-    t.string  "name"
+  create_table "candidates", force: :cascade do |t|
+    t.string "name"
+    t.text   "description"
+    t.string "constituency"
+    t.string "image"
+    t.string "help_image"
+    t.string "fb_link"
+    t.string "help_link"
   end
-
-  add_index "categories", ["position"], name: "index_categories_on_position", unique: true, using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -70,6 +74,13 @@ ActiveRecord::Schema.define(version: 20150420190225) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "issues", force: :cascade do |t|
+    t.string  "name"
+    t.integer "position"
+  end
+
+  add_index "issues", ["position"], name: "index_issues_on_position", unique: true, using: :btree
 
   create_table "keywords", force: :cascade do |t|
     t.string "name"

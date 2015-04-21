@@ -14,4 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require ckeditor/init
+//= require bootstrap
+//= require modernizr
+//= require jquery.themepunch.tools.min
+//= require jquery.themepunch.revolution.min
+//= require isotope
+//= require owl.carousel
+//= require magnific-popup
+//= require jquery-appear
+//= require mhuggins--jquery-countTo
+//= require jquery.parallax
+//= require jquery.validate
+//= require template
+//= require custom
 //= require_tree .

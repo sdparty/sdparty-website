@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "bundler", ">= 1.8.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
@@ -46,6 +46,29 @@ gem 'chosen-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+# gem "font-awesome-rails"
+gem 'fontello_rails_converter'
+# gem 'magnific-popup-rails'
+gem 'owlcarousel-rails'
+# gem "animate-rails"
+# gem 'google-webfonts'
+# gem "twitter-bootstrap-rails"
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery'
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-fontawesome'
+  # gem 'rails-assets-owlcarousel'
+  gem 'rails-assets-magnific-popup'
+  gem 'rails-assets-animate.css'
+  gem 'rails-assets-owl-carousel'
+  gem 'rails-assets-modernizr'
+  gem 'rails-assets-isotope'
+  gem 'rails-assets-jquery-appear'
+  gem 'rails-assets-mhuggins--jquery-countTo'
+  gem 'rails-assets-jquery.parallax'
+  gem 'rails-assets-jquery.validate'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

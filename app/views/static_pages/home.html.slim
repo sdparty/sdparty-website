@@ -1,0 +1,84 @@
+.banner
+  .slideshow.white-bg
+    .slider-banner-container
+      .slider-banner-fullscreen
+        ul
+          - @banners.each do |b|
+            li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on" data-title="#{b.title}"
+              = image_tag b.image, alt: "slidebg1", data: {bgposition: "center top", bgfit: "cover", bgrepeat: "no-repeat"}
+              .tp-caption.light-translucent-bg data-x="center" data-y="bottom" data-speed="800" data-start="0" style="background-color:rgba(255,255,255,0.3);"
+              .tp-caption.very_large_text.black.sfl.tp-resizeme data-x="center" data-y="70" data-speed="600" data-start="0" data-end="10000" data-endspeed="600"
+              .tp-caption.sfr.small_thin_dark.text-center.tp-resizeme data-x="center" data-y="170" data-speed="600" data-start="0" data-end="10000" data-endspeed="600"
+              .tp-caption.tp-resizeme.sfl data-x="center" data-y="350" data-speed="600" data-start="0" data-end="10000" data-endspeed="600"
+                = link_to b.button_name, b.link, class: "btn btn-dark btn-lg"
+.section.clearfix.object-non-visible.politics-info.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+  .container
+    .row
+      .col-md-12
+        .row.grid-space-20
+          .col-md-4.politics-01
+            .image-box
+              .overlay-container
+                h4 = link_to '新經濟', '#'
+                = image_tag 'politics-01.png', alt: ''
+                = link_to '', '#', class: "overlay small"
+          .col-md-4.politics-02
+            .image-box
+              .overlay-container
+                h4 = link_to '新政治', '#'
+                = image_tag 'politics-02.png', alt: ''
+                = link_to '', '#', class: "overlay small"
+          .col-md-4.politics-03
+            .image-box
+              .overlay-container
+                h4 = link_to '新社會', '#'
+                = image_tag 'politics-03.png', alt: ''
+                = link_to '', '#', class: "overlay small"
+      .sline
+.section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+  .container
+    h2.title 你想支持誰？
+      .row.grid-space-20
+        - @candidates.each do |c|
+          .col-md-2
+            .image-box
+              .overlay-container
+                = image_tag(c.image, alt: '')
+                = link_to 'candidate01.html', class: 'overlay small' do
+                  h4
+                    = c.name
+                    span = c.constituency
+        - (@candidates.length + 1).upto(10).each do |i|
+          .col-md-2
+            .image-box
+              .overlay-container
+                = image_tag("cc%02d.jpg" % i, alt: '')
+.section.clearfix.object-non-visible.candidates.custom-block-02 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+  .container
+    h2.title 共同政見
+    ul.politics-info-together
+      li
+        = link_to policy01_path, id: 'pit-01' do
+          | 提高薪資，
+          span.color-01 捍衛
+          | 中產、受薪階級的
+          span.color-01 勞動權
+      li
+        = link_to policy02_path, id: 'pit-02' do
+          span.color-02 年金大改革
+          | ，建構平等的社會安全體系
+      li
+        = link_to policy03_path, id: 'pit-03' do
+          | 財團
+          span.color-03 富人要增稅
+          | ，強化國家財政和施政能力
+      li
+        = link_to policy04_path, id: 'pit-04' do
+          | 政治制度要公平，要
+          span.color-04 透明可監督
+          | ，要不可被收買
+      li
+        = link_to policy05_path, id: 'pit-05' do
+          | 尊重少數、
+          span.color-05 反對歧視
+          | ，共創多元社會
