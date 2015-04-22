@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   match "/policy05",    to: 'static_pages#policy05',   via: 'get'
   match "/policy06",    to: 'static_pages#policy06',   via: 'get'
 
-  resources :articles, only: [:index, :show]
   resources :issues, only: [:index, :show]
   resources :candidates, only: [:index, :show]
-  match '/articles/news',   to: 'articles#news',   via: 'get', as: 'articles_news'
+  match '/articles/presses',      to: 'articles#presses',      via: 'get', as: 'articles_presses'
   match '/articles/activities',   to: 'articles#activities',   via: 'get', as: 'articles_activities'
+  resources :articles, only: [:index, :show]
 
   namespace :admin do
     resources :articles, except: [:show]

@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, except: [:index, :new]
+  before_action :set_article, except: [:index, :new, :presses, :activities]
 
   # GET /articles
   def index
@@ -43,6 +43,15 @@ class ArticlesController < ApplicationController
     redirect_to articles_url, notice: '關鍵字已刪除'
   end
 
+  def presses
+    @keywords = Keyword.all
+    @articles = Article.presses.page params[:page]
+  end
+
+  def activities
+    @articles = Article.activities.page params[:page]
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -52,7 +61,7 @@ class ArticlesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
-    params.require(:article).permit(:user_id, :category_id, :published, 
-      :published_at, :kind, :image, :title, :content, :youtube_url)
+    params.require(:article).permit(:user_id, :published, :published_at, 
+      :kind, :image, :title, :content, :youtube_url)
   end
 end

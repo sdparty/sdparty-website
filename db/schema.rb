@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421164345) do
+ActiveRecord::Schema.define(version: 20150422134749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20150421164345) do
   create_table "articles", force: :cascade do |t|
     t.string   "kind"
     t.integer  "user_id"
-    t.integer  "issue_id"
     t.boolean  "published",    default: true
     t.datetime "published_at"
     t.string   "image"
@@ -30,6 +29,13 @@ ActiveRecord::Schema.define(version: 20150421164345) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
+
+  create_table "articles_issues", id: false, force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "issue_id"
+  end
+
+  add_index "articles_issues", ["article_id", "issue_id"], name: "index_articles_issues_on_article_id_and_issue_id", unique: true, using: :btree
 
   create_table "articles_keywords", id: false, force: :cascade do |t|
     t.integer "article_id"

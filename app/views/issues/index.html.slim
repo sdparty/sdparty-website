@@ -1,0 +1,23 @@
+section.main-container
+  .politics-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 熱門議題
+          .separator-2
+          .issue-top-tag
+            a.active href="#" 全部
+            - @keywords.each do |t|
+              = link_to t.name, '#'
+          .row
+            .col-md-12
+              .issue-list-block
+                - @issues.each do |i|
+                  .issue-single-block
+                    h3
+                      em.issue-tag = i.title
+                      = link_to i.title
+                    .issue-txt
+                      = i.content
+              #page
+                = paginate @issues

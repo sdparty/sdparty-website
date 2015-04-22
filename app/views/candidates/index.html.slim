@@ -1,0 +1,43 @@
+section.main-container
+  .candidate-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 候選人介紹
+          .separator-2
+          .row
+            .col-md-12.candidate-sblock
+              h3.can-title-01
+                | 誠心推薦的
+                br
+                | 區域立委候選人
+    .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+      .container
+        h2.title 你想支持誰？
+        .row.grid-space-20
+          - @candidates.each do |c|
+            .col-md-2
+              .image-box
+                .overlay-container
+                  = image_tag(c.image, alt: '')
+                  = link_to candidate_path(c), class: 'overlay small' do
+                    h4
+                      = c.name
+                      span = c.constituency
+          - (@candidates.length + 1).upto(10).each do |i|
+            .col-md-2
+              .image-box
+                .overlay-container
+                  = image_tag("cc%02d.jpg" % i, alt: '')
+
+    .container.candidate-block
+      .row
+        .main.col-md-12
+          h6.can-title-02 共同政見
+          .politics-tag
+            = link_to image_tag('icon-big-01.png', alt: ''), policy01_path
+            = link_to image_tag('icon-big-02.png', alt: ''), policy02_path
+            = link_to image_tag('icon-big-03.png', alt: ''), policy03_path
+            = link_to image_tag('icon-big-04.png', alt: ''), policy04_path
+            = link_to image_tag('icon-big-05.png', alt: ''), policy05_path
+            = link_to image_tag('icon-big-06.png', alt: ''), policy06_path

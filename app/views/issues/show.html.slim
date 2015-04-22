@@ -1,0 +1,22 @@
+section.main-container
+  .politics-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 近期活動
+          .article-tag
+            a href="#" 全部
+            - @keywords.each do |t|
+              = link_to t.name, '#'
+          .separator-2
+          .row
+            .col-md-12
+              .action-list-block
+                - @articles.each do |a|
+                  .action-single-block
+                    .action-img
+                      = link_to image_tag(a.image, alt: ''), article_path(a)
+                    h3 = link_to a.title, article_path(a)
+                    p.action-time a.published_at.strftime('%Y-%m-%d')
+              #page
+                = paginate @articles

@@ -1,0 +1,26 @@
+section.main-container
+  .candidate-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 候選人介紹
+          .separator-2
+          .row
+            .col-md-12.candidate-sblock
+              .candidate-img
+                = link_to image_tag(@candidate.image, alt: ''), @candidate.fb_link, target: '_blank'
+              = @candidate.description.html_safe
+              p.help-img
+                = link_to image_tag(@candidate.help_image, alt: ''), @candidate.help_link, target: '_blank'
+    .container.candidate-block
+      .row
+        .main.col-md-12
+          h6.can-title-02 了解更多共同政見
+          .politics-tag
+            = link_to image_tag('icon-big-01.png', alt: ''), policy01_path
+            = link_to image_tag('icon-big-02.png', alt: ''), policy02_path
+            = link_to image_tag('icon-big-03.png', alt: ''), policy03_path
+            = link_to image_tag('icon-big-04.png', alt: ''), policy04_path
+            = link_to image_tag('icon-big-05.png', alt: ''), policy05_path
+            = link_to image_tag('icon-big-06.png', alt: ''), policy06_path
+      = link_to '更多候選人', candidates_path, class: 'inner-link'

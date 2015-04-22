@@ -22,7 +22,7 @@
 //= require owl.carousel
 //= require magnific-popup
 //= require jquery-appear
-//= require mhuggins--jquery-countTo
+//= require jquery.countTo
 //= require jquery.parallax
 //= require jquery.validate
 //= require template

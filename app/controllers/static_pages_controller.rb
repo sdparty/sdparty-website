@@ -1,17 +1,16 @@
 class StaticPagesController < ApplicationController
   def home
+    @banners = Banner.published
   end
 
   def about
-    @article = Article.find(1)
   end
 
   def donate
-    @article = Article.find(2)
+    @article = Article.find(1)
   end
 
   def join
-    @article = Article.find(3)
   end
 
   def programs

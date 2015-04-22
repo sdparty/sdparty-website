@@ -1,0 +1,46 @@
+section.main-container
+  .principle-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 政綱
+          .separator-2
+          .row
+            .col-md-12
+              p
+                | 社會民主黨是由一群長期關心台灣各個議題的公民所組成。
+                br
+                | 和你一樣，我們對既有政治的不滿已經很久了。
+                br
+                | 現在，我們決定自己捲起袖子，動手打造台灣的新政治。
+              p.dlbtn-group
+                = link_to '捐款支持', donate_path, class: 'dlbtn'
+                = link_to '下載完整政綱', "https://www.gitbook.com/download/pdf/book/sdparty/sdparty-program", class: 'dlbtn', target: '_blank'
+                = link_to '政綱電子書', "https://www.gitbook.com/book/sdparty/sdparty-program/details", class: 'dlbtn', target: '_blank'
+              .section.clearfix.object-non-visible.politics-info.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300" 
+                .row
+                  .col-md-12
+                    /! portfolio items start
+                    .row.grid-space-20
+                      .col-md-4.politics-01
+                        .image-box
+                          .overlay-container
+                            h4
+                              = link_to '新經濟', program01_path
+                            = image_tag('program-01.png', alt: '')
+                            = link_to '', program01_path, class: 'overlay small'
+                      .col-md-4.politics-02
+                        .image-box
+                          .overlay-container
+                            h4
+                              = link_to '新政治', program01_path
+                            = image_tag('program-02.png', alt: '')
+                            = link_to '', program01_path, class: 'overlay small'
+                      .col-md-4.politics-03
+                        .image-box
+                          .overlay-container
+                            h4
+                              = link_to '新社會', program01_path
+                            = image_tag('program-03.png', alt: '')
+                            = link_to '', program01_path, class: 'overlay small'
+              = link_to '政見', policies_path, class: 'inner-link'
