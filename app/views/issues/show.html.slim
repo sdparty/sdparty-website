@@ -5,9 +5,15 @@ section.main-container
         .main.col-md-12
           h2.page-title 近期活動
           .article-tag
-            a href="#" 全部
-            - @keywords.each do |t|
-              = link_to t.name, '#'
+            - unless @keyword
+              = link_to '全部', url_for(params.merge({k: nil}))
+            - else
+              = link_to '全部', url_for(params.merge({k: nil})), class: 'active'
+            - @keywords.each do |k|
+              - unless k == @keyword
+                = link_to k.name, url_for(params.merge({k: k.id}))
+              - else
+                = link_to k.name, url_for(params.merge({k: k.id})), class: 'active'
           .separator-2
           .row
             .col-md-12

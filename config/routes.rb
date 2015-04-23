@@ -25,10 +25,12 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
 
   namespace :admin do
+    match 'update_banners',    to: 'admin/banners#update_banners',    via: 'put'
     resources :articles, except: [:show]
     resources :banners
     resources :issues, except: [:show]
     resources :keywords
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

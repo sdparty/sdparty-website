@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @banners = Banner.published
+    @candidates = Candidate.published
   end
 
   def about

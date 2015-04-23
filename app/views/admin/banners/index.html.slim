@@ -1,0 +1,39 @@
+h1 廣告管理
+= form_tag admin_update_banners_path, method: :put do
+  table border="1" cellpadding="5" width="100%" 
+    tr
+      th width="59"  排序
+      th colspan="3"  圖檔標題 / 連結 / 圖檔
+    - @banners.each do |b|
+      tr
+        td align="center" rowspan="4" 
+          p &nbsp;
+          p
+          input#textfield3.input_shot name="textfield3" type="text" value="1" /
+      th align="center" 
+        p 圖檔
+      td align="left" 
+        p
+          = image_tag(b.image, class: 'banner-img')
+        p &nbsp;
+      td align="center" rowspan="4" width="84" 
+        p
+          = link_to '編輯', edit_admin_banner_path(b)
+        p
+          = link_to '刪除', admin_banner_path(b), method: :delete
+      tr
+        th align="center" 連結文字
+        td align="left" = b.title
+      tr
+        th align="center"  連結
+        td align="left" = link_to b.link, b.link
+      tr
+        th align="center" 是否發佈
+        - if b.published
+          td align="left" 已發佈
+        - else
+          td align="left" 未發佈
+
+    .btn
+      input#button.submit name="button" type="submit" value="儲存" /
+  /! ------------後台管理界面end------------

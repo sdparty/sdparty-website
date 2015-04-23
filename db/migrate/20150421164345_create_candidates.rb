@@ -8,6 +8,7 @@ class CreateCandidates < ActiveRecord::Migration
       t.string :help_image
       t.string :fb_link
       t.string :help_link
+      t.boolean :published, default: false
     end
   end
 end

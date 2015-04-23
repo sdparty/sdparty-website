@@ -3,7 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :kind
       t.belongs_to :user
-      t.boolean :published, default: true
+      t.boolean :published, default: false
       t.datetime :published_at
       t.string :image
       t.string :title

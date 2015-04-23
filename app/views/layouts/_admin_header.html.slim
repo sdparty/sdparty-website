@@ -1,0 +1,25 @@
+#side_menu
+  .side_block
+    h4 首頁banner
+    ul
+      li.select
+        = link_to '廣告管理', admin_banners_path
+      li
+        = link_to '新增廣告', new_admin_banner_path
+  .side_block
+    h4
+      | 最新消息 /
+      br
+      | 關注議題管理
+    ul
+      li
+        = link_to '文章管理', admin_articles_path
+      li
+        = link_to '新增文章', new_admin_article_path
+      li
+        = link_to '議題分類管理', admin_issues_path
+      li
+        = link_to '新增議題分類', new_admin_issue_path
+  .side_block
+    h4
+      = link_to '捐款支持', edit_admin_article_path(1)

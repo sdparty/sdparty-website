@@ -1,0 +1,15 @@
+doctype html
+head
+  meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+  title 管理後台:首頁大圖管理
+  = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
+body
+  #all
+    #content_wrap
+      = render 'layouts/admin_header'
+      /! ------------後台管理界面start------------
+      #main.inner
+        #header
+          | sdparty管理後台 -
+          = link_to '我要登出', destroy_user_session_path, method: :delete
+        = yield

@@ -9,6 +9,16 @@ class IssuesController < ApplicationController
   # GET /issues/1
   def show
     @articles = @issue.articles.page params[:page]
+    unless params[:k].blank?
+      @keyword = keyword.find(params[:k])
+      @keyword = nil unless @keyword
+    end
+    if @keyword
+      @articles = @issue.articles.keywords_has(@keyword.id).page params[:page]
+    else
+      @articles = @issue.articles.page params[:page]
+    end
+    @keywords = Article.issues.get_keywords
   end
 
   # GET /issues/new

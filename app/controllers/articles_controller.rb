@@ -44,12 +44,29 @@ class ArticlesController < ApplicationController
   end
 
   def presses
-    @keywords = Keyword.all
-    @articles = Article.presses.page params[:page]
+    unless params[:k].blank?
+      @keyword = keyword.find(params[:k])
+      @keyword = nil unless @keyword
+    end
+    if @keyword
+      @articles = @keyword.articles.presses.page params[:page]
+    else
+      @articles = Article.presses.page params[:page]
+    end
+    @keywords = Article.get_keywords
   end
 
   def activities
-    @articles = Article.activities.page params[:page]
+    unless params[:k].blank?
+      @keyword = keyword.find(params[:k])
+      @keyword = nil unless @keyword
+    end
+    if @keyword
+      @articles = @keyword.articles.activities.page params[:page]
+    else
+      @articles = Article.activities.page params[:page]
+    end
+    @keywords = Article.get_keywords
   end
 
   private
@@ -63,5 +80,15 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:user_id, :published, :published_at, 
       :kind, :image, :title, :content, :youtube_url)
+  end
+
+  def get_keywords(articles)
+    keywords = []
+    articles.to_a.map do |a|
+      a.keywords.each do |k|
+        keywords << k unless keywords.include? k
+      end
+    end
+    return keywords
   end
 end

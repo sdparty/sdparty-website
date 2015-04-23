@@ -19,15 +19,15 @@ ActiveRecord::Schema.define(version: 20150422134749) do
   create_table "articles", force: :cascade do |t|
     t.string   "kind"
     t.integer  "user_id"
-    t.boolean  "published",    default: true
+    t.boolean  "published",    default: false
     t.datetime "published_at"
     t.string   "image"
     t.string   "title"
     t.text     "content"
     t.string   "youtube_url"
     t.string   "youtube_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "articles_issues", id: false, force: :cascade do |t|
@@ -56,13 +56,14 @@ ActiveRecord::Schema.define(version: 20150422134749) do
   add_index "banners", ["position"], name: "index_banners_on_position", unique: true, using: :btree
 
   create_table "candidates", force: :cascade do |t|
-    t.string "name"
-    t.text   "description"
-    t.string "constituency"
-    t.string "image"
-    t.string "help_image"
-    t.string "fb_link"
-    t.string "help_link"
+    t.string  "name"
+    t.text    "description"
+    t.string  "constituency"
+    t.string  "image"
+    t.string  "help_image"
+    t.string  "fb_link"
+    t.string  "help_link"
+    t.boolean "published",    default: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

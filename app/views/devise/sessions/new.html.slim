@@ -1,0 +1,9 @@
+#all
+  h1.ltitle 【社民黨管理後台】
+  #google-login
+    = link_to image_tag('login-google.png', height: 64, width: 151), banners_path
+    /! 初次登入訊息start:一開始這段字是不會顯示的。第一次登入後，gmail帳號還沒經過管理員開啟權限的人會看到這塊文字。已經開啟的就直接進到後台不會看到這個字。
+    .login-note
+      | 待本帳號經網站管理員確認後，
+      br
+      | 始可使用本後台。
