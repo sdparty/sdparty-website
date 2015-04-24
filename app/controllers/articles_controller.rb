@@ -44,29 +44,29 @@ class ArticlesController < ApplicationController
   end
 
   def presses
-    unless params[:k].blank?
-      @keyword = keyword.find(params[:k])
-      @keyword = nil unless @keyword
+    unless params[:i].blank?
+      @issue = issue.find(params[:i])
+      @issue = nil unless @issue
     end
-    if @keyword
-      @articles = @keyword.articles.presses.page params[:page]
+    if @issue
+      @articles = @issue.articles.presses.page params[:page]
     else
       @articles = Article.presses.page params[:page]
     end
-    @keywords = Article.get_keywords
+    @issues = Article.get_issues
   end
 
   def activities
-    unless params[:k].blank?
-      @keyword = keyword.find(params[:k])
-      @keyword = nil unless @keyword
+    unless params[:i].blank?
+      @issue = issue.find(params[:i])
+      @issue = nil unless @issue
     end
-    if @keyword
-      @articles = @keyword.articles.activities.page params[:page]
+    if @issue
+      @articles = @issue.articles.activities.page params[:page]
     else
       @articles = Article.activities.page params[:page]
     end
-    @keywords = Article.get_keywords
+    @issues = Article.get_issues
   end
 
   private
@@ -79,16 +79,16 @@ class ArticlesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
     params.require(:article).permit(:user_id, :published, :published_at, 
-      :kind, :image, :title, :content, :youtube_url)
+      :iind, :image, :title, :content, :youtube_url)
   end
 
-  def get_keywords(articles)
-    keywords = []
+  def get_issues(articles)
+    issues = []
     articles.to_a.map do |a|
-      a.keywords.each do |k|
-        keywords << k unless keywords.include? k
+      a.issues.each do |k|
+        issues << k unless issues.include? k
       end
     end
-    return keywords
+    return issues
   end
 end

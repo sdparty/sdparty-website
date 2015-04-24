@@ -29,7 +29,6 @@ Rails.application.routes.draw do
     resources :articles
     resources :banners, except: [:show]
     resources :issues, except: [:show]
-    resources :keywords
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

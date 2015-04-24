@@ -1,5 +1,4 @@
 class Article < ActiveRecord::Base
-  has_and_belongs_to_many :keywords, -> { uniq }
   has_and_belongs_to_many :issues, -> { uniq }
   belongs_to :user
   mount_uploader :image, ImageUploader
@@ -17,9 +16,5 @@ class Article < ActiveRecord::Base
       end
     end
     return issues
-  end
-
-  def self.keywords_has(keyword_id)
-    includes(:keywords).where(keywords: {id: keyword_id})
   end
 end
