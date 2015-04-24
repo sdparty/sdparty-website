@@ -25,8 +25,8 @@
         <ul>
           <li><a href="news_list.html">文章管理</a></li>
           <li class="select"><a href="news_add.html">新增文章</a></li>
-          <li><a href="issue_class.html">議題分類管理</a></li>
-          <li><a href="issue_class_add.html">新增議題分類</a></li>
+          <li><a href="issue_class.html">文章子分類管理</a></li>
+          <li><a href="issue_class_add.html">新增文章子分類</a></li>
         </ul>
       </div>
       <div class="side_block">
@@ -42,27 +42,29 @@
         <tr>
           <th width="95">*類型</th>
           <td><p>
-              <input type="radio" name="radio" id="radio3" value="radio" />
+              <input type="radio" name="radio" value="radio" />
               新聞稿
-              <input type="radio" name="radio" id="radio4" value="radio" />
+              <input type="radio" name="radio" value="radio" />
               活動
-              <input type="radio" name="radio" id="radio5" value="radio" />
+              <input type="radio" name="radio" value="radio" />
               議題 </p></td>
         </tr>
         <tr>
-          <th>議題分類</th>
-          <td><select name="select" id="select">
-              <option>自訂分類1</option>
-              <option>自訂分類2</option>
-              <option>自訂分類3</option>
+          <th>文章子分類</th>
+          <td><p>
+            <select name="select" id="select">
+              <option>子分類1</option>
+              <option>子分類2</option>
+              <option>子分類3</option>
             </select>
-            <em class="s_note"> 只有選「議題」才有此項</em></td>
+          </p>
+          <p>              <em class="s_note"> 如果同一個文章分屬多個子分類，可以多選。因為可多選，故用此替代標籤，欲新增子分類請至「文章子分類管理」。</em></p></td>
         </tr>
         <tr>
           <th>文章狀態</th>
-          <td><input type="radio" name="radio" id="radio" value="radio" />
+          <td><input type="radio" name="radio"value="radio" />
             上架
-            <input type="radio" name="radio" id="radio2" value="radio" />
+            <input type="radio" name="radio"value="radio" />
             下架</td>
         </tr>
         <tr>
@@ -86,12 +88,6 @@
         <tr>
           <th>*標題</th>
           <td><input name="textfield3" type="text" class="input_04" id="textfield3" /></td>
-        </tr>
-        <tr>
-          <th valign="top">標籤tag</th>
-          <td><input name="textfield" type="text" class="input_04" id="textfield" />
-            <br />
-            <em class="s_note">多個標籤請使用逗號隔開</em></td>
         </tr>
         <tr>
           <th valign="top">*內容</th>
