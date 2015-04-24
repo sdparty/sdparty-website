@@ -9,14 +9,14 @@ class Article < ActiveRecord::Base
   scope :presses, -> { where(kind: 'press') }
   scope :issues, -> { where(kind: 'issues') }
 
-  def self.get_keywords
-    keywords = []
-    includes(:keywords).to_a.map do |a|
-      a.keywords.each do |k|
-        keywords << k unless keywords.include? k
+  def self.get_issues
+    issues = []
+    includes(:issues).to_a.map do |a|
+      a.issues.each do |i|
+        issues << i unless issues.include? i
       end
     end
-    return keywords
+    return issues
   end
 
   def self.keywords_has(keyword_id)

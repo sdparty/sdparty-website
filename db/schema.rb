@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422134749) do
+ActiveRecord::Schema.define(version: 20150421164345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,13 +36,6 @@ ActiveRecord::Schema.define(version: 20150422134749) do
   end
 
   add_index "articles_issues", ["article_id", "issue_id"], name: "index_articles_issues_on_article_id_and_issue_id", unique: true, using: :btree
-
-  create_table "articles_keywords", id: false, force: :cascade do |t|
-    t.integer "article_id"
-    t.integer "keyword_id"
-  end
-
-  add_index "articles_keywords", ["article_id", "keyword_id"], name: "index_articles_keywords_on_article_id_and_keyword_id", unique: true, using: :btree
 
   create_table "banners", force: :cascade do |t|
     t.integer "position"
@@ -83,15 +76,12 @@ ActiveRecord::Schema.define(version: 20150422134749) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "issues", force: :cascade do |t|
-    t.string  "name"
     t.integer "position"
+    t.string  "name"
+    t.text    "content"
   end
 
   add_index "issues", ["position"], name: "index_issues_on_position", unique: true, using: :btree
-
-  create_table "keywords", force: :cascade do |t|
-    t.string "name"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "",    null: false
