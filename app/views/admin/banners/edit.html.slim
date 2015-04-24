@@ -1,2 +1,2 @@
-= simple_form_for @banner, url: admin_banner_path, method: :put do |f|
+= simple_form_for @banner, url: admin_banner_path(@banner), method: :put do |f|
   = render :partial => 'form', :locals => { :f => f }

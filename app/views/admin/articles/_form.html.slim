@@ -1,0 +1,51 @@
+= render 'shared/error_messages', object: f.object
+table border="1" cellpadding="5" width="100%" 
+  tr
+    th width="95" ＊類型
+    td
+      p
+        - if @article.kind == 'system'
+          = f.collection_radio_buttons :kind, [['system', '系統']], :first, :last, disable: true
+        - else
+          = f.collection_radio_buttons :kind, [['press', '新聞稿'] ,['activity', '活動'], ['issue', '議題']], :first, :last
+  - if @article.kind == 'issue'
+    tr.issue_field
+      th 議題分類
+      td
+        = f.association :issues, label: false, collection: Issue.all, input_html: { class: 'chosen-select' }
+  - else
+    tr.issue_field style="display: none;"
+      th 議題分類
+      td
+        = f.association :issues, label: false, collection: Issue.all, input_html: { class: 'chosen-select' }
+  tr
+    th 是否發佈
+    td
+      = f.input :published, as: :boolean, label: false
+  tr
+    th ＊發表日期
+    td
+      = f.input :published_at, as: :string, label: false, input_html: { class: "datetimepicker" }, required: true
+      em.s_note 如果設定日期是未來，則視為預約發布，時間到才會正式在前台顯示
+  tr
+    th 小圖
+    td
+      = f.input :image, as: :file, label: false, required: true, input_html: { id: 'fileField2' }
+      = f.input :image_cache, as: :hidden
+      em.s_note
+        br
+        | 若無上傳小圖，由系統自動抓文章第一張圖顯示
+  tr
+    th ＊標題
+    td
+      = f.input :title, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
+  tr
+    th 關鍵字
+    td
+      = f.association :keywords, label: false, collection: Keyword.all, input_html: { class: 'chosen-select' }
+  tr
+    th valign="top"  ＊內容
+    td
+      = f.cktext_area :content, label: false, required: true
+.btn
+  = f.submit '送出', id: 'button', class: 'submit'

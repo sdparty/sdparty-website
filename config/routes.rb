@@ -26,8 +26,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     match 'update_banners',    to: 'admin/banners#update_banners',    via: 'put'
-    resources :articles, except: [:show]
-    resources :banners
+    resources :articles
+    resources :banners, except: [:show]
     resources :issues, except: [:show]
     resources :keywords
 

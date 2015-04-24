@@ -1,4 +1,4 @@
-class ArticlesController < Admin::BaseController
+class Admin::ArticlesController < Admin::BaseController
   before_action :set_article, except: [:index, :new]
 
   # GET /articles

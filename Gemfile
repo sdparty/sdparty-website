@@ -48,6 +48,7 @@ gem 'chosen-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+gem 'jquery-datetimepicker-rails'
 # gem "font-awesome-rails"
 gem 'fontello_rails_converter'
 # gem 'magnific-popup-rails'

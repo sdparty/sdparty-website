@@ -5,27 +5,37 @@ table border="1" cellpadding="5" width="100%"
       em.s_note 建議圖片尺寸：1350x605 像素。單一圖檔大小限制200K。
   tr
     th width="59"
-      | *圖檔
+      | ＊圖檔
     td align="left"
-      = f.input :image, as: :file, label: false, required: true, id: 'fileField2'
+      = f.input :image, as: :file, label: false, required: true, input_html: { id: 'textfield2' }
       = f.input :image_cache, as: :hidden
     td rowspan="4" width="90" 
       span.btn
         = f.button :submit, id: 'button2', class: 'submit'
   tr
     th
-      | *連結文字
+      | ＊簡單描述
     td align="left" 
-      = f.input :title, label: false, required: true, id: 'textfield', class: 'input_04'
+      = f.input :title, label: false, required: true, input_html: { id: 'textfield', class: 'input_04' }
       em.s_note
-        br/
-        | 最多7個中文字
+        br
+        | 最多10個中文字
   tr
     th
-      | *連結
+      | ＊按鈕文字
     td align="left" 
-      p = f.input :title, as: :url, label: false, required: true, id: 'textfield', class: 'input_04'
+      p = f.input :button_name, label: false, required: true, input_html: { id: 'textfield', class: 'input_04' }
+      em.s_note
+        br
+        | 最多5個中文字
+  tr
+    th
+      | ＊連結
+    td align="left" 
+      p = f.input :title, as: :url, label: false, required: true, input_html: { id: 'textfield', class: 'input_04' }
   tr
     th 是否發佈
     td align="left"
       = f.input :published, as: :boolean, label: false
+.btn
+  = f.submit '確定送出', id: 'button', class: 'submit'

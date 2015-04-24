@@ -1,4 +1,4 @@
-class KeywordsController < Admin::BaseController
+class Admin::KeywordsController < Admin::BaseController
   before_action :set_keyword, except: [:index, :new]
 
   # GET /keywords

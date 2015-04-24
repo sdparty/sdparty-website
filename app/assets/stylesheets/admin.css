@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require reset
+ *= require jquery-ui
+ *= require jquery.datetimepicker
  *= require admin-style
  *= require_self
  */

@@ -1,4 +1,4 @@
-class IssuesController < Admin::BaseController
+class Admin::IssuesController < Admin::BaseController
   before_action :set_issue, except: [:index, :new]
 
   # GET /issues

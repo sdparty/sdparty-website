@@ -1,0 +1,56 @@
+h1 文章管理
+#search_bar
+  | 分類
+  select#select name="select" 
+    option 全部
+    option 新聞稿
+    option 活動
+  | 標題
+  input#textfield.input_08 name="textfield" type="text" /
+  input#button name="button" type="submit" value="搜尋" /
+table border="1" cellpadding="5" width="100%" 
+  tr
+    th 編號
+    th width="385"  標題
+    th 分類
+    th 發表日期
+    th 操作
+  - num = 0
+  - @articles.each do |a|
+    - if num % 2 == 0
+      tr
+        td align="center" valign="top" width="39"  1
+        td
+          = link_to a.title, admin_article_path(a)
+        td align="center" width="99"
+          - if a.kind == 'press'
+            | 新聞稿
+          - elsif a.kind == 'activity'
+            | 活動
+          - if a.kind == 'issue'
+            | 議題
+        td align="center" width="127" = a.published_at.strftime('%Y-%m-%d')
+        td align="center" width="126" 
+          = link_to '編輯', edit_admin_article_path(a)
+          | ｜
+          = link_to '刪除', admin_article_path(a), method: :delete
+    - else
+      tr.even
+        td align="center" valign="top" width="39"  1
+        td
+          = link_to a.title, admin_article_path(a)
+        td align="center" width="99"
+          - if a.kind == 'press'
+            | 新聞稿
+          - elsif a.kind == 'activity'
+            | 活動
+          - if a.kind == 'issue'
+            | 議題
+        td align="center" width="127" = a.published_at.strftime('%Y-%m-%d')
+        td align="center" width="126" 
+          = link_to '編輯', edit_admin_article_path(a)
+          | ｜
+          = link_to '刪除', admin_article_path(a), method: :delete
+    - num += 1
+#page
+  = paginate @articles

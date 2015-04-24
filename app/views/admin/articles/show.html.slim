@@ -1,0 +1,37 @@
+h1 瀏覽文章
+table border="1" cellpadding="5" width="100%" 
+  tr
+    th width="95" ＊分類(活動or新聞稿)
+    td width="317"
+      - if @article.kind == 'press' 
+        p 新聞稿
+      - elsif @article.kind == 'activity'
+        p 活動
+      - elsif @article.kind == 'issue'
+        p 議題
+      - elsif @article.kind == 'system'
+        p 系統
+      - else
+        p 未知
+    th width="99"  建檔時間
+    td width="279" = @article.created_at.strftime('%Y-%m-%d %H:%M:%i')
+  tr
+    th ＊發表日期
+    td colspan="3" = @article.published_at.strftime('%Y-%m-%d')
+  tr
+    th 小圖
+    td colspan="3"
+      = image_tag(@article.image, class: 'news-img')
+  tr
+    th ＊標題
+    td colspan="3" = @article.title
+  tr
+    th valign="top"  標籤tag
+    td colspan="3"
+      = @article.keywords.join('、')
+  tr
+    th valign="top"  ＊內容
+    td colspan="3"
+      = @article.content.html_safe
+.btn
+  input#button.submit name="button" type="submit" value="回上頁" /

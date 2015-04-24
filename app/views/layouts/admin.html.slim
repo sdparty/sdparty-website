@@ -13,3 +13,4 @@ body
           | sdparty管理後台 -
           = link_to '我要登出', destroy_user_session_path, method: :delete
         = yield
+  = javascript_include_tag 'admin', 'data-turbolinks-track' => true

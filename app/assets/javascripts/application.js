@@ -31,18 +31,11 @@
 //= require chosen-jquery
 //= require social-share-button
 
-var ready = function(){
-  // datepicker
-  $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
-  // enable chosen js
-  $('.chosen-select').chosen({
-    search_contains: true,
-    allow_single_deselect: true,
-    no_results_text: 'No results matched',
-    width: '200px',
-  });
-  $(".chosen-select").trigger('chosen:updated');
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
+if ( $("#disqus_thread").length ){
+    var disqus_shortname = 'sdparty';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  }
