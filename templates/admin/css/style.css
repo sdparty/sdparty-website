@@ -5,8 +5,8 @@ body{
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:15px;
 	background:url(../images/aside.gif) -150px top repeat-y;}
-#view_page,#longin_page{
-	background:none;}
+#longin_page{
+	background:#fff;}
 a{
 	color:#498a13;
 	text-decoration:none;}
