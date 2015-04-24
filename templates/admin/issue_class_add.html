@@ -25,17 +25,8 @@
         <ul>
           <li><a href="news_list.html">文章管理</a></li>
           <li><a href="news_add.html">新增文章</a></li>
-          <li><a href="issue_class.html">議題分類管理</a></li>
-          <li><a href="issue_class_add.html">新增議題分類</a></li>
-        </ul>
-      </div>
-      <div class="side_block">
-        <h4>關注議題</h4>
-        <ul>
-          <li><a href="issue_list.html">議題管理</a></li>
-          <li><a href="issue_add.html">新增議題</a></li>
-          <li><a href="issue_class.html">議題分類管理</a></li>
-          <li class="select"><a href="issue_class_add.html">新增議題分類</a></li>
+          <li><a href="issue_class.html">文章子分類管理</a></li>
+          <li class="select"><a href="issue_class_add.html">新增文章子分類</a></li>
         </ul>
       </div>
       <div class="side_block">
@@ -46,11 +37,21 @@
 <!--------------後台管理界面start-------------->
     <div id="main" class="inner">
       <div id="header">sdparty管理後台 - <a href="admin_login.html" class="logout">我要登出</a> </div>
-      <h1>新增議題分類</h1>
+      <h1>新增文章子分類</h1>
       <table width="70%" border="1" cellpadding="5">
         <tr>
-          <th width="112">分類名稱</th>
-          <td width="347"><input name="textfield3" type="text" class="input_04" id="textfield3" /></td>
+          <th>上層文章類型</th>
+          <td><input type="radio" name="radio" value="radio" />
+新聞稿
+  <input type="radio" name="radio" value="radio" />
+活動
+<input type="radio" name="radio" value="radio" />
+議題 </td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th width="147">分類名稱</th>
+          <td width="312"><input name="textfield3" type="text" class="input_04" id="textfield3" /></td>
           <td width="90"><span class="btn">
             <input type="submit" name="button2" id="button2" value="儲存" class="submit"/>
             </span></td>
