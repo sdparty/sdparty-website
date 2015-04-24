@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :candidates, only: [:index, :show]
   match '/articles/presses',      to: 'articles#presses',      via: 'get', as: 'articles_presses'
   match '/articles/activities',   to: 'articles#activities',   via: 'get', as: 'articles_activities'
+  match '/articles/issues',   to: 'articles#issues',   via: 'get', as: 'articles_issues'
   resources :articles, only: [:index, :show]
 
   namespace :admin do

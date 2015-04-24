@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, except: [:index, :new, :presses, :activities]
+  before_action :set_article, except: [:index, :new, :presses, :activities, :issues]
 
   # GET /articles
   def index
@@ -65,6 +65,19 @@ class ArticlesController < ApplicationController
       @articles = @issue.articles.activities.page params[:page]
     else
       @articles = Article.activities.page params[:page]
+    end
+    @issues = Article.get_issues
+  end
+
+  def issues
+    unless params[:i].blank?
+      @issue = issue.find(params[:i])
+      @issue = nil unless @issue
+    end
+    if @issue
+      @articles = @issue.articles.issues.page params[:page]
+    else
+      @articles = Article.issues.page params[:page]
     end
     @issues = Article.get_issues
   end
