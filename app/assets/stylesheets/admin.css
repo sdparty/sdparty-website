@@ -13,6 +13,7 @@
  *= require reset
  *= require jquery-ui
  *= require jquery.datetimepicker
+ *= require chosen
  *= require admin-style
  *= require_self
  */

@@ -53,13 +53,15 @@ gem 'jquery-datetimepicker-rails'
 gem 'fontello_rails_converter'
 # gem 'magnific-popup-rails'
 gem 'owlcarousel-rails'
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 # gem "animate-rails"
 # gem 'google-webfonts'
-# gem "twitter-bootstrap-rails"
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery'
-  gem 'rails-assets-bootstrap'
+  # gem 'rails-assets-jquery'
+  # gem 'rails-assets-bootstrap'
   gem 'rails-assets-fontawesome'
   # gem 'rails-assets-owlcarousel'
   gem 'rails-assets-magnific-popup'
@@ -71,6 +73,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-mhuggins--jquery-countTo'
   gem 'rails-assets-jquery.parallax'
   gem 'rails-assets-jquery.validate'
+  gem 'rails-assets-html.sortable'
 end
 
 # Use Capistrano for deployment

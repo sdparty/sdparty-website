@@ -1,9 +1,9 @@
 class Admin::IssuesController < Admin::BaseController
-  before_action :set_issue, except: [:index, :new]
+  before_action :set_issue, except: [:index, :new, :update_issues, :sort]
 
   # GET /issues
   def index
-    @issues = Issue.all.page params[:page]
+    @issues = Issue.all
   end
 
   # GET /issues/1
@@ -24,7 +24,7 @@ class Admin::IssuesController < Admin::BaseController
   def create
     @issue = Issue.new(issue_params)
     if @issue.save
-        redirect_to @issue, notice: 'Issue was successfully created.'
+        redirect_to admin_issues_url, notice: 'Issue was successfully created.'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Admin::IssuesController < Admin::BaseController
   # PATCH/PUT /issues/1
   def update
     if @issue.update(issue_params)
-      redirect_to @issue, notice: 'Issue was successfully updated.'
+      redirect_to admin_issues_url, notice: 'Issue was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +42,28 @@ class Admin::IssuesController < Admin::BaseController
   # DELETE /issues/1
   def destroy
     @issue.destroy
-    redirect_to issues_url, notice: 'Issue was successfully destroyed.'
+    redirect_to admin_issues_url, notice: 'Issue was successfully destroyed.'
+  end
+
+  def update_issues
+    if issue_params[:issue_ids].any? and issue_params[:issue_positions].any?
+      issue_positions = issue_params[:issue_positions]
+      issue_ids = issue_params[:issue_ids]
+      issue_ids.length.times.each do |i|
+        issue = Issue.find(issue_ids[i])
+        issue.position = issue_positions[i].to_i if issue_positions[i]
+        issue.save
+      end
+      flash[:notice] = "議題順序更新完畢！"
+    end
+    redirect_to admin_issues_url
+  end
+
+  def sort
+    issue_params[:order].each do |key,value|
+      Issue.find(value[:id]).update_attribute(:position, value[:position])
+    end
+    render :nothing => true
   end
 
   private
@@ -53,6 +74,7 @@ class Admin::IssuesController < Admin::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def issue_params
-    params.require(:issue).permit(:name, :published)
+    params.require(:issue).permit(:name, :published, {issue_ids: []}, {issue_positions: []},
+      {order: [:id, :position]})
   end
 end

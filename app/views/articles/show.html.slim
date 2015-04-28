@@ -3,11 +3,11 @@ section.main-container
     .container
       .row
         .main.col-md-12
-          h2.page-title @article.title
+          h2.page-title = @article.title
           /! 文章標籤 start
           .article-tag
-            - @article.tags.each do |t|
-              = link_to t.name, '#'
+            - @article.issues.each do |i|
+              = i.name
           p = @article.published_at.strftime('%Y-%m-%d')
           .separator-2
           .row

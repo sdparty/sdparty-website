@@ -12,11 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
-//= require bootstrap
 //= require ckeditor/init
 //= require chosen-jquery
 //= require jquery.datetimepicker
+//= require html.sortable
+
+set_positions = function(){
+    // loop through and give each task a data-pos
+    // attribute that holds its position in the DOM
+    $('.panel.panel-default').each(function(i){
+        console.log('set positions');
+        $(this).attr("data-pos",i+1);
+    });
+}
 
 var ready = function(){
   // datetiimepicker
@@ -29,17 +39,66 @@ var ready = function(){
     width: '200px',
   });
   $(".chosen-select").trigger('chosen:updated');
+  set_positions();
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  // after the order changes
+  $('.sortable-issue').sortable().bind('sortupdate', function(e, ui) {
+    // array to store new order
+    console.log('sort update');
+    updated_order = []
+    // set the updated positions
+    set_positions();
+
+    // populate the updated_order array with the new task positions
+    $('.panel.panel-default').each(function(i){
+        updated_order.push({ id: $(this).data("id"), position: i+1 });
+    });
+
+    // send the updated order via ajax
+    $.ajax({
+      type: "PUT",
+      url: '/admin/issues/sort',
+      data: {
+        _method: 'put',
+        issue: {
+          order: updated_order
+        },
+        authenticity_token: window._token
+      }
+    });
+  });
+
+  $('.sortable-banner').sortable().bind('sortupdate', function(e, ui) {
+    // array to store new order
+    console.log('sort update');
+    updated_order = []
+    // set the updated positions
+    set_positions();
+
+    // populate the updated_order array with the new task positions
+    $('.panel.panel-default').each(function(i){
+        updated_order.push({ id: $(this).data("id"), position: i+1 });
+    });
+
+    // send the updated order via ajax
+    $.ajax({
+      type: "PUT",
+      url: '/admin/banners/sort',
+      data: {
+        _method: 'put',
+        banner: {
+          order: updated_order
+        },
+        authenticity_token: window._token
+      }
+    });
+  });
 };
-
-
-$("input[name='article[kind]']").change(function(){
-  if($(this).val() == 'issue') {
-    $('.issue_field').show();
-  } else {
-    $('.issue_field').hide();
-  }
-
-});
 
 
 $(document).ready(ready);

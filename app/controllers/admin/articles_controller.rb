@@ -52,7 +52,7 @@ class Admin::ArticlesController < Admin::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
-    params.require(:article).permit(:user_id, :category_id, :published, 
+    params.require(:article).permit(:user_id, :published, {:issue_ids => []},
       :published_at, :kind, :image, :title, :content, :youtube_url)
   end
 end

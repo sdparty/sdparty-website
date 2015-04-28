@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20150421164345) do
     t.boolean "published"
   end
 
-  add_index "banners", ["position"], name: "index_banners_on_position", unique: true, using: :btree
-
   create_table "candidates", force: :cascade do |t|
     t.string  "name"
     t.text    "description"
@@ -80,8 +78,6 @@ ActiveRecord::Schema.define(version: 20150421164345) do
     t.string  "name"
     t.text    "content"
   end
-
-  add_index "issues", ["position"], name: "index_issues_on_position", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "",    null: false

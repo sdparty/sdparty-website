@@ -8,6 +8,5 @@ class CreateBanners < ActiveRecord::Migration
       t.string :link
       t.boolean :published
     end
-    add_index :banners, :position, :unique => true
   end
 end

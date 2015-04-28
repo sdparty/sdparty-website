@@ -12,16 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require ckeditor/init
-//= require bootstrap
 //= require modernizr
 //= require jquery.themepunch.tools.min
-//= require jquery.themepunch.revolution.min
-//= require isotope
+//= require jquery.themepunch.revolution
+//= require isotope.pkgd
 //= require owl.carousel
 //= require magnific-popup
-//= require jquery-appear
+//= require jquery.appear
 //= require jquery.countTo
 //= require jquery.parallax
 //= require jquery.validate

@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
 
   def presses
     unless params[:i].blank?
-      @issue = issue.find(params[:i])
+      @issue = Issue.find(params[:i])
       @issue = nil unless @issue
     end
     if @issue
@@ -53,12 +53,12 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.presses.page params[:page]
     end
-    @issues = Article.get_issues
+    @issues = Article.presses.get_issues
   end
 
   def activities
     unless params[:i].blank?
-      @issue = issue.find(params[:i])
+      @issue = Issue.find(params[:i])
       @issue = nil unless @issue
     end
     if @issue
@@ -66,12 +66,12 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.activities.page params[:page]
     end
-    @issues = Article.get_issues
+    @issues = Article.activities.get_issues
   end
 
   def issues
     unless params[:i].blank?
-      @issue = issue.find(params[:i])
+      @issue = Issue.find(params[:i])
       @issue = nil unless @issue
     end
     if @issue
@@ -79,7 +79,7 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.issues.page params[:page]
     end
-    @issues = Article.get_issues
+    @issues = Article.issues.get_issues
   end
 
   private

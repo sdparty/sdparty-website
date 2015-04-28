@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   match "/policy05",    to: 'static_pages#policy05',   via: 'get'
   match "/policy06",    to: 'static_pages#policy06',   via: 'get'
 
-  resources :issues, only: [:index, :show]
   resources :candidates, only: [:index, :show]
   match '/articles/presses',      to: 'articles#presses',      via: 'get', as: 'articles_presses'
   match '/articles/activities',   to: 'articles#activities',   via: 'get', as: 'articles_activities'
@@ -26,10 +25,15 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
 
   namespace :admin do
-    match 'update_banners',    to: 'admin/banners#update_banners',    via: 'put'
+    match 'update_banners',    to: 'banners#update_banners',    via: 'put'
+    match 'update_issues',     to: 'issues#update_issues',    via: 'put'
     resources :articles
-    resources :banners, except: [:show]
-    resources :issues, except: [:show]
+    resources :banners, except: [:show] do
+      put :sort, on: :collection
+    end
+    resources :issues, except: [:show] do
+      put :sort, on: :collection
+    end
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

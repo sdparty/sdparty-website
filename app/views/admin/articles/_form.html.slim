@@ -5,19 +5,13 @@ table border="1" cellpadding="5" width="100%"
     td
       p
         - if @article.kind == 'system'
-          = f.collection_radio_buttons :kind, [['system', '系統']], :first, :last, disable: true
+          = f.collection_radio_buttons :kind, [['system', '系統']], :first, :last, disabled: true
         - else
           = f.collection_radio_buttons :kind, [['press', '新聞稿'] ,['activity', '活動'], ['issue', '議題']], :first, :last
-  - if @article.kind == 'issue'
-    tr.issue_field
-      th 議題分類
-      td
-        = f.association :issues, label: false, collection: Issue.all, input_html: { class: 'chosen-select' }
-  - else
-    tr.issue_field style="display: none;"
-      th 議題分類
-      td
-        = f.association :issues, label: false, collection: Issue.all, input_html: { class: 'chosen-select' }
+  tr
+    th 議題分類
+    td
+      = f.association :issues, label: false, collection: Issue.all, input_html: { class: 'chosen-select' }
   tr
     th 是否發佈
     td
@@ -38,11 +32,10 @@ table border="1" cellpadding="5" width="100%"
   tr
     th ＊標題
     td
-      = f.input :title, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
-  tr
-    th 關鍵字
-    td
-      = f.association :keywords, label: false, collection: Keyword.all, input_html: { class: 'chosen-select' }
+      - if @article.kind == 'system'
+        = f.input :title, label: false, required: true, disabled: true, input_html: { id: 'textfield3', class: 'input_04' }
+      - else
+        = f.input :title, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
   tr
     th valign="top"  ＊內容
     td

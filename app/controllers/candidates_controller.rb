@@ -8,7 +8,6 @@ class CandidatesController < ApplicationController
 
   # GET /candidates/1
   def show
-    @articles = @candidate.articles.page params[:page]
   end
 
   # GET /candidates/new

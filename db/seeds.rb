@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+FIRST_TIME = true
+
 Article.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!(Article.table_name)
 
@@ -34,6 +36,53 @@ articles.each do |a|
   article.save
 end
 
+if FIRST_TIME
+
+  Banner.delete_all
+  ActiveRecord::Base.connection.reset_pk_sequence!(Banner.table_name)
+
+  banners = [
+    {
+      id: 1, 
+      position: 1,
+      image: 'banner00.jpg',
+      button_name: '了解社民黨政見',
+      link: '/policies',
+      published: true
+    }, {
+      id: 2, 
+      position: 2,
+      image: 'banner01.png',
+      button_name: '幫助范雲',
+      link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&amp;reset=1',
+      published: true
+    }, {
+      id: 3, 
+      position: 3,
+      image: 'banner02.png',
+      button_name: '幫助呂欣潔',
+      link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&amp;reset=1',
+      published: true
+    }, {
+      id: 4, 
+      position: 4,
+      image: 'banner03.png',
+      button_name: '幫助苗博雅',
+      link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&amp;reset=1',
+      published: true
+    }
+  ]
+
+  banners.each do |b|
+    banner = Banner.new(b)
+    File.open(Rails.root.join('db', 'fixtures', b[:image])) do |f|
+      banner.image = f
+    end
+    banner.id = b[:id]
+    banner.save
+  end
+end
+
 Candidate.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 
@@ -41,9 +90,10 @@ candidates = [
   {
     id: 1,
     name: '范雲',
+    published: true,
     constituency: '大安區',
     image: 'people01.jpg',
-    help_image: 'help01.jpg',
+    help_image: 'help01.png',
     fb_link: 'https://www.facebook.com/yun.fan1',
     help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&amp;reset=1',
     description: '<p>
@@ -72,9 +122,10 @@ candidates = [
   }, {
     id: 2,
     name: '呂欣潔',
+    published: true,
     constituency: '信義松山',
     image: 'people02.jpg',
-    help_image: 'help02.jpg',
+    help_image: 'help02.png',
     fb_link: 'https://www.facebook.com/JenniferLuTw',
     help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&amp;reset=1',
     description: '<h3 class="sub-title-01">打拼，在來不及之前</h3>
@@ -105,9 +156,10 @@ candidates = [
   }, {
     id: 3,
     name: '苗博雅',
+    published: true,
     constituency: '中正文山',
     image: 'people03.jpg',
-    help_image: 'help03.jpg',
+    help_image: 'help03.png',
     fb_link: 'https://www.facebook.com/miaopoya',
     help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&amp;reset=1',
     description: '<h3 class="sub-title-01">台灣，已經沒有時間等我們變老</h3>
@@ -143,9 +195,10 @@ candidates = [
   }, {
     id: 4,
     name: '李晏榕',
+    published: true,
     constituency: '中山松山',
     image: 'people04.jpg',
-    help_image: 'help04.jpg',
+    help_image: 'help04.png',
     fb_link: '',
     help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=17&amp;reset=1',
     description: '<h3 class="sub-title-01">曾幾何時，政治離我何其遙遠，卻又如此接近。</h3>
@@ -176,4 +229,8 @@ candidates.each do |c|
   candidate = Candidate.new(c)
   candidate.id = c[:id]
   candidate.save
+end
+
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end

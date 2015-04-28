@@ -5,6 +5,5 @@ class CreateIssues < ActiveRecord::Migration
       t.string :name
       t.text :content
     end
-    add_index :issues, :position, :unique => true
   end
 end

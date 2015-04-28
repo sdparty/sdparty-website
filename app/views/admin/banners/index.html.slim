@@ -6,11 +6,10 @@ h1 廣告管理
       th colspan="3"  圖檔標題 / 連結 / 圖檔
     - @banners.each do |b|
       tr
-        td align="center" rowspan="4" 
-          p &nbsp;
-          p
-          input#textfield3.input_shot name="textfield3" type="text" value="1" /
-      th align="center" 
+        td align="center" rowspan="5" 
+          p = hidden_field_tag "banner_ids[]", b.id
+          p = text_field_tag 'banner_positions[]', b.position, id: 'textfield3'
+      th align="center"
         p 圖檔
       td align="left" 
         p
@@ -34,6 +33,12 @@ h1 廣告管理
         - else
           td align="left" 未發佈
 
-    .btn
-      input#button.submit name="button" type="submit" value="儲存" /
-  /! ------------後台管理界面end------------
+  .btn
+    = submit_tag nil, id: 'button'
+
+.row
+  .col-md-5.col-md-offset-4.sortable-banner
+    - @banners.each do |b|
+      .panel.panel-default data-id="#{b.id}"
+        .panel-heading
+          h3.panel-title = image_tag(b.image, height: 100)

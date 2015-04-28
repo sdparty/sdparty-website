@@ -3,6 +3,7 @@ head
   meta content="text/html; charset=utf-8" http-equiv="Content-Type"
   title 管理後台:首頁大圖管理
   = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
+  = javascript_tag "window._token = '#{form_authenticity_token}'"
 body
   #all
     #content_wrap
@@ -13,4 +14,5 @@ body
           | sdparty管理後台 -
           = link_to '我要登出', destroy_user_session_path, method: :delete
         = yield
+  = debug(params) if Rails.env.development?
   = javascript_include_tag 'admin', 'data-turbolinks-track' => true

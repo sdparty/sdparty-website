@@ -5,7 +5,7 @@ section.main-container
         .main.col-md-12
           h2.page-title 近期活動
           .article-tag
-            - unless @issue
+            - unless @issue.blank?
               = link_to '全部', url_for(params.merge({i: nil}))
             - else
               = link_to '全部', url_for(params.merge({i: nil})), class: 'active'
@@ -23,6 +23,6 @@ section.main-container
                     .action-img
                       = link_to image_tag(a.image, alt: ''), article_path(a)
                     h3 = link_to a.title, article_path(a)
-                    p.action-time a.published_at.strftime('%Y-%m-%d')
+                    p.action-time = a.published_at.strftime('%Y-%m-%d')
               #page
                 = paginate @articles

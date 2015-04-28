@@ -1,20 +1,7 @@
-table border="1" cellpadding="5" width="100%" 
+table border="1" cellpadding="5" width="70%" 
   tr
-    th 是否發佈
+    th 分類名稱
     td
-      = f.input :published, as: :boolean, label: false
-  tr
-    th ＊發表日期
-    td
-      = f.input :published_at, as: :string, label: false, input_html: { class: "datetimepicker" }, required: true
-      em.s_note 如果設定日期是未來，則視為預約發布，時間到才會正式在前台顯示
-  tr
-    th ＊名稱
-    td
-      = f.input :name, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
-  tr
-    th valign="top"  ＊內容
-    td
-      = f.cktext_area :content, label: false, required: true, input_html: { class: "input_09", id: "textfield2" }
+      = f.input :name, label: false, class: "input_04", id: 'textfield3'
 .btn
-  = f.submit '送出', id: 'button', class: 'submit'
+  = f.submit '儲存', id: 'button2', class: 'submit'
