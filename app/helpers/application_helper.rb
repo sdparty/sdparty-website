@@ -1,16 +1,16 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      separator: "&mdash;".html_safe,
-      site: '國會調查兵團 CIC',
+      separator: "｜",
+      site: '社會民主黨',
       reverse: true,
       description: ' ',
       og: {
-        title: '國會調查兵團 CIC',
+        title: '社會民主黨',
         description: ' ',
         type: 'website',
-        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/FB-img-default.gif",
-        site_name: '國會調查兵團' }
+        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png",
+        site_name: '社會民主黨' }
     }
   end
 end
