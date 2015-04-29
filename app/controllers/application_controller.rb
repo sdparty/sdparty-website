@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_admin
-    unless current_user.admin?
+    if user_signed_in? and not current_user.admin?
       sign_out current_user
       redirect_to '/'
     end
