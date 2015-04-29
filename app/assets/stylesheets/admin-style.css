@@ -5,8 +5,8 @@ body{
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:15px;
 	background:url(../images/aside.gif) -150px top repeat-y;}
-#view_page,#longin_page{
-	background:none;}
+#longin_page{
+	background:#fff;}
 a{
 	color:#498a13;
 	text-decoration:none;}
@@ -499,14 +499,3 @@ table.replay{
 	padding:15px;
 	font-size:18px;
 	color:#CD0003;}
-
-.sortable-placeholder {
-  border: 1px dashed #CCC;
-  background-color: #f9f9f9;
-  height: 80px;
-  margin-bottom: 10px;
-}
- 
-.sortable {
-  display: list-item;
-}
