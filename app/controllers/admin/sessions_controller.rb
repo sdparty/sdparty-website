@@ -14,7 +14,7 @@ class Admin::SessionsController < Devise::SessionsController
       sign_out current_user
       redirect_to '/'
     else
-      redirect_to 'admin/banners'
+      redirect_to '/admin/banners'
     end
   end
 

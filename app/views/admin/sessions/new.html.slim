@@ -1,8 +1,3 @@
-#all
-  h1.ltitle 【社民黨管理後台】
-  #content_wrap
-    #main.inner
-      #head 社民黨管理後台
-      #google-login
-        = link_to image_tag('login-google.png', width: "151", height: "64"), user_omniauth_authorize_path(:google_oauth2)
-        = link_to image_tag('login-fb.png', width: "151", height: "64"), user_omniauth_authorize_path(:facebook)
+#google-login
+  = link_to image_tag('login-google.png', width: "151", height: "64"), user_omniauth_authorize_path(:google_oauth2)
+  = link_to image_tag('login-fb.png', width: "151", height: "64"), user_omniauth_authorize_path(:facebook)
