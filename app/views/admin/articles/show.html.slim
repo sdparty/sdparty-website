@@ -26,9 +26,14 @@ table border="1" cellpadding="5" width="100%"
     th ＊標題
     td colspan="3" = @article.title
   tr
-    th valign="top"  標籤tag
+    th valign="top" 標籤tag
     td colspan="3"
-      = @article.keywords.join('、')
+      - num = 0
+      - @article.issues.each do |i|
+        - unless num == 0
+          | 、
+        - num += 1
+        = i.name
   tr
     th valign="top"  ＊內容
     td colspan="3"

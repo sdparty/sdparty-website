@@ -3,7 +3,8 @@ class Admin::ArticlesController < Admin::BaseController
 
   # GET /articles
   def index
-    @articles = Article.all.page params[:page]
+    @q = Article.search(params[:q])
+    @articles = @q.result(distinct: true).page(params[:page])
   end
 
   # GET /articles/1
@@ -22,7 +23,7 @@ class Admin::ArticlesController < Admin::BaseController
   # POST /articles
   def create
     if @article.save
-        redirect_to @article, notice: '關鍵字建立成功'
+        redirect_to admin_article_url(@article), notice: '文章建立成功'
     else
       render :new
     end
@@ -31,7 +32,7 @@ class Admin::ArticlesController < Admin::BaseController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: '關鍵字更新成功'
+      redirect_to admin_article_url(@article), notice: '文章更新成功'
     else
       render :edit
     end
@@ -40,7 +41,7 @@ class Admin::ArticlesController < Admin::BaseController
   # DELETE /articles/1
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: '關鍵字已刪除'
+    redirect_to admin_articles_url, notice: '文章已刪除'
   end
 
   private

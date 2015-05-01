@@ -3,4 +3,15 @@ class Banner < ActiveRecord::Base
   validates_uniqueness_of :position
   mount_uploader :image, ImageUploader
   scope :published, -> { where(published: true) }
+  validates_presence_of :button_name, message: '請輸入按鈕文字'
+  validates_presence_of :content, message: '請填寫內容'
+  validates_presence_of :image, message: '請上傳圖片'
+  validates_presence_of :link, message: '請輸入按鈕連結'
+  before_save :set_position
+
+  def set_position
+    if not self.position
+      self.position = Banner.maximum("position") + 1
+    end
+  end
 end

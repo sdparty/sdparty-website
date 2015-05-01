@@ -11,6 +11,8 @@ FIRST_TIME = true
 Article.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!(Article.table_name)
 
+ActiveRecord::Base.connection.execute("Delete from articles_issues;");
+
 articles = [
   {
     id: 1,

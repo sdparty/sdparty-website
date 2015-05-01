@@ -24,7 +24,7 @@ class Admin::IssuesController < Admin::BaseController
   def create
     @issue = Issue.new(issue_params)
     if @issue.save
-        redirect_to admin_issues_url, notice: 'Issue was successfully created.'
+        redirect_to admin_issues_url, notice: '子分類成功建立！'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Admin::IssuesController < Admin::BaseController
   # PATCH/PUT /issues/1
   def update
     if @issue.update(issue_params)
-      redirect_to admin_issues_url, notice: 'Issue was successfully updated.'
+      redirect_to admin_issues_url, notice: '子分類成功更新！'
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class Admin::IssuesController < Admin::BaseController
   # DELETE /issues/1
   def destroy
     @issue.destroy
-    redirect_to admin_issues_url, notice: 'Issue was successfully destroyed.'
+    redirect_to admin_issues_url, notice: '子分類成功刪除！'
   end
 
   def update_issues
@@ -54,7 +54,7 @@ class Admin::IssuesController < Admin::BaseController
         issue.position = issue_positions[i].to_i if issue_positions[i]
         issue.save
       end
-      flash[:notice] = "議題順序更新完畢！"
+      flash[:notice] = "子分類順序更新完畢！"
     end
     redirect_to admin_issues_url
   end

@@ -20,25 +20,27 @@
 //= require html.sortable
 
 set_positions = function(){
-    // loop through and give each task a data-pos
-    // attribute that holds its position in the DOM
-    $('.panel.panel-default').each(function(i){
-        console.log('set positions');
-        $(this).attr("data-pos",i+1);
-    });
+  // loop through and give each task a data-pos
+  // attribute that holds its position in the DOM
+  $('.panel.panel-default').each(function(i){
+      $(this).attr("data-pos",i+1);
+  });
 }
 
 var ready = function(){
   // datetiimepicker
   $('.datetimepicker').datetimepicker({format: 'Y-m-d H:i'});
   // enable chosen js
-  $('.chosen-select').chosen({
-    search_contains: true,
-    allow_single_deselect: true,
-    no_results_text: 'No results matched',
-    width: '200px',
-  });
-  $(".chosen-select").trigger('chosen:updated');
+  if(!$('div.chosen-container.chosen-container-multi').length){
+    $('.chosen-select').chosen({
+      search_contains: true,
+      allow_single_deselect: true,
+      no_results_text: 'No results matched',
+      width: '400px'
+    });
+    $(".chosen-select").trigger('chosen:updated');
+  }
+
   set_positions();
   $.ajaxSetup({
     headers: {
@@ -49,7 +51,6 @@ var ready = function(){
   // after the order changes
   $('.sortable-issue').sortable().bind('sortupdate', function(e, ui) {
     // array to store new order
-    console.log('sort update');
     updated_order = []
     // set the updated positions
     set_positions();
@@ -75,7 +76,6 @@ var ready = function(){
 
   $('.sortable-banner').sortable().bind('sortupdate', function(e, ui) {
     // array to store new order
-    console.log('sort update');
     updated_order = []
     // set the updated positions
     set_positions();
