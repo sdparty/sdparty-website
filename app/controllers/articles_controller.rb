@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
-    keywords = @article.keywords.to_a.map({ |k| k.name }).join(',')
+    keywords = @article.keywords.to_a.map{ |k| k.name }.join(',')
     if @article.kind = 'press'
       set_meta_tags({
         title: @article.title,
