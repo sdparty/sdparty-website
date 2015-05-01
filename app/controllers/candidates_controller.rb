@@ -11,7 +11,7 @@ class CandidatesController < ApplicationController
     set_meta_tags({
       title: "候選人介紹",
       description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。",
-      keywords: keywords
+      keywords: keywords,
       og: {
         type: 'article',
         title: "候選人介紹",
