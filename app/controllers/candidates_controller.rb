@@ -3,45 +3,35 @@ class CandidatesController < ApplicationController
 
   # GET /candidates
   def index
-    @candidates = Candidate.all.page params[:page]
+    @candidates = Candidate.all
+    keywords = "社會民主黨候選人"
+    @candidates.each do |c|
+      keywords = keywords + ",#{c.name}"
+    end
+    set_meta_tags({
+      title: "候選人介紹",
+      description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。",
+      keywords: keywords
+      og: {
+        type: 'article',
+        title: "候選人介紹",
+        description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
+      }
+    })
   end
 
   # GET /candidates/1
   def show
-  end
-
-  # GET /candidates/new
-  def new
-    @candidate = Candidate.new
-  end
-
-  # GET /candidates/1/edit
-  def edit
-  end
-
-  # POST /candidates
-  def create
-    @candidate = Candidate.new(candidate_params)
-    if @candidate.save
-        redirect_to @candidate, notice: 'Candidate was successfully created.'
-    else
-      render :new
-    end
-  end
-
-  # PATCH/PUT /candidates/1
-  def update
-    if @candidate.update(candidate_params)
-      redirect_to @candidate, notice: 'Candidate was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /candidates/1
-  def destroy
-    @candidate.destroy
-    redirect_to candidates_url, notice: 'Candidate was successfully destroyed.'
+    set_meta_tags({
+      title: "#{@candidate.name}介紹",
+      description: "為什麼#{@candidate.name}要出來參選？一起來深入了解#{@candidate.name}吧！",
+      keywords: "#{@candidate.name},#{@candidate.name}介紹",
+      og: {
+        type: 'article',
+        title: "#{@candidate.name}介紹",
+        description: "為什麼#{@candidate.name}要出來參選？一起來深入了解#{@candidate.name}吧！"
+      }
+    })
   end
 
   private
@@ -52,6 +42,6 @@ class CandidatesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def candidate_params
-    params.require(:candidate).permit(:name, :published)
+    params.require(:candidate).permit()
   end
 end
