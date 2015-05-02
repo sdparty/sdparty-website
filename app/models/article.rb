@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   scope :scope_issues, -> { where(kind: 'issue') }
   before_save :update_youtube_values
   validates_presence_of :title, message: '請填寫標題'
+  validates_presence_of :kind, message: '請選擇類型'
   validates_presence_of :content, message: '請填寫內容'
   validates_presence_of :image, message: '請上傳圖片'
   validates_presence_of :published_at, message: '請填寫發佈日期'
