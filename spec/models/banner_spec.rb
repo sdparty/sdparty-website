@@ -1,5 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Banner, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Banner do
+  it "#factory_creat_success" do
+    expect {
+      FactoryGirl.create :banner
+    }.to change { Banner.count }.by(1)
+  end
 end

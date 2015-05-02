@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20150421164345) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "kind"
-    t.integer  "user_id"
     t.boolean  "published",    default: false
     t.datetime "published_at"
     t.string   "image"

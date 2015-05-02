@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :banner do
-    sequence 1
-image "MyString"
-title "MyString"
-link "MyString"
-published false
+    sequence(:title)  { |n| "Banner title #{n}" }
+    sequence(:button_name)  { |n| "Banner button #{n}" }
+    link "http://www.google.com/"
+    sequence(:position)  { |n| n }
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }
+    published true
   end
-
 end

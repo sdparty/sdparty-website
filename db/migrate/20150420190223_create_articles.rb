@@ -2,7 +2,6 @@ class CreateArticles < ActiveRecord::Migration
   def change
     create_table :articles do |t|
       t.string :kind
-      t.belongs_to :user
       t.boolean :published, default: false
       t.datetime :published_at
       t.string :image

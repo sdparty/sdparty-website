@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :issue do
-    name "MyString"
-position 1
+    sequence(:name)  { |n| "Issue #{n}" }
+    sequence(:position)  { |n| n }
   end
-
 end
