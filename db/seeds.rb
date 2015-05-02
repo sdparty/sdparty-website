@@ -17,7 +17,6 @@ articles = [
   {
     id: 1,
     kind: 'system',
-    user_id: 1,
     published: false,
     published_at: Time.now,
     title: '捐款支持',
