@@ -37,4 +37,17 @@ describe Article do
     expect(Article.scope_activities).to eq([article3, article4])
     expect(Article.scope_issues).to eq([article5, article6])
   end
+
+  it "get_issues" do
+    article1 = FactoryGirl.create(:press_article)
+    article2 = FactoryGirl.create(:press_article)
+    expect(Article.get_issues).to eq([article1.issues.first, article2.issues.first])
+  end
+
+  it "#youtube_update_work" do
+    article = FactoryGirl.build(:press_article)
+    article.youtube_url = 'https://www.youtube.com/watch?v=Gh1zJVwHhjw'
+    article.update_youtube_values
+    expect(article.youtube_id).to eq("Gh1zJVwHhjw")
+  end
 end

@@ -10,8 +10,7 @@ describe Issue do
   it "#set_position" do
     issue1 = FactoryGirl.create(:issue)
     issue2 = FactoryGirl.create(:issue)
-    expect {
-      issue2.position - issue1.position
-    }.to eq(1)
+    position_diff = issue2.position - issue1.position
+    expect(position_diff).to eq(1)
   end
 end

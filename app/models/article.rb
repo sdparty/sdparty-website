@@ -71,5 +71,25 @@ class Article < ActiveRecord::Base
   #   end
   end
 
+  private
+
+  def extract_youtube_id(url)
+    youtube_uri = URI.parse(url)
+    if youtube_uri.host == 'www.youtube.com'
+      params = youtube_uri.query
+      if params
+        youtube_id = CGI::parse(params)['v'].first
+      else
+        youtube_id = youtube_uri.path.split('/')[-1]
+      end
+    elsif youtube_uri.host == 'youtu.be'
+      youtube_id = youtube_uri.path[1..-1]
+    else
+      self.youtube_url = nil
+      errors.add(:base, 'youtube網址錯誤')
+      return false
+    end
+  end
+
 
 end
