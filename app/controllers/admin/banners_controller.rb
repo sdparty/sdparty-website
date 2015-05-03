@@ -22,7 +22,7 @@ class Admin::BannersController < Admin::BaseController
   # POST /banners
   def create
     if @banner.save
-        redirect_to admin_banners_url, notice: '廣告大圖建立成功'
+      redirect_to admin_banners_url, notice: '廣告大圖建立成功'
     else
       render :new
     end

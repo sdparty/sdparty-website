@@ -23,7 +23,7 @@ class Admin::ArticlesController < Admin::BaseController
   # POST /articles
   def create
     if @article.save
-        redirect_to admin_article_url(@article), notice: '文章建立成功'
+      redirect_to admin_article_url(@article), notice: '文章建立成功'
     else
       render :new
     end

@@ -24,7 +24,7 @@ class Admin::IssuesController < Admin::BaseController
   def create
     @issue = Issue.new(issue_params)
     if @issue.save
-        redirect_to admin_issues_url, notice: '子分類成功建立！'
+      redirect_to admin_issues_url, notice: '子分類成功建立！'
     else
       render :new
     end
