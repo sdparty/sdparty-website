@@ -13,4 +13,12 @@ describe Issue do
     position_diff = issue2.position - issue1.position
     expect(position_diff).to eq(1)
   end
+
+  it "#cannot delete with article" do
+    article = FactoryGirl.create(:press_article)
+    issue = article.issues.first
+    expect {
+      issue.destroy
+    }.to change { Issue.count }.by(0)
+  end
 end

@@ -8,15 +8,13 @@ class Admin::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    super
-    unless current_user.admin?
-      sign_out current_user
-      redirect_to root_url
-    else
-      redirect_to admin_banners_url
-    end
-  end
+  # def create
+  #   super
+  #   unless current_user.admin?
+  #     sign_out current_user
+  #     redirect_to root_url
+  #   end
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

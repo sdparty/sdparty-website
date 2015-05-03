@@ -90,6 +90,4 @@ class Article < ActiveRecord::Base
       return false
     end
   end
-
-
 end
