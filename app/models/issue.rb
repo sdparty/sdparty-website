@@ -9,7 +9,7 @@ class Issue < ActiveRecord::Base
 
   def set_position
     if not self.position
-      self.position = Issue.maximum("position") + 1
+      self.position = Issue.maximum("position").to_i + 1
     end
   end
 

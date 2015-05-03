@@ -1,12 +1,6 @@
 require "rails_helper"
 
 describe Article do
-  it "#factory_creat_success" do
-    expect {
-      FactoryGirl.create :article
-    }.to change { Article.count }.by(1)
-  end
-
 it "#factory_creat_press_success" do
     expect {
       FactoryGirl.create :press_article

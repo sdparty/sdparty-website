@@ -198,4 +198,7 @@ class StaticPagesController < ApplicationController
       }
     })
   end
+
+  def constructing
+  end
 end

@@ -19,6 +19,11 @@ FactoryGirl.define do
   factory :issue_article, parent: :article do
     kind "issue"
   end
+
+  factory :donate_article, parent: :article do
+    kind "system"
+    id 1
+  end
 end
 
 

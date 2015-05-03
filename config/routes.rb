@@ -2,31 +2,32 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { omniauth_callbacks: "admin/omniauth_callbacks", sessions: "admin/sessions" }
   root 'static_pages#home'
-  match '/about',       to: 'static_pages#about',      via: 'get'
-  match '/donate',      to: 'static_pages#donate',     via: 'get'
-  match '/join',        to: 'static_pages#join',       via: 'get'
-  match "/sitemap.xml", to: 'static_pages#sitemap', format: 'xml', via: 'get'
-  match "/programs",    to: 'static_pages#programs',   via: 'get'
-  match "/program01",   to: 'static_pages#program01',  via: 'get'
-  match "/program02",   to: 'static_pages#program02',  via: 'get'
-  match "/program03",   to: 'static_pages#program03',  via: 'get'
-  match "/policies",    to: 'static_pages#policies',   via: 'get'
-  match "/policy01",    to: 'static_pages#policy01',   via: 'get'
-  match "/policy02",    to: 'static_pages#policy02',   via: 'get'
-  match "/policy03",    to: 'static_pages#policy03',   via: 'get'
-  match "/policy04",    to: 'static_pages#policy04',   via: 'get'
-  match "/policy05",    to: 'static_pages#policy05',   via: 'get'
-  match "/policy06",    to: 'static_pages#policy06',   via: 'get'
+  match '/about',        to: 'static_pages#about',        via: 'get'
+  match '/donate',       to: 'static_pages#donate',       via: 'get'
+  match '/join',         to: 'static_pages#join',         via: 'get'
+  match "/sitemap.xml",  to: 'static_pages#sitemap',   format: 'xml', via: 'get'
+  match "/programs",     to: 'static_pages#programs',     via: 'get'
+  match "/program01",    to: 'static_pages#program01',    via: 'get'
+  match "/program02",    to: 'static_pages#program02',    via: 'get'
+  match "/program03",    to: 'static_pages#program03',    via: 'get'
+  match "/policies",     to: 'static_pages#policies',     via: 'get'
+  match "/policy01",     to: 'static_pages#policy01',     via: 'get'
+  match "/policy02",     to: 'static_pages#policy02',     via: 'get'
+  match "/policy03",     to: 'static_pages#policy03',     via: 'get'
+  match "/policy04",     to: 'static_pages#policy04',     via: 'get'
+  match "/policy05",     to: 'static_pages#policy05',     via: 'get'
+  match "/policy06",     to: 'static_pages#policy06',     via: 'get'
+  match "/constructing", to: 'static_pages#constructing', via: 'get'
 
   resources :candidates, only: [:index, :show]
-  match '/articles/presses',      to: 'articles#presses',      via: 'get', as: 'articles_presses'
-  match '/articles/activities',   to: 'articles#activities',   via: 'get', as: 'articles_activities'
-  match '/articles/issues',   to: 'articles#issues',   via: 'get', as: 'articles_issues'
+  match '/articles/presses',     to: 'articles#presses',      via: 'get', as: 'articles_presses'
+  match '/articles/activities',  to: 'articles#activities',   via: 'get', as: 'articles_activities'
+  match '/articles/issues',      to: 'articles#issues',       via: 'get', as: 'articles_issues'
   resources :articles, only: [:index, :show]
 
   namespace :admin do
-    match 'update_banners',    to: 'banners#update_banners',    via: 'put'
-    match 'update_issues',     to: 'issues#update_issues',    via: 'put'
+    match 'update_banners',  to: 'banners#update_banners',  via: 'put'
+    match 'update_issues',   to: 'issues#update_issues',    via: 'put'
     resources :articles
     resources :banners, except: [:show] do
       put :sort, on: :collection
