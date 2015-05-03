@@ -9,9 +9,9 @@ table border="1" cellpadding="5" width="100%"
     td align="left"
       = f.input :image, as: :file, label: false, required: true, input_html: { id: 'textfield2' }
       = f.input :image_cache, as: :hidden
-    td rowspan="4" width="90" 
+    td rowspan="5" width="90" 
       span.btn
-        = f.button :submit, id: 'button2', class: 'submit'
+        = f.submit '儲存', id: 'button2', class: 'submit'
   tr
     th
       | ＊簡單描述
@@ -22,12 +22,12 @@ table border="1" cellpadding="5" width="100%"
         | 最多10個中文字
   tr
     th
-      | ＊按鈕文字
+      | ＊連結文字
     td align="left" 
       p = f.input :button_name, label: false, required: true, input_html: { id: 'textfield', class: 'input_04' }
       em.s_note
         br
-        | 最多5個中文字
+        | 最多7個中文字
   tr
     th
       | ＊連結
@@ -37,5 +37,3 @@ table border="1" cellpadding="5" width="100%"
     th 是否發佈
     td align="left"
       = f.input :published, as: :boolean, label: false
-.btn
-  = f.submit '確定送出', id: 'button', class: 'submit'

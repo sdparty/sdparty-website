@@ -3,7 +3,7 @@ section.main-container
     .container
       .row
         .main.col-md-12
-          h2.page-title 近期活動
+          h2.page-title 新聞稿
           .article-tag
             - unless @issue.blank?
               = link_to '全部', url_for(params.merge({i: nil}))
@@ -17,12 +17,14 @@ section.main-container
           .separator-2
           .row
             .col-md-12
-              .action-list-block
+              .news-list-bloc
                 - @articles.each do |a|
-                  .action-single-block
-                    .action-img
+                  .news-single-block
+                    .news-img
                       = link_to image_tag(a.image, alt: ''), article_path(a)
                     h3 = link_to a.title, article_path(a)
-                    p.action-time = a.published_at.strftime('%Y-%m-%d')
+                    p.news-time = a.published_at.strftime('%Y-%m-%d')
+                    .little-txt
+                      = display_shorter(a.content, 75)
               #page
                 = paginate @articles

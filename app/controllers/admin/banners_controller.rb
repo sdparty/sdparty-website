@@ -73,7 +73,7 @@ class Admin::BannersController < Admin::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def banner_params
-    params.require(:banner).permit(:position, :image, :title, :link, :published, 
+    params.require(:banner).permit(:position, :image, :title, :link, :published, :button_name,
       {banner_ids: []}, {banner_positions: []}, {order: [:id, :position]})
   end
 end

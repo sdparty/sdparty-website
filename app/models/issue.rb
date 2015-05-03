@@ -16,7 +16,7 @@ class Issue < ActiveRecord::Base
   private
 
   def detect_articles
-    if articles.any?
+    if self.articles.any?
       return false
     end
   end

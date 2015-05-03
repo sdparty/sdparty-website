@@ -12,9 +12,9 @@ class Admin::SessionsController < Devise::SessionsController
     super
     unless current_user.admin?
       sign_out current_user
-      redirect_to '/'
+      redirect_to root_url
     else
-      redirect_to '/admin/banners'
+      redirect_to admin_banners_url
     end
   end
 

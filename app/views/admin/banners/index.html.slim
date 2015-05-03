@@ -8,7 +8,7 @@ h1 廣告管理
       tr
         td align="center" rowspan="5" 
           p = hidden_field_tag "banner_ids[]", b.id
-          p = text_field_tag 'banner_positions[]', b.position, id: 'textfield3'
+          p = text_field_tag 'banner_positions[]', b.position, id: 'textfield3', class: "input_shot"
       th align="center"
         p 圖檔
       td align="left" 
@@ -19,7 +19,7 @@ h1 廣告管理
         p
           = link_to '編輯', edit_admin_banner_path(b)
         p
-          = link_to '刪除', admin_banner_path(b), method: :delete
+          = link_to '刪除', admin_banner_path(b), method: :delete, data: { confirm: '確認要刪除嗎？' }
       tr
         th align="center" 連結文字
         td align="left" = b.title

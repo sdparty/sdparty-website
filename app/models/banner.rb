@@ -14,4 +14,9 @@ class Banner < ActiveRecord::Base
       self.position = Banner.maximum("position").to_i + 1
     end
   end
+
+  private
+
+  def detect_length
+  end
 end

@@ -13,14 +13,14 @@ h1 文章子分類管理
       tr
         td align="center"
           = hidden_field_tag "issue[issue_ids][]", i.id
-          = text_field_tag 'issue[issue_positions][]', i.position, id: 'textfield3'
+          = text_field_tag 'issue[issue_positions][]', i.position, id: 'textfield3', class: "input_shot"
         td width="354" 
           = i.name
         td align="center" = i.articles.count
         td align="center"
           = link_to '編輯', edit_admin_issue_path(i)
           | ｜
-          = link_to '刪除', admin_issue_path(i), method: :delete
+          = link_to '刪除', admin_issue_path(i), method: :delete, data: { confirm: '確認要刪除嗎？' }
   .btn
     = submit_tag nil, id: 'button'
 

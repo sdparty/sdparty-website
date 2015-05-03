@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :article do
     sequence(:title)  { |n| "Article title #{n}" }
     sequence(:content)  { |n| "Article content #{n}" }
-    sequence(:published_at) { |n| Time.now - n.days }
+    sequence(:published_at) { |n| n.days.ago }
     issues {[ FactoryGirl.create(:issue) ]}
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }
     published true
