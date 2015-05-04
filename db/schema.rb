@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150421164345) do
     t.integer "position"
     t.string  "image"
     t.string  "title"
-    t.string  "button_name"
+    t.string  "button"
     t.string  "link"
     t.boolean "published"
   end

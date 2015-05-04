@@ -3,7 +3,7 @@ class Banner < ActiveRecord::Base
   validates_uniqueness_of :position
   mount_uploader :image, ImageUploader
   scope :published, -> { where(published: true) }
-  validates_presence_of :button_name, message: '請輸入按鈕文字'
+  validates_presence_of :button, message: '請輸入按鈕文字'
   validates_presence_of :title, message: '請填寫標題'
   validates_presence_of :image, message: '請上傳圖片'
   validates_presence_of :link, message: '請輸入按鈕連結'
@@ -19,7 +19,7 @@ class Banner < ActiveRecord::Base
 
   def detect_length
     result = true
-    if self.button_name.display_width > 14
+    if self.button.display_width > 14
       errors.add(:base, '按鈕文字過長')
       result = false
     end

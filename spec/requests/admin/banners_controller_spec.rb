@@ -8,7 +8,7 @@ describe "Admin/Banner" do
   let(:new_banner) do
     {
       title: "new_banner_title",
-      button_name: "new_banner_button",
+      button: "new_banner_button",
       link: "http://www.google.com/",
       image: File.open(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')),
       published: true

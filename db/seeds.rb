@@ -48,7 +48,7 @@ if FIRST_TIME
       position: 1,
       title: '社民黨政見',
       image: 'banner00.jpg',
-      button_name: '了解社民黨政見',
+      button: '了解社民黨政見',
       link: '/policies',
       published: true
     }, {
@@ -56,7 +56,7 @@ if FIRST_TIME
       position: 2,
       title: '范雲',
       image: 'banner01.png',
-      button_name: '幫助范雲',
+      button: '幫助范雲',
       link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&amp;reset=1',
       published: true
     }, {
@@ -64,7 +64,7 @@ if FIRST_TIME
       position: 3,
       title: '呂欣潔',
       image: 'banner02.png',
-      button_name: '幫助呂欣潔',
+      button: '幫助呂欣潔',
       link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&amp;reset=1',
       published: true
     }, {
@@ -72,7 +72,7 @@ if FIRST_TIME
       position: 4,
       title: '苗博雅',
       image: 'banner03.png',
-      button_name: '幫助苗博雅',
+      button: '幫助苗博雅',
       link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&amp;reset=1',
       published: true
     }

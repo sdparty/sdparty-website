@@ -4,7 +4,7 @@ class CreateBanners < ActiveRecord::Migration
       t.integer :position
       t.string :image
       t.string :title
-      t.string :button_name
+      t.string :button
       t.string :link
       t.boolean :published
     end
