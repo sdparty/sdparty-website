@@ -144,7 +144,7 @@ describe "Admin/Article" do
     describe "#create" do
       it "success" do
         post "/admin/articles", :article => new_article
-        expect(response).to be_success
+        expect(response).to be_redirect
       end
     end
 

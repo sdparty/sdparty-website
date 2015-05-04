@@ -1,6 +1,5 @@
 class Banner < ActiveRecord::Base
   default_scope { order(position: :asc) }
-  validates_uniqueness_of :position
   mount_uploader :image, ImageUploader
   scope :published, -> { where(published: true) }
   validates_presence_of :button, message: '請輸入按鈕文字'
