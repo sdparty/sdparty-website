@@ -16,9 +16,10 @@ table border="1" cellpadding="5" width="100%"
     th 操作
   - num = 0
   - @articles.each do |a|
+    - num += 1
     - if num % 2 == 0
       tr
-        td align="center" valign="top" width="39"  1
+        td align="center" valign="top" width="39" = num
         td
           = link_to a.title, admin_article_path(a)
         td align="center" width="99"
@@ -51,6 +52,6 @@ table border="1" cellpadding="5" width="100%"
           = link_to '編輯', edit_admin_article_path(a)
           | ｜
           = link_to '刪除', admin_article_path(a), method: :delete, data: { confirm: '確認要刪除嗎？' }
-    - num += 1
+
 #page
   = paginate @articles

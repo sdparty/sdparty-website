@@ -1,33 +1,26 @@
 h1 文章子分類管理
-= form_tag admin_update_issues_path, method: :put do
-  table border="1" cellpadding="5" width="100%" 
-    tr
-      th colspan="4" 
-        em.s_note 若該分類底下有文章，則不可刪除
-    tr
-      th width="67"  排序
-      th 新聞稿子分類
-      th width="107"  文章總數
-      th width="262"  操作
-    - @issues.each do |i|
-      tr
-        td align="center"
-          = hidden_field_tag "issue[issue_ids][]", i.id
-          = text_field_tag 'issue[issue_positions][]', i.position, id: 'textfield3', class: "input_shot"
-        td width="354" 
-          = i.name
-        td align="center" = i.articles.count
-        td align="center"
-          = link_to '編輯', edit_admin_issue_path(i)
-          | ｜
-          = link_to '刪除', admin_issue_path(i), method: :delete, data: { confirm: '確認要刪除嗎？' }
-  .btn
-    = submit_tag nil, id: 'button'
-
+p.hint 排序調整：將滑鼠移到區塊上，按住滑鼠上下拖曳到要的位置後放開即可調整排序
+table border="1" cellpadding="5" width="100%" 
+  tr
+    th colspan="3" 
+      em.s_note 若該分類底下有文章，則不可刪除
+  tr
+    th width="46%"  新聞稿子分類
+    th width="17%"  文章總數
+    th width="37%"  操作
 .row
-  .col-md-5.col-md-offset-4.sortable-issue
+  .col-md-5.col-md-offset-4.sortable-banner
     - @issues.each do |i|
       .panel.panel-default data-id="#{i.id}"
         .panel-heading
-          h3.panel-title = i.name
-
+          table border="1" cellpadding="5" width="100%" 
+            tr
+              td width="46%" = i.name
+              td align="center" width="17%" = i.articles.count
+              td align="center" width="37%"
+                - if i.articles.any?
+                  = link_to '編輯', edit_admin_issue_path(i)
+                - else
+                  = link_to '編輯', edit_admin_issue_path(i)
+                  | ｜
+                  = link_to '刪除', admin_issue_path(i), method: :delete, data: { confirm: '確認要刪除嗎？' }

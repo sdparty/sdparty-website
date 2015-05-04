@@ -38,4 +38,9 @@ table border="1" cellpadding="5" width="100%"
   tr
     th 是否發佈
     td align="left"
-      = f.input :published, as: :boolean, label: false
+      - if @banner.new_record?
+        = f.input :published, as: :boolean, label: false, input_html: { checked: true }
+        | 是
+      - else
+        = f.input :published, as: :boolean, label: false
+        | 是

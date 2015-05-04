@@ -9,7 +9,7 @@ table border="1" cellpadding="5" width="100%"
         - else
           = f.collection_radio_buttons :kind, [['press', '新聞稿'] ,['activity', '活動'], ['issue', '議題']], :first, :last
   tr
-    th 議題分類
+    th 子分類
     td
       - if @article.kind == 'system'
         = f.association :issues, label: false, collection: Issue.all, disabled: true, input_html: { class: 'chosen-select' }
@@ -20,8 +20,14 @@ table border="1" cellpadding="5" width="100%"
     td
       - if @article.kind == 'system'
         = f.input :published, as: :boolean, label: false, disabled: true
+        | 是
       - else
-        = f.input :published, as: :boolean, label: false
+        - if @article.new_record?
+          = f.input :published, as: :boolean, label: false, input_html: { checked: true }
+          | 是
+        - else
+          = f.input :published, as: :boolean, label: false
+          | 是
   tr
     th ＊發表日期
     td
@@ -40,7 +46,7 @@ table border="1" cellpadding="5" width="100%"
         = f.input :image, as: :file, label: false, input_html: { id: 'fileField2' }
         = f.input :image_cache, as: :hidden
         = f.input :remove_image, as:  :boolean, label: '移除圖片'
-        = image_tag(@article.image_url) if @article.image?
+        = image_tag(@article.image_url, alt:"", class: "banner-img") if @article.image?
   tr
     th Youtube影片網址
     td 

@@ -4,10 +4,16 @@ section.main-container
       .row
         .main.col-md-12
           h2.page-title = @article.title
-          /! 文章標籤 start
           .article-tag
             - @article.issues.each do |i|
-              = i.name
+              - if @article.kind == 'press'
+                = link_to i.name, articles_presses_path(i: i.id)
+              - elsif @article.kind == 'activity'
+                = link_to i.name, articles_activities_path(i: i.id)
+              - elsif @article.kind == 'issue'
+                = link_to i.name, articles_issues_path(i: i.id)
+              - else
+                = i.name
           p = @article.published_at.strftime('%Y-%m-%d')
           .separator-2
           .row

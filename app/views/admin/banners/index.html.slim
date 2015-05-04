@@ -1,44 +1,32 @@
 h1 廣告管理
-= form_tag admin_update_banners_path, method: :put do
-  table border="1" cellpadding="5" width="100%" 
-    tr
-      th width="59"  排序
-      th colspan="3"  圖檔標題 / 連結 / 圖檔
-    - @banners.each do |b|
-      tr
-        td align="center" rowspan="5" 
-          p = hidden_field_tag "banner_ids[]", b.id
-          p = text_field_tag 'banner_positions[]', b.position, id: 'textfield3', class: "input_shot"
-      th align="center"
-        p 圖檔
-      td align="left" 
-        p
-          = image_tag(b.image, class: 'banner-img')
-        p &nbsp;
-      td align="center" rowspan="4" width="84" 
-        p
-          = link_to '編輯', edit_admin_banner_path(b)
-        p
-          = link_to '刪除', admin_banner_path(b), method: :delete, data: { confirm: '確認要刪除嗎？' }
-      tr
-        th align="center" 連結文字
-        td align="left" = b.title
-      tr
-        th align="center"  連結
-        td align="left" = link_to b.link, b.link
-      tr
-        th align="center" 是否發佈
-        - if b.published
-          td align="left" 已發佈
-        - else
-          td align="left" 未發佈
-
-  .btn
-    = submit_tag nil, id: 'button'
-
+p.hint 排序調整：將滑鼠移到區塊上，按住滑鼠上下拖曳到要的位置後放開即可調整排序
 .row
   .col-md-5.col-md-offset-4.sortable-banner
     - @banners.each do |b|
       .panel.panel-default data-id="#{b.id}"
         .panel-heading
-          h3.panel-title = image_tag(b.image, height: 100)
+          table border="1" cellpadding="5" width="100%" 
+            tr
+              th align="center" width="12%" 
+                p 圖檔
+                p 
+              td align="left" 
+                = image_tag(b.image, class: 'banner-img')
+              th 操作
+              td align="left" 
+                = link_to '編輯', edit_admin_banner_path(b)
+                | ｜
+                = link_to '刪除', admin_banner_path(b), method: :delete, data: { confirm: '確認要刪除嗎？' }
+            tr
+              th align="center"  簡單描述
+              td align="left" width="40%" = b.title
+              th width="12%"  連結文字
+              td align="left" width="36%" = b.button_name
+            tr
+              th align="center"  連結
+              td align="left" = link_to b.link, b.link
+              th 是否發佈
+              - if b.published
+                td align="left" 已發佈
+              - else
+                td align="left" 未發佈
