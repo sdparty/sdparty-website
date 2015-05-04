@@ -14,14 +14,17 @@ table border="1" cellpadding="5" width="100%"
       - else
         p 未知
     th width="99"  建檔時間
-    td width="279" = @article.created_at.strftime('%Y-%m-%d %H:%M:%i')
+    td width="279" = @article.created_at.strftime('%Y-%m-%d %H:%M')
   tr
     th ＊發表日期
     td colspan="3" = @article.published_at.strftime('%Y-%m-%d')
   tr
     th 小圖
     td colspan="3"
-      = image_tag(@article.image, class: 'news-img')
+      - unless @article.image.blank?
+        = image_tag(@article.image, class: 'news-img')
+      - else
+        = image_tag(get_img_from_content(@article.content))
   tr
     th ＊標題
     td colspan="3" = @article.title
@@ -44,4 +47,4 @@ table border="1" cellpadding="5" width="100%"
     td colspan="3"
       = @article.content.html_safe
 .btn
-  input#button.submit name="button" type="submit" value="回上頁" /
+  = link_to "回上頁", admin_articles_path, id: 'button', class: 'submit'

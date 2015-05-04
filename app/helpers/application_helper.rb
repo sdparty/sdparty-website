@@ -30,4 +30,15 @@ module ApplicationHelper
       text
     end
   end
+
+  def get_img_from_content(content)
+    doc = Nokogiri::HTML(content)
+    img_url = nil
+    img = doc.xpath("//img[@src][1]")
+    if img.any?
+      img_url = img.first.attr('src')
+    end
+    img_url = "default-img.jpg" if img_url.blank?
+    return img_url
+  end
 end

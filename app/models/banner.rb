@@ -7,7 +7,7 @@ class Banner < ActiveRecord::Base
   validates_presence_of :title, message: '請填寫標題'
   validates_presence_of :image, message: '請上傳圖片'
   validates_presence_of :link, message: '請輸入按鈕連結'
-  before_save :set_position
+  before_save :detect_length, :set_position
 
   def set_position
     if not self.position
@@ -18,5 +18,15 @@ class Banner < ActiveRecord::Base
   private
 
   def detect_length
+    result = true
+    if self.button_name.display_width > 14
+      errors.add(:base, '按鈕文字過長')
+      result = false
+    end
+    if self.title.display_width > 20
+      errors.add(:base, '標題文字過長')
+      result = false
+    end
+    result
   end
 end
