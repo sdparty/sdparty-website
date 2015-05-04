@@ -26,12 +26,14 @@ class Article < ActiveRecord::Base
   end
 
   def update_youtube_values
-    unless youtube_url
+    unless self.youtube_url
+      self.youtube_id = nil
       return true
     end
     youtube_id = extract_youtube_id(self.youtube_url)
     unless youtube_id
       self.youtube_url = nil
+      self.youtube_id = nil
       errors.add(:base, 'youtube網址錯誤')
       return false
     end

@@ -25,6 +25,11 @@ table border="1" cellpadding="5" width="100%"
   tr
     th ＊標題
     td colspan="3" = @article.title
+  - unless @article.youtube_id.blank?
+    tr
+      th 影片
+      td colspan="3"
+        iframe src="https://www.youtube.com/embed/#{@article.youtube_id}" frameborder="0" allowfullscreen="1"
   tr
     th valign="top" 標籤tag
     td colspan="3"
