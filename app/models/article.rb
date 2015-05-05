@@ -21,6 +21,7 @@ class Article < ActiveRecord::Base
         results << i unless results.include? i
       end
     end
+    results = results.sort_by(&:position)
     return results
   end
 

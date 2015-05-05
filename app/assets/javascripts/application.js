@@ -31,11 +31,19 @@
 //= require chosen-jquery
 //= require social-share-button
 
-if ( $("#disqus_thread").length ){
-    var disqus_shortname = 'sdparty';
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  }
+if ($("#disqus_thread").length) {
+  var disqus_shortname = 'sdparty';
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+}
+
+$('.sublist').hide();
+$('.prlist span').click(function() {
+  $(this).next('.sublist').slideToggle('slow');
+})
+

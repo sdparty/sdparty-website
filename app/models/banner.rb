@@ -7,6 +7,7 @@ class Banner < ActiveRecord::Base
   validates_presence_of :image, message: '請上傳圖片'
   validates_presence_of :link, message: '請輸入按鈕連結'
   before_save :detect_length, :set_position
+  # validate :validate_image_size
 
   def set_position
     if not self.position
@@ -28,4 +29,11 @@ class Banner < ActiveRecord::Base
     end
     result
   end
+
+  # def validate_image_size
+  #   width, height = `identify -format "%wx%h" #{self.image.file.path}`.split(/x/)
+  #   errors.add :avatar, "請上傳 1650 x 605 尺寸的圖片" unless width == 1350 && height == 605
+  # end
 end
+
+

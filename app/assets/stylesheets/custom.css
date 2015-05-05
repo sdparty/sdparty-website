@@ -153,7 +153,7 @@ text-shadow:1px 1px 5px #000;}
 .page-intro .container{padding-left:40px;}
 .breadcrumb > li + li::before {
     content: "> ";
-	color:#f5a08c;
+	color:#f0747b;
 }
 .breadcrumb > .active {
 	color:#ababab;}
@@ -204,7 +204,7 @@ background-color: #f8c8c3;}
 	color:#9a9897;
 	margin:0 0 0 15px;}
 .gprice span{
-	color:#f5a08c;}
+	color:#f0747b;}
 .inner-link{
 	display:block;
 	background:url(../images/libg-02.png) no-repeat left center;

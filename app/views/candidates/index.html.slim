@@ -19,7 +19,7 @@ section.main-container
             .col-md-2
               .image-box
                 .overlay-container
-                  = image_tag(c.image, alt: '')
+                  = image_tag(c.avatar, alt: '')
                   = link_to candidate_path(c), class: 'overlay small' do
                     h4
                       = c.name

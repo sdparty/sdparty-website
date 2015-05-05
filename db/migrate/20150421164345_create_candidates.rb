@@ -4,6 +4,7 @@ class CreateCandidates < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :constituency
+      t.string :avatar
       t.string :image
       t.string :help_image
       t.string :fb_link

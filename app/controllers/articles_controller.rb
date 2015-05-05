@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
       not_found
     end
     issues = @article.issues.to_a.map{ |i| i.name }.join(',')
-    if @article.kind = 'press'
+    if @article.kind == 'press'
       set_meta_tags({
         title: @article.title,
         description: @article.title,
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
           description: @article.title
         }
       })
-    elsif @article.kind = 'activity'
+    elsif @article.kind == 'activity'
       set_meta_tags({
         title: @article.title,
         description: @article.title,
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
           description: @article.title
         }
       })
-    elsif @article.kind = 'issue'
+    elsif @article.kind == 'issue'
       set_meta_tags({
         title: @article.title,
         description: @article.title,

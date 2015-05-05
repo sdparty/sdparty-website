@@ -10,7 +10,7 @@ table border="1" cellpadding="5" width="100%"
       = f.input :image, as: :file, label: false, required: true, input_html: { id: 'textfield2' }
       = f.input :image_cache, as: :hidden
       = f.input :remove_image, as:  :boolean, label: '移除圖片'
-      = image_tag(@banner.image_url) if @banner.image?
+      = image_tag(@banner.image_url, class: "banner-img") if @banner.image?
     td rowspan="5" width="90" 
       span.btn
         = f.submit '儲存', id: 'button2', class: 'submit'
