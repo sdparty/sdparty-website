@@ -30,20 +30,26 @@
 //= require jquery-ui/datepicker
 //= require chosen-jquery
 //= require social-share-button
+//= require analytics
 
-if ($("#disqus_thread").length) {
-  var disqus_shortname = 'sdparty';
-  (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-}
+var ready = function(){
+  if ($("#disqus_thread").length) {
+    var disqus_shortname = 'sdparty';
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  }
 
-$('.sublist').hide();
-$('.prlist span').click(function() {
-  $(this).next('.sublist').slideToggle('slow');
-})
+  $('.sublist').hide();
+  $('.prlist span').click(function() {
+    $(this).next('.sublist').slideToggle('slow');
+  });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
