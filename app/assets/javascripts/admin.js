@@ -19,6 +19,8 @@
 //= require jquery.datetimepicker
 //= require html.sortable
 
+var ready_ran = 0;
+
 set_positions = function(){
   // loop through and give each task a data-pos
   // attribute that holds its position in the DOM
@@ -28,6 +30,11 @@ set_positions = function(){
 }
 
 var ready = function(){
+  if (ready_ran == 1){
+    return;
+  }else{
+    ready_ran = 1;
+  }
   // datetiimepicker
   $('.datetimepicker').datetimepicker({format: 'Y-m-d H:i'});
   // enable chosen js

@@ -32,7 +32,14 @@
 //= require social-share-button
 //= require analytics
 
+var ready_ran = 0;
+
 var ready = function(){
+  if (ready_ran == 1){
+    return;
+  }else{
+    ready_ran = 1;
+  }
   if ($("#disqus_thread").length) {
     var disqus_shortname = 'sdparty';
     (function() {
@@ -46,6 +53,7 @@ var ready = function(){
 
   $('.sublist').hide();
   $('.prlist span').click(function() {
+    console.log('show');
     $(this).next('.sublist').slideToggle('slow');
   });
 };
