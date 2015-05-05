@@ -304,7 +304,7 @@ a.overlay i {
 .dropdown-menu .menu > .active > a,
 .dropdown-menu .menu > .active > a:hover,
 .dropdown-menu .menu > .active > a:focus {
-	background-color: #f5a08c;
+	background-color: #f0747b;
 	color: #fff;
 	border-color: #bababa;
 }
@@ -353,7 +353,7 @@ a.overlay i {
 	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, 
 	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus { 
 		color: #fff; 
-		background-color: #f5a08c; 
+		background-color: #f0747b; 
 	}
 	
 	/* first level items hover and focus states */
@@ -370,7 +370,7 @@ a.overlay i {
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
 		color: #fff;
-		background-color:#f5a08c;
+		background-color:#f0747b;
 	}
 }
 
