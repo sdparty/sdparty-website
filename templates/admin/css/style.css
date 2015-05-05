@@ -152,7 +152,9 @@ background:#7bc142;
 	height:45px;
 	cursor:pointer;
 	font-size:16px;
-	letter-spacing:2px;}
+	letter-spacing:2px;
+	display:block;
+	float:right;}
 .back{
 	background:url(../images/back.gif) no-repeat;
 	color:#333;

@@ -387,15 +387,14 @@
   <script type="text/javascript">
 // 收缩展开效果
 $(document).ready(function(){
-  // $(&quot;.box h3&quot;).toggle(function(){
-  //   $(this).next(&quot;.text&quot;).animate({height: &#39;toggle&#39;, opacity: &#39;toggle&#39;}, &quot;slow&quot;);
+  // $(".box h3").toggle(function(){
+  //   $(this).next(".text").animate({height: 'toggle', opacity: 'toggle'}, "slow");
  //  },function(){
-//$(this).next(&quot;.text&quot;).animate({height: &#39;toggle&#39;, opacity: &#39;toggle&#39;}, &quot;slow&quot;);
+//$(this).next(".text").animate({height: 'toggle', opacity: 'toggle'}, "slow");
    //});
-        $(&quot;.sublist&quot;).hide();//默认隐藏div，或者在样式表中添加.text{display:none}，推荐使用后者
-        $(&quot;.prlist span&quot;).click(function(){
-                $(this).next(&quot;.sublist&quot;).slideToggle(&quot;slow&quot;);
-        })
-});
-</script></body>
+	$(".sublist").hide();//默认隐藏div，或者在样式表中添加.text{display:none}，推荐使用后者
+	$(".prlist span").click(function(){
+		$(this).next(".sublist").slideToggle("slow");
+	})
+});</script></body>
 </html>
