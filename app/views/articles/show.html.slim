@@ -18,4 +18,10 @@ section.main-container
           .separator-2
           .row
             .col-md-12.editor-block
+              - unless @article.youtube_id.blank?
+                .youtube-video
+                  iframe.viframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/#{@article.youtube_id}" 
               = @article.content.html_safe
+
+
+
