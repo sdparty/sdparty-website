@@ -4,6 +4,9 @@ class Admin::IssuesController < Admin::BaseController
   # GET /issues
   def index
     @issues = Issue.all
+    set_meta_tags({
+      title: "文章子分類管理"
+    })
   end
 
   # GET /issues/1
@@ -14,10 +17,16 @@ class Admin::IssuesController < Admin::BaseController
   # GET /issues/new
   def new
     @issue = Issue.new
+    set_meta_tags({
+      title: "新增文章子分類"
+    })
   end
 
   # GET /issues/1/edit
   def edit
+    set_meta_tags({
+      title: "編輯文章子分類"
+    })
   end
 
   # POST /issues

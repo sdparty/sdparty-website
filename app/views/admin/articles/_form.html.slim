@@ -46,6 +46,7 @@ table border="1" cellpadding="5" width="100%"
         = f.input :image, as: :file, label: false, input_html: { id: 'fileField2' }
         = f.input :image_cache, as: :hidden
         = f.input :remove_image, as:  :boolean, label: '移除圖片'
+        em.s_note 本小圖會顯示在新聞稿、活動前台的文章列表的縮圖，但不會顯示在內文，內文要顯示的圖片請直接從「內容」上傳
         = image_tag(@article.image_url, alt:"", class: "banner-img") if @article.image?
   tr
     th Youtube影片網址
