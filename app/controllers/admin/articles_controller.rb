@@ -5,6 +5,9 @@ class Admin::ArticlesController < Admin::BaseController
   def index
     @q = Article.search(params[:q])
     @articles = @q.result(distinct: true).page(params[:page])
+    set_meta_tags({
+      title: "文章管理"
+    })
   end
 
   # GET /articles/1
@@ -14,10 +17,16 @@ class Admin::ArticlesController < Admin::BaseController
   # GET /articles/new
   def new
     @article = Article.new
+    set_meta_tags({
+      title: "新增文章"
+    })
   end
 
   # GET /articles/1/edit
   def edit
+    set_meta_tags({
+      title: "編輯文章"
+    })
   end
 
   # POST /articles

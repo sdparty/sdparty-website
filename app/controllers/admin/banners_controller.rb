@@ -4,6 +4,9 @@ class Admin::BannersController < Admin::BaseController
   # GET /banners
   def index
     @banners = Banner.all
+    set_meta_tags({
+      title: "廣告大圖管裡"
+    })
   end
 
   # GET /banners/1
@@ -13,10 +16,16 @@ class Admin::BannersController < Admin::BaseController
   # GET /banners/new
   def new
     @banner = Banner.new
+    set_meta_tags({
+      title: "新增廣告大圖"
+    })
   end
 
   # GET /banners/1/edit
   def edit
+    set_meta_tags({
+      title: "編輯廣告大圖"
+    })
   end
 
   # POST /banners

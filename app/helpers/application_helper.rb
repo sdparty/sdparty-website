@@ -15,6 +15,13 @@ module ApplicationHelper
     }
   end
 
+  def admin_meta_tags
+    {
+      separator: "：",
+      site: '管理後台'
+    }
+  end
+
   def display_shorter(str, length, additional = "...")
     length = length * 2
     text = Nokogiri::HTML(str).text
