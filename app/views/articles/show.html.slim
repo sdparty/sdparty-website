@@ -21,7 +21,7 @@ section.main-container
               - unless @article.youtube_id.blank?
                 .youtube-video
                   iframe.viframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/#{@article.youtube_id}" 
-              = @article.content.html_safe
+              = @article.content.try :html_safe
 
 
 

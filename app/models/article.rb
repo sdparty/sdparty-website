@@ -10,8 +10,8 @@ class Article < ActiveRecord::Base
   before_save :update_youtube_values
   validates_presence_of :title, message: '請填寫標題'
   validates_presence_of :kind, message: '請選擇類型'
-  validates_presence_of :content, message: '請填寫內容'
   validates_presence_of :published_at, message: '請填寫發佈日期'
+  validate :check_content
 
 
   def self.get_issues
@@ -90,6 +90,12 @@ class Article < ActiveRecord::Base
       self.youtube_url = nil
       errors.add(:base, 'youtube網址錯誤')
       return false
+    end
+  end
+
+  def check_content
+    unless self.kind == 'system'
+      errors.add(:content, '內容不能為空') if self.content.strip.blank?
     end
   end
 end

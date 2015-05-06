@@ -45,6 +45,6 @@ table border="1" cellpadding="5" width="100%"
   tr
     th valign="top"  ＊內容
     td colspan="3"
-      = @article.content.html_safe
+      = @article.content.try :html_safe
 .btn
   = link_to "回上頁", admin_articles_path, id: 'button', class: 'submit'

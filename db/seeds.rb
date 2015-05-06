@@ -23,7 +23,7 @@ if FIRST_TIME
       published_at: Time.now,
       image: 'logo.png',
       title: '捐款支持',
-      content: ' '
+      content: ''
     }
   ]
 
