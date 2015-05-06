@@ -29,7 +29,7 @@ section.main-container
                 br
                 | 捐贈一萬元以上，依法「必須」開立收據，否則須退回捐款。請與各參選人聯繫以便確認收據資料。
             .col-md-12.editor-block
-              = @article.content.html_safe
+              = @article.content.try :html_safe
 
 
 
