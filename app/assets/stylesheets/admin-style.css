@@ -155,6 +155,10 @@ background:#7bc142;
 	letter-spacing:2px;
 	display:block;
 	float:right;}
+a.submit{
+	text-decoration:none;
+	text-align:center;
+	line-height:45px;}
 .back{
 	background:url(../images/back.gif) no-repeat;
 	color:#333;

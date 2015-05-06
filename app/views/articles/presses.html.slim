@@ -21,9 +21,9 @@ section.main-container
                 - @articles.each do |a|
                   .news-single-block
                     .news-img
-                      - unless a.youtube_id.blank?
-                        iframe src="https://www.youtube.com/embed/#{@article.youtube_id}" frameborder="0" allowfullscreen="1"
-                      - unless a.image.blank?
+                      - if not a.youtube_id.blank?
+                        iframe src="https://www.youtube.com/embed/#{a.youtube_id}" frameborder="0" allowfullscreen="1"
+                      - elsif not a.image.blank?
                         = link_to image_tag(a.image, alt: ''), article_path(a)
                       - else
                         = link_to image_tag(get_img_from_content(a.content), alt: ''), article_path(a)
