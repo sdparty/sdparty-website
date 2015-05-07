@@ -1,6 +1,5 @@
 h1 文章管理
 #search_bar
-  
   = search_form_for @q, url: admin_articles_path do |f|
     | 分類
     = f.select :kind_eq, options_for_select([['全部', ''], ['新聞稿', 'press'], ['活動', 'activity'], ['議題', 'issue']], selected: :kind), id: "select"

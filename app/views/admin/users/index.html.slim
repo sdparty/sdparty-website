@@ -1,0 +1,61 @@
+h1 管理員設定
+#search_bar
+  = search_form_for @q, url: admin_users_path do |f|
+    | Email
+    = f.search_field :email_cont, class: "input_08", id: "textfield"
+    = f.submit '搜尋', class: "button"
+table border="1" cellpadding="5" width="100%" 
+  tr
+    th width="254"  email
+    th 登入來源
+    th 管理權限
+    th 操作
+  - num = 0
+  - @users.each do |u|
+    - num += 1
+    - if (num % 2) == 0
+      tr
+        td = u.email
+        td align="center" width="91"
+          - if u.provider == 'google_oauth2'
+            | Google
+          - elsif u.provider == 'facebook'
+            | Facebook
+          - else
+            | 未知
+        - if u.admin?
+          td align="center" width="112" 管理員
+          td align="center" width="333"
+            = simple_form_for u, url: admin_user_path(u), method: :put do |f|
+              = f.input :admin, as: :hidden, :input_html => { :value => 0 }
+              = f.button :submit, "移除管理權限"
+        - else
+          td align="center" width="112" 無
+          td align="center" width="333"
+            = simple_form_for u, url: admin_user_path(u), method: :put do |f|
+              = f.input :admin, as: :hidden, :input_html => { :value => 1 }
+              = f.button :submit, "授與管理權限"
+    - else
+      tr.even
+        td = u.email
+        td align="center" width="91"
+          - if u.provider == 'google_oauth2'
+            | Google
+          - elsif u.provider == 'facebook'
+            | Facebook
+          - else
+            | 未知
+        - if u.admin?
+          td align="center" width="112" 管理員
+          td align="center" width="333"
+            = simple_form_for u, url: admin_user_path(u), method: :put do |f|
+              = f.input :admin, as: :hidden, :input_html => { :value => 0 }
+              = f.button :submit, "移除管理權限"
+        - else
+          td align="center" width="112" 無
+          td align="center" width="333"
+            = simple_form_for u, url: admin_user_path(u), method: :put do |f|
+              = f.input :admin, as: :hidden, :input_html => { :value => 1 }
+              = f.button :submit, "授與管理權限"
+#page
+  = paginate @users
