@@ -592,6 +592,22 @@ a.overlay{
 	left:0px;
 	top:0px;
 	}
+.btxt{
+	font-size:32px;}
+.bname{
+	font-size:24px;
+	color:#e60035;}
+.don-block{
+	width:45%;
+	margin:2.5%;
+	float:left;
+	background:#fff;
+	box-shadow:#969696 1px 1px 5px;
+	height:220px;
+	padding:20px;
+	text-align:center;}
+.ditxt{
+	clear:both;}
 @media screen and (max-width: 992px) {
     .politics-02{
 		border:none;
@@ -662,6 +678,8 @@ a.overlay{
 	}
 	.issue-txt{
 		display:none;}
+		.btxt{
+	font-size:28px;}
 	}
 
 @media (max-width:767px) {
@@ -680,7 +698,11 @@ a.overlay{
 	margin:0 0 0 10%;
 	width:90%;
 	}	
-
+.don-block{
+	float:none;
+	width:auto;
+	height:auto;
+	margin-bottom:30px;	}
 	
 }
 @media screen and (max-width: 680px){
