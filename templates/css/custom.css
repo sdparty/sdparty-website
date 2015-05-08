@@ -495,10 +495,13 @@ a.overlay{
 	background:#ccc;
 	float:left;
 	margin:0 3% 0 0;}
-.news-img img,.action-img img{
+.news-img img,.action-img img,.action-img iframe,.news-img iframe{
 	position:absolute;
 	left:0px;
 	top:0px;}
+.action-img iframe,.news-img iframe{
+	width:100%;
+	height:100%;}
 .action-list-block{
 	overflow:hidden;
 	width:103.3%;}
