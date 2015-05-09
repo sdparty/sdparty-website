@@ -10,7 +10,7 @@ describe "Admin/Banner" do
       title: "new_banner_title",
       button: "new_banner_button",
       link: "http://www.google.com/",
-      image: File.open(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')),
+      image: File.open(File.join(Rails.root, 'spec', 'fixtures', 'banner.jpg')),
       published: true
     }
   end
@@ -62,7 +62,33 @@ describe "Admin/Banner" do
         expect(response).to be_redirect
       end
     end
+
+    describe "#sort" do
+      it "failed" do
+        banner1 = FactoryGirl.create(:banner)
+        banner2 = FactoryGirl.create(:banner)
+        sort_data = {
+          banner: {
+            order: {
+              '0': {
+                id: banner1.id,
+                position: 2
+              },
+              '1': {
+                id: banner2.id,
+                position: 1
+              }
+            }
+          }
+        }
+        put "/admin/banners/sort", sort_data
+        banner1.reload
+        banner2.reload
+        expect(Banner.all).to eq([banner1, banner2])
+      end
+    end
   end
+
   describe "after login" do
     before { sign_in(user) }
     after { sign_out }
@@ -113,6 +139,31 @@ describe "Admin/Banner" do
         expect(response).to be_redirect
       end
     end
+
+    describe "#sort" do
+      it "failed" do
+        banner1 = FactoryGirl.create(:banner)
+        banner2 = FactoryGirl.create(:banner)
+        sort_data = {
+          banner: {
+            order: {
+              '0': {
+                id: banner1.id,
+                position: 2
+              },
+              '1': {
+                id: banner2.id,
+                position: 1
+              }
+            }
+          }
+        }
+        put "/admin/banners/sort", sort_data
+        banner1.reload
+        banner2.reload
+        expect(Banner.all).to eq([banner1, banner2])
+      end
+    end
   end
 
   describe "after login admin" do
@@ -153,6 +204,8 @@ describe "Admin/Banner" do
         update_data = { :title => "new_title" }
         put "/admin/banners/#{banner.id}", :banner => update_data
         expect(response).to be_redirect
+        banner.reload
+        expect(banner.title).to match(update_data[:title])
       end
     end
 
@@ -163,6 +216,32 @@ describe "Admin/Banner" do
           delete "/admin/banners/#{banner.id}"
         }.to change { Banner.count }.by(-1)
         expect(response).to be_redirect
+      end
+    end
+
+
+    describe "#sort" do
+      it "success" do
+        banner1 = FactoryGirl.create(:banner)
+        banner2 = FactoryGirl.create(:banner)
+        sort_data = {
+          banner: {
+            order: {
+              '0': {
+                id: banner1.id,
+                position: 2
+              },
+              '1': {
+                id: banner2.id,
+                position: 1
+              }
+            }
+          }
+        }
+        put "/admin/banners/sort", sort_data
+        banner1.reload
+        banner2.reload
+        expect(Banner.all).to eq([banner2, banner1])
       end
     end
   end

@@ -31,8 +31,10 @@ class Banner < ActiveRecord::Base
   end
 
   def validate_image_size
-    width, height = `identify -format "%wx%h" #{self.image.file.path}`.split(/x/).map{ |i| i.to_i }
-    errors.add :image, "請上傳 1350 x 605 尺寸的圖片" unless width == 1350 && height == 605
+    unless self.image.file.blank?
+      width, height = `identify -format "%wx%h" #{self.image.file.path}`.split(/x/).map{ |i| i.to_i }
+      errors.add :image, "請上傳 1350 x 605 尺寸的圖片" unless width == 1350 && height == 605
+    end
   end
 end
 

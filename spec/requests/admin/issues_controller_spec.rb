@@ -58,7 +58,33 @@ describe "Admin/Issue" do
         expect(response).to be_redirect
       end
     end
+
+    describe "#sort" do
+      it "failed" do
+        issue1 = FactoryGirl.create(:issue)
+        issue2 = FactoryGirl.create(:issue)
+        sort_data = {
+          issue: {
+            order: {
+              '0': {
+                id: issue1.id,
+                position: 2
+              },
+              '1': {
+                id: issue2.id,
+                position: 1
+              }
+            }
+          }
+        }
+        put "/admin/issues/sort", sort_data
+        issue1.reload
+        issue2.reload
+        expect(Issue.all).to eq([issue1, issue2])
+      end
+    end
   end
+
   describe "after login" do
     before { sign_in(user) }
     after { sign_out }
@@ -107,6 +133,31 @@ describe "Admin/Issue" do
           delete "/admin/issues/#{issue.id}"
         }.to change { Issue.count }.by(0)
         expect(response).to be_redirect
+      end
+    end
+
+    describe "#sort" do
+      it "failed" do
+        issue1 = FactoryGirl.create(:issue)
+        issue2 = FactoryGirl.create(:issue)
+        sort_data = {
+          issue: {
+            order: {
+              '0': {
+                id: issue1.id,
+                position: 2
+              },
+              '1': {
+                id: issue2.id,
+                position: 1
+              }
+            }
+          }
+        }
+        put "/admin/issues/sort", sort_data
+        issue1.reload
+        issue2.reload
+        expect(Issue.all).to eq([issue1, issue2])
       end
     end
   end
@@ -159,6 +210,31 @@ describe "Admin/Issue" do
           delete "/admin/issues/#{issue.id}"
         }.to change { Issue.count }.by(-1)
         expect(response).to be_redirect
+      end
+    end
+
+    describe "#sort" do
+      it "success" do
+        issue1 = FactoryGirl.create(:issue)
+        issue2 = FactoryGirl.create(:issue)
+        sort_data = {
+          issue: {
+            order: {
+              '0': {
+                id: issue1.id,
+                position: 2
+              },
+              '1': {
+                id: issue2.id,
+                position: 1
+              }
+            }
+          }
+        }
+        put "/admin/issues/sort", sort_data
+        issue1.reload
+        issue2.reload
+        expect(Issue.all).to eq([issue2, issue1])
       end
     end
   end
