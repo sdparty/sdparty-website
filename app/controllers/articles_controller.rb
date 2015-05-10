@@ -46,19 +46,59 @@ class ArticlesController < ApplicationController
         }
       })
     end
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+        status: "success",
+        article: JSON.parse(
+            @article.to_json({include: [:issues], except: [:published]})
+          ),
+        callback: params[:callback]
+        }
+      }
+    end
   end
 
   def presses
-    unless params[:i].blank?
-      @issue = Issue.find(params[:i])
-      @issue = nil unless @issue
-    end
-    if @issue
-      @articles = @issue.articles.scope_presses.published.page params[:page]
+    if params[:format] == "json"
+      unless params[:issue].blank?
+        @issue = Issue.where(name: params[:issue]).first
+        @issue = nil unless @issue
+      end
+      if @issue
+        if params[:query]
+          @articles = @issue.articles.scope_presses.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.scope_presses.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = @issue.articles.scope_presses.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.scope_presses.published.count
+        end
+      else
+        if params[:query]
+          @articles = Article.scope_presses.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.scope_presses.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = Article.scope_presses.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.scope_presses.published.count
+        end
+      end
     else
-      @articles = Article.scope_presses.published.page params[:page]
+      unless params[:i].blank?
+        @issue = Issue.find(params[:i])
+        @issue = nil unless @issue
+      end
+      if @issue
+        @articles = @issue.articles.scope_presses.published.page params[:page]
+      else
+        @articles = Article.scope_presses.published.page params[:page]
+      end
+      @issues = Article.scope_presses.published.get_issues
     end
-    @issues = Article.scope_presses.published.get_issues
     set_meta_tags({
       title: "新聞稿",
       description: "社會民主黨發新聞稿啦！所有社會民主黨的新稿資訊都在這！",
@@ -69,19 +109,60 @@ class ArticlesController < ApplicationController
         description: "社會民主黨發新聞稿啦！所有社會民主黨的新稿資訊都在這！"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+          status: "success",
+          articles: JSON.parse(
+            @articles.to_json({include: [:issues], except: [:published]})
+          ),
+          count: @articles_count
+        },
+        callback: params[:callback]
+      }
+    end
   end
 
   def activities
-    unless params[:i].blank?
-      @issue = Issue.find(params[:i])
-      @issue = nil unless @issue
-    end
-    if @issue
-      @articles = @issue.articles.scope_activities.published.page params[:page]
+    if params[:format] == "json"
+      unless params[:issue].blank?
+        @issue = Issue.where(name: params[:issue]).first
+        @issue = nil unless @issue
+      end
+      if @issue
+        if params[:query]
+          @articles = @issue.articles.scope_activities.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.scope_activities.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = @issue.articles.scope_activities.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.scope_activities.published.count
+        end
+      else
+        if params[:query]
+          @articles = Article.scope_activities.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.scope_activities.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = Article.scope_activities.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.scope_activities.published.count
+        end
+      end
     else
-      @articles = Article.scope_activities.published.page params[:page]
+      unless params[:i].blank?
+        @issue = Issue.find(params[:i])
+        @issue = nil unless @issue
+      end
+      if @issue
+        @articles = @issue.articles.scope_activities.published.page params[:page]
+      else
+        @articles = Article.scope_activities.published.page params[:page]
+      end
+      @issues = Article.scope_activities.published.get_issues
     end
-    @issues = Article.scope_activities.published.get_issues
     set_meta_tags({
       title: "近期活動",
       description: "想知道關於社會民主黨的最新活動嗎？所有社會民主黨活動資訊都在近期活動中。",
@@ -92,19 +173,60 @@ class ArticlesController < ApplicationController
         description: "想知道關於社會民主黨的最新活動嗎？所有社會民主黨活動資訊都在近期活動中。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+          status: "success",
+          articles: JSON.parse(
+            @articles.to_json({include: [:issues], except: [:published]})
+          ),
+          count: @articles_count
+        },
+        callback: params[:callback]
+      }
+    end
   end
 
   def issues
-    unless params[:i].blank?
-      @issue = Issue.find(params[:i])
-      @issue = nil unless @issue
-    end
-    if @issue
-      @articles = @issue.articles.scope_issues.published.page params[:page]
+    if params[:format] == "json"
+      unless params[:issue].blank?
+        @issue = Issue.where(name: params[:issue]).first
+        @issue = nil unless @issue
+      end
+      if @issue
+        if params[:query]
+          @articles = @issue.articles.scope_issues.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.scope_issues.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = @issue.articles.scope_issues.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.scope_issues.published.count
+        end
+      else
+        if params[:query]
+          @articles = Article.scope_issues.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.scope_issues.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = Article.scope_issues.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.scope_issues.published.count
+        end
+      end
     else
-      @articles = Article.scope_issues.published.page params[:page]
+      unless params[:i].blank?
+        @issue = Issue.find(params[:i])
+        @issue = nil unless @issue
+      end
+      if @issue
+        @articles = @issue.articles.scope_issues.published.page params[:page]
+      else
+        @articles = Article.scope_issues.published.page params[:page]
+      end
+      @issues = Article.scope_issues.published.get_issues
     end
-    @issues = Article.scope_issues.published.get_issues
     set_meta_tags({
       title: "熱門議題",
       description: "想了解社民黨針對各種特定熱門議題的看法嗎？帶你來了解。",
@@ -115,6 +237,19 @@ class ArticlesController < ApplicationController
         description: "想了解社民黨針對各種特定熱門議題的看法嗎？帶你來了解。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+          status: "success",
+          articles: JSON.parse(
+            @articles.to_json({include: [:issues], except: [:published]})
+          ),
+          count: @articles_count
+        },
+        callback: params[:callback]
+      }
+    end
   end
 
   private

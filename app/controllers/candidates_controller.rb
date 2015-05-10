@@ -18,6 +18,17 @@ class CandidatesController < ApplicationController
         description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+          status: "success",
+          candidates: @candidates,
+          count: @candidates.length
+        },
+        callback: params[:callback]
+      }
+    end
   end
 
   # GET /candidates/1
@@ -32,6 +43,15 @@ class CandidatesController < ApplicationController
         description: "為什麼#{@candidate.name}要出來參選？一起來深入了解#{@candidate.name}吧！"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+        status: "success",
+        candidate: @candidate,
+        callback: params[:callback]
+      }
+    end
   end
 
   private
