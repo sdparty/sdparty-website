@@ -7,16 +7,16 @@ Rails.application.routes.draw do
   match '/join',         to: 'static_pages#join',         via: 'get'
   match "/sitemap.xml",  to: 'static_pages#sitemap',   format: 'xml', via: 'get'
   match "/programs",     to: 'static_pages#programs',     via: 'get'
-  match "/program01",    to: 'static_pages#program01',    via: 'get'
-  match "/program02",    to: 'static_pages#program02',    via: 'get'
-  match "/program03",    to: 'static_pages#program03',    via: 'get'
+  match "/programs/1",    to: 'static_pages#programs_1',    via: 'get'
+  match "/programs/2",    to: 'static_pages#programs_2',    via: 'get'
+  match "/programs/3",    to: 'static_pages#programs_3',    via: 'get'
   match "/policies",     to: 'static_pages#policies',     via: 'get'
-  match "/policy01",     to: 'static_pages#policy01',     via: 'get'
-  match "/policy02",     to: 'static_pages#policy02',     via: 'get'
-  match "/policy03",     to: 'static_pages#policy03',     via: 'get'
-  match "/policy04",     to: 'static_pages#policy04',     via: 'get'
-  match "/policy05",     to: 'static_pages#policy05',     via: 'get'
-  match "/policy06",     to: 'static_pages#policy06',     via: 'get'
+  match "/policies/1",     to: 'static_pages#policies_1',     via: 'get'
+  match "/policies/2",     to: 'static_pages#policies_2',     via: 'get'
+  match "/policies/3",     to: 'static_pages#policies_3',     via: 'get'
+  match "/policies/4",     to: 'static_pages#policies_4',     via: 'get'
+  match "/policies/5",     to: 'static_pages#policies_5',     via: 'get'
+  match "/policies/6",     to: 'static_pages#policies_6',     via: 'get'
   match "/constructing", to: 'static_pages#constructing', via: 'get'
 
   resources :candidates, only: [:index, :show]
@@ -37,6 +37,28 @@ Rails.application.routes.draw do
       put :sort, on: :collection
     end
   end
+
+  get 'about.html', to: redirect('/about')
+  get 'candidate00.html', to: redirect('/candidates')
+  get 'candidate01.html', to: redirect('/candidates/1')
+  get 'candidate02.html', to: redirect('/candidates/2')
+  get 'candidate03.html', to: redirect('/candidates/3')
+  get 'candidate04.html', to: redirect('/candidates/4')
+  get 'constructed.html', to: redirect('/constructing')
+  get 'donation.html', to: redirect('/donate')
+  get 'index.html', to: redirect('/')
+  get 'join01.html', to: redirect('/join')
+  get 'politics00.html', to: redirect('/policies')
+  get 'politics01.html', to: redirect('/policies/1')
+  get 'politics02.html', to: redirect('/policies/2')
+  get 'politics03.html', to: redirect('/policies/3')
+  get 'politics04.html', to: redirect('/policies/4')
+  get 'politics05.html', to: redirect('/policies/5')
+  get 'politics06.html', to: redirect('/policies/6')
+  get 'principle00.html', to: redirect('/programs')
+  get 'principle01.html', to: redirect('/programs/1')
+  get 'principle02.html', to: redirect('/programs/2')
+  get 'principle03.html', to: redirect('/programs/3')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

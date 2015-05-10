@@ -47,23 +47,23 @@ describe "Static pages" do
     end
   end
 
-  describe "#program01" do
+  describe "#programs_1" do
     it "success" do
-      get "/program01"
+      get "/programs_1"
       expect(response).to be_success
     end
   end
 
-  describe "#program02" do
+  describe "#programs_2" do
     it "success" do
-      get "/program02"
+      get "/programs_2"
       expect(response).to be_success
     end
   end
 
-  describe "#program03" do
+  describe "#programs_3" do
     it "success" do
-      get "/program03"
+      get "/programs_3"
       expect(response).to be_success
     end
   end
@@ -75,44 +75,44 @@ describe "Static pages" do
     end
   end
 
-  describe "#policy01" do
+  describe "#policies_1" do
     it "success" do
-      get "/policy01"
+      get "/policies_1"
       expect(response).to be_success
     end
   end
 
-  describe "#policy02" do
+  describe "#policies_2" do
     it "success" do
-      get "/policy02"
+      get "/policies_2"
       expect(response).to be_success
     end
   end
 
-  describe "#policy03" do
+  describe "#policies_3" do
     it "success" do
-      get "/policy03"
+      get "/policies_3"
       expect(response).to be_success
     end
   end
 
-  describe "#policy04" do
+  describe "#policies_4" do
     it "success" do
-      get "/policy04"
+      get "/policies_4"
       expect(response).to be_success
     end
   end
 
-  describe "#policy05" do
+  describe "#policies_5" do
     it "success" do
-      get "/policy05"
+      get "/policies_5"
       expect(response).to be_success
     end
   end
 
-  describe "#policy06" do
+  describe "#policies_6" do
     it "success" do
-      get "/policy06"
+      get "/policies_6"
       expect(response).to be_success
     end
   end
