@@ -3,7 +3,7 @@ class CandidatesController < ApplicationController
 
   # GET /candidates
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.published
     keywords = "社會民主黨候選人"
     @candidates.each do |c|
       keywords = keywords + ",#{c.name}"
@@ -23,9 +23,11 @@ class CandidatesController < ApplicationController
       format.html
       format.json { render :json => {
           status: "success",
-          candidates: @candidates,
+          candidates: JSON.parse(
+            @candidates.to_json({except: [:published]})
+          ),
           count: @candidates.length
-        },
+          },
         callback: params[:callback]
       }
     end
@@ -47,8 +49,11 @@ class CandidatesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json => {
-        status: "success",
-        candidate: @candidate,
+          status: "success",
+          candidate: JSON.parse(
+            @candidate.to_json({except: [:published]})
+          )
+        },
         callback: params[:callback]
       }
     end
