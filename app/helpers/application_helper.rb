@@ -18,7 +18,10 @@ module ApplicationHelper
   def admin_meta_tags
     {
       separator: "：",
-      site: '管理後台'
+      site: '社民黨管理後台',
+      og: {
+        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png"
+      }
     }
   end
 

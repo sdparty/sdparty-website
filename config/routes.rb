@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   match '/about',        to: 'static_pages#about',        via: 'get'
   match '/donate',       to: 'static_pages#donate',       via: 'get'
   match '/join',         to: 'static_pages#join',         via: 'get'
-  match "/sitemap.xml",  to: 'static_pages#sitemap',   format: 'xml', via: 'get'
   match "/programs",     to: 'static_pages#programs',     via: 'get'
   match "/programs/1",    to: 'static_pages#programs_1',    via: 'get'
   match "/programs/2",    to: 'static_pages#programs_2',    via: 'get'
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
   match "/policies/5",     to: 'static_pages#policies_5',     via: 'get'
   match "/policies/6",     to: 'static_pages#policies_6',     via: 'get'
   match "/constructing", to: 'static_pages#constructing', via: 'get'
+  match "/sitemap.xml", to: 'static_pages#sitemap', format: 'xml', via: 'get'
 
   resources :candidates, only: [:index, :show]
   match '/articles/presses',     to: 'articles#presses',      via: 'get', as: 'articles_presses'
@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
 
   namespace :admin do
-    match 'update_banners',  to: 'banners#update_banners',  via: 'put'
-    match 'update_issues',   to: 'issues#update_issues',    via: 'put'
+    #match 'update_banners',  to: 'banners#update_banners',  via: 'put'
+    #match 'update_issues',   to: 'issues#update_issues',    via: 'put'
     resources :articles
     resources :users, only: [:index, :update]
     resources :banners, except: [:show] do
@@ -37,6 +37,10 @@ Rails.application.routes.draw do
       put :sort, on: :collection
     end
   end
+
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ], as: 'not_found'
+  match "/422" => "errors#error422", via: [ :get, :post, :patch, :delete ]
+  match "/500" => "errors#error500", via: [ :get, :post, :patch, :delete ]
 
   get 'about.html', to: redirect('/about')
   get 'candidate00.html', to: redirect('/candidates')

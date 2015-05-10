@@ -201,4 +201,9 @@ class StaticPagesController < ApplicationController
 
   def constructing
   end
+
+  def sitemap
+    @articles = Article.all
+    @candidates = Candidate.all
+  end
 end
