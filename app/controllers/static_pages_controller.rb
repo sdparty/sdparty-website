@@ -55,6 +55,11 @@ class StaticPagesController < ApplicationController
         description: "政綱內容包含三大類：新經濟、新政治、新社會。一起來了解社會民主黨政綱。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def programs_1
@@ -68,6 +73,11 @@ class StaticPagesController < ApplicationController
         description: "新經濟政綱 - 社民黨認為當務之急是改革稅制與產業政策，並強化財產的社會責任。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def programs_2
@@ -81,6 +91,11 @@ class StaticPagesController < ApplicationController
         description: "新政治政綱 - 社民黨主張，新的政治力量必須進入國會，重新設定政治議題，改革政治體制，重塑政治文化，最終改變台灣的政治版圖。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def programs_3
@@ -94,6 +109,11 @@ class StaticPagesController < ApplicationController
         description: "新社會政綱 - 社民黨主張國家應積極保障社會不同群體尊嚴與基本權益，創造平等的多元社會，促進實質平等與社會正義的實現。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def policies
@@ -107,6 +127,11 @@ class StaticPagesController < ApplicationController
         description: "政治能改變這一切。社會民主國家的經驗告訴我們，只要受雇者們能團結、組織起來，對抗財團資本，對抗新自由主義體制，我們就不用再忍受目前的不平等和無奈，可以自由地合作、創造和發展。"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def policies_1
@@ -142,6 +167,11 @@ class StaticPagesController < ApplicationController
         description: "#{description}"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def policies_3
@@ -157,6 +187,11 @@ class StaticPagesController < ApplicationController
         description: "#{description}"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def policies_4
@@ -172,6 +207,11 @@ class StaticPagesController < ApplicationController
         description: "#{description}"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def policies_5
@@ -187,6 +227,11 @@ class StaticPagesController < ApplicationController
         description: "#{description}"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def policies_6
@@ -202,6 +247,11 @@ class StaticPagesController < ApplicationController
         description: "#{description}"
       }
     })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def constructing

@@ -1,0 +1,22 @@
+<% unless params[:callback].blank? %>
+  <%= params[:callback] %>(
+<% end %>
+{
+  "states": "success",
+  "programs": [
+    {
+      "title": "新經濟",
+      "link": "/programs/1.json"
+    }, {
+      "title": "新政治",
+      "link": "/programs/2.json"
+    }, {
+      "title": "新社會",
+      "link": "/programs/3.json"
+    }
+  ],
+  "count": 3
+}
+<% unless params[:callback].blank? %>
+  )
+<% end %>
