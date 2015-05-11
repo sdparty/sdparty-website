@@ -5,6 +5,11 @@ class Admin::ArticlesController < Admin::BaseController
   def index
     @q = Article.search(params[:q])
     @articles = @q.result(distinct: true).page(params[:page])
+    if params[:q] and params[:q][:kind_eq]
+      @kind = params[:q][:kind_eq]
+    else
+      @kind = nil
+    end
     set_meta_tags({
       title: "文章管理"
     })
