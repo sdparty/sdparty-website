@@ -22,9 +22,9 @@ table border="1" cellpadding="5" width="100%"
     th 小圖
     td colspan="3"
       - unless @article.image.blank?
-        = image_tag(@article.image, class: 'news-img')
+        = image_tag(@article.image, class: 'news-img banner-img')
       - else
-        = image_tag(get_img_from_content(@article.content))
+        = image_tag(get_img_from_content(@article.content), class: 'news-img banner-img')
   tr
     th ＊標題
     td colspan="3" = @article.title

@@ -49,8 +49,9 @@ table border="1" cellpadding="5" width="100%"
         td align="center" width="127" = a.published_at.strftime('%Y-%m-%d')
         td align="center" width="126" 
           = link_to '編輯', edit_admin_article_path(a)
-          | ｜
-          = link_to '刪除', admin_article_path(a), method: :delete, data: { confirm: '確認要刪除嗎？' }
+          - unless a.kind == 'system'
+            | ｜
+            = link_to '刪除', admin_article_path(a), method: :delete, data: { confirm: '確認要刪除嗎？' }
 
 #page
   = paginate @articles
