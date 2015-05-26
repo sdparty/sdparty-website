@@ -609,6 +609,11 @@ a.overlay{
 	height:220px;
 	padding:20px;
 	text-align:center;}
+.don-block-2{
+	width:95%;
+	height:200px;}
+.don-block-2 span br{
+	display:none;}
 .ditxt{
 	clear:both;}
 @media screen and (max-width: 992px) {
@@ -701,11 +706,13 @@ a.overlay{
 	margin:0 0 0 10%;
 	width:90%;
 	}	
-.don-block{
+.don-block,.don-block-2{
 	float:none;
 	width:auto;
 	height:auto;
 	margin-bottom:30px;	}
+.don-block-2 span br{
+	display:inline;}
 	
 }
 @media screen and (max-width: 680px){
