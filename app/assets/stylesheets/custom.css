@@ -616,6 +616,10 @@ a.overlay{
 	display:none;}
 .ditxt{
 	clear:both;}
+.color-pp.fz .fz{
+	font-size:28px;}
+strong.fz{
+	font-size:22px;}
 @media screen and (max-width: 992px) {
     .politics-02{
 		border:none;

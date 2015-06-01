@@ -254,6 +254,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def constitution
+  end
+
   def constructing
   end
 
