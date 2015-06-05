@@ -214,43 +214,38 @@
                   </div>
                   <div class="donation-form">
                   <form 
- action='http://newpowerparty.backme.tw:80/cashflow/checkout' method='get'>
-  <input type='hidden' name='project_id' value='56'>
-  <input type='hidden' name='reward_id' value='189'>
+ action='http://sdparty.backme.tw:80/cashflow/checkout' method='get'>
+  <input type='hidden' name='project_id' value='74'>
+  <input type='hidden' name='reward_id' value='250'>
                   <h3>募款單位: 呂欣潔</h3>
                   <h4>請填寫捐款人基本資料</h4>
                   <p>所有欄位皆為必填</p>
                   <table width="920" border="0">
                     <tbody>
                       <tr>
-                        <td align="right"><label for='custom_field[]2'>捐款金額：</label></td>
-                        <td><input name="textfield9" type="text" required id="textfield9">
+                        <td width="220" align="right"><label for='custom_field[146]'>捐款人姓名（公司名稱）：</label></td>
+                        <td width="690"><input name='custom_field[146]' required='required' type='text' value=''></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for='custom_field[147]'>身分證字號（統一編號）：</label></td>
+                        <td><input name='custom_field[147]' required='required' type='text' value=''></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for='custom_field[148]'>聯絡電話（行動電話）：</label></td>
+                        <td><input name='custom_field[148]' required='required' type='text' value=''></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for='custom_field[149]'>戶籍地址：</label></td>
+                        <td><input name='custom_field[149]' required='required' type='text' value='' class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for='custom_field[150]'>收據寄送地址：</label></td>
+                        <td><input name='custom_field[150]' required='required' type='text' value='' class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for='additional_support'>捐款金額：</label></td>
+                        <td><input name='additional_support' required='required' type='number' value=''>
                           元</td>
-                      </tr>
-                      <tr>
-                        <td width="220" align="right">
-                          <label for='custom_field[]'>捐款人姓名（公司名稱）：</label>
-                          </td>
-                        <td width="690"><input name="textfield2" type="text" required id="textfield2"></td>
-                      </tr>
-                      <tr>
-                        <td align="right">
-                        <label for='custom_field[]'>身分證字號（統一編號）：</label> </td>
-                        <td><input name="textfield3" type="text" required id="textfield3"></td>
-                      </tr>
-                      <tr>
-                        <td align="right">
-                          <label for='custom_field[]'> 聯絡電話（行動電話）：</label>
-                          </td>
-                        <td><input name="textfield4" type="text" required id="textfield4"></td>
-                      </tr>
-                      <tr>
-                        <td align="right"><label for='custom_field[]'>戶籍地址：</label></td>
-                        <td><input name="textfield6" type="text" required class="long-input" id="textfield6"></td>
-                      </tr>
-                      <tr>
-                        <td align="right"><label for='custom_field[]'>收據寄送地址：</label></td>
-                        <td><input name="textfield8" type="text" required class="long-input" id="textfield8"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -268,7 +263,8 @@
 
 其他規定請參閱政治獻金法或監察院網站。</p>
 <div class="form-btn">
-  <input type="button" name="button" id="button" value="確認捐款" class="fbt01">
+  <button class="fbt01">確認捐款</button>
+  </div>
 </form>
                   </div>
                 </div>
