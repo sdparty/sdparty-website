@@ -643,19 +643,15 @@ strong.fz{
 .long-input{
 	width:95%;}
 .form-btn{
-	width:320px;
-	margin:auto;}
-.form-btn a{
+	text-align:center;}
+.form-btn input{
 	background:#e70036;
 	color:#fff;
-	display:block;
 	padding:10px;
 	text-align:center;
 	width:150px;
-	float:left;}
-.form-btn a.fbt02{
-	float:right;
-	background:#a3a2a1;}
+	border:none;
+	cursor:pointer;}
 /*捐款的slideer*/
 #abgneBlock {
 	width: 920px;
@@ -702,6 +698,8 @@ strong.fz{
 	font-weight:bold;
 	color:#797775;
 }
+#abgneBlock ul.playerControl li a{
+	color:#797775;}
 #abgneBlock ul.playerControl li div{
 	height: 20px;
 	width:100%;
@@ -721,6 +719,7 @@ strong.fz{
 	background:#e7e7e7;
 	color:#969594;
 }
+#abgneBlock ul.playerControl li.current a{color:#969594;}
 
 #abgneBlock ul.playerControl li:nth-child(2) span:after{
 	content: "大安 范雲";}
