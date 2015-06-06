@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421164345) do
+ActiveRecord::Schema.define(version: 20150606060717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20150421164345) do
     t.string  "fb_link"
     t.string  "help_link"
     t.boolean "published",    default: false
+    t.text    "donate_form"
+    t.string  "donate_image"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

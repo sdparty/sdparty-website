@@ -128,7 +128,61 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   <p>
     未來一年，我要努力的目標就是，讓新政治的理想與思維，再度從台北市大安區出發。</p>
   <p>社會民主的象徵玫瑰，就是要提醒我們，政治，是為了追求更好的生活。
-    <br />讓我們共同努力。</p>'
+    <br />讓我們共同努力。</p>',
+      donate_image: 'donation01.jpg',
+      donate_form: '<form 
+ action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+  <input type="hidden" name="project_id" value="74">
+  <input type="hidden" name="reward_id" value="248">
+                  <h3>募款單位:范雲</h3>
+                  <h4>請填寫捐款人基本資料</h4>
+                  <p>所有欄位皆為必填</p>
+                  <table width="920" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="220" align="right"><label for="custom_field[136]">捐款人姓名（公司名稱）：</label></td>
+                        <td width="690"><input name="custom_field[136]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[137]">身分證字號（統一編號）：</label></td>
+                        <td><input name="custom_field[137]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[138]">聯絡電話（行動電話）：</label></td>
+                        <td><input name="custom_field[138]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[139]">戶籍地址：</label></td>
+                        <td><input name="custom_field[139]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[140]">收據寄送地址：</label></td>
+                        <td><input name="custom_field[140]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="additional_support">捐款金額：</label></td>
+                        <td><input name="additional_support" required="required" type="number" value="">
+                          元</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>捐款人注意事項</h4>
+                  <p>一、捐款人必須為本國國民且年滿 20 歲。<br>
+
+二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。<br>
+
+三、任何人不得以本人以外之名義捐贈。<br>
+
+四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+台幣20萬元。<br>
+
+五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+
+其他規定請參閱政治獻金法或監察院網站。</p>
+                    <div class="form-btn">
+                      <button class="fbt01">確認捐款</button>
+                      </div>
+                    </form>'
     }, {
       id: 2,
       name: '呂欣潔',
@@ -162,8 +216,61 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   <p>所以，我以成長的松山信義區作為起點，開始這一場落實民主的旅程。</p>
   <p>
     在此邀請大家從今天開始認識我、監督我；最後，如果你認同我，請把票投給我，讓我們一起來改變令人無感的腐敗政治，讓人民重新信任國會。</p>
-  <p>改變就從今天、現在開始！</p>
-  '
+  <p>改變就從今天、現在開始！</p>',
+      donate_image: 'donation03.jpg',
+      donate_form: '<form 
+ action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+  <input type="hidden" name="project_id" value="74">
+  <input type="hidden" name="reward_id" value="250">
+                  <h3>募款單位: 呂欣潔</h3>
+                  <h4>請填寫捐款人基本資料</h4>
+                  <p>所有欄位皆為必填</p>
+                  <table width="920" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="220" align="right"><label for="custom_field[146]">捐款人姓名（公司名稱）：</label></td>
+                        <td width="690"><input name="custom_field[146]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[147]">身分證字號（統一編號）：</label></td>
+                        <td><input name="custom_field[147]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[148]">聯絡電話（行動電話）：</label></td>
+                        <td><input name="custom_field[148]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[149]">戶籍地址：</label></td>
+                        <td><input name="custom_field[149]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[150]">收據寄送地址：</label></td>
+                        <td><input name="custom_field[150]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="additional_support">捐款金額：</label></td>
+                        <td><input name="additional_support" required="required" type="number" value="">
+                          元</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>捐款人注意事項</h4>
+                  <p>一、捐款人必須為本國國民且年滿 20 歲。<br>
+
+二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。<br>
+
+三、任何人不得以本人以外之名義捐贈。<br>
+
+四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+台幣20萬元。<br>
+
+五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+
+其他規定請參閱政治獻金法或監察院網站。</p>
+                    <div class="form-btn">
+                      <button class="fbt01">確認捐款</button>
+                      </div>
+                    </form>'
     }, {
       id: 3,
       name: '苗博雅',
@@ -202,8 +309,61 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
     我們是台灣失落的一代，也是台灣希望之所在。透過這場選戰，我將證明，青年可以跨越舊政治的門檻、青年可以深度參政，我們可以用自己的方式挽救國家，我們可以找回失落的勇氣，讓投票成為一件光榮的事。</p>
   <p>台灣，我的國家，已經沒有時間等待我們變老。
     <br />請你和我，一起行動，讓三十年之後，我們的下一代不再失落。</p>
-  <p>讓我們共同努力。</p>
-  '
+  <p>讓我們共同努力。</p>',
+      donate_image: 'donation02.jpg',
+      donate_form: '<form 
+ action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+  <input type="hidden" name="project_id" value="74">
+  <input type="hidden" name="reward_id" value="249">
+                  <h3>募款單位:苗博雅</h3>
+                  <h4>請填寫捐款人基本資料</h4>
+                  <p>所有欄位皆為必填</p>
+                  <table width="920" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="220" align="right"><label for="custom_field[141]">捐款人姓名（公司名稱）：</label></td>
+                        <td width="690"><input name="custom_field[141]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[142]">身分證字號（統一編號）：</label></td>
+                        <td><input name="custom_field[142]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[143]">聯絡電話（行動電話）：</label></td>
+                        <td><input name="custom_field[143]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[144]">戶籍地址：</label></td>
+                        <td><input name="custom_field[144]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[145]">收據寄送地址：</label></td>
+                        <td><input name="custom_field[145]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="additional_support">捐款金額：</label></td>
+                        <td><input name="additional_support" required="required" type="number" value="">
+                          元</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>捐款人注意事項</h4>
+                  <p>一、捐款人必須為本國國民且年滿 20 歲。<br>
+
+二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。<br>
+
+三、任何人不得以本人以外之名義捐贈。<br>
+
+四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+台幣20萬元。<br>
+
+五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+
+其他規定請參閱政治獻金法或監察院網站。</p>
+                    <div class="form-btn">
+                      <button class="fbt01">確認捐款</button>
+                      </div>
+                    </form>'
     }, {
       id: 4,
       name: '李晏榕',
@@ -233,8 +393,62 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
     然而，經驗告訴我們，政治影響法律與政策，而法律及政策能帶動人類行為的改變，進一步改變既有的文化。政治是創造進步與改變的動力，我希望透過對政治的參與，達到性別平等與社會平等的終極理想。</p>
   <p>我是李晏榕。</p>
   <p>
-    如果你/妳相信「人，不分性別、性傾向、性別認同與性別氣質，應該一律平等」，如果你/妳認為「人，不分出身地域、經濟條件、社會階級，應該一律平等」，請支持我進入國會，扭轉台灣既有的框架，創造一個更平等、更幸福的社會。</p>
-  '
+    如果你/妳相信「人，不分性別、性傾向、性別認同與性別氣質，應該一律平等」，如果你/妳認為「人，不分出身地域、經濟條件、社會階級，應該一律平等」，請支持我進入國會，扭轉台灣既有的框架，創造一個更平等、更幸福的社會。</p>',
+      donate_image: 'donation04.jpg',
+      donate_form: '<form 
+ action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+  <input type="hidden" name="project_id" value="74">
+  <input type="hidden" name="reward_id" value="251">
+  <h4>捐款給李晏榕</h4>
+                  <h3>募款單位: 李晏榕</h3>
+                  <h4>請填寫捐款人基本資料</h4>
+                  <p>所有欄位皆為必填</p>
+                  <table width="920" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="220" align="right"><label for="custom_field[151]">捐款人姓名（公司名稱）：</label></td>
+                        <td width="690"><input name="custom_field[151]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[152]">身分證字號（統一編號）：</label></td>
+                        <td><input name="custom_field[152]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[153]">聯絡電話（行動電話）：</label></td>
+                        <td><input name="custom_field[153]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[154]">戶籍地址：</label></td>
+                        <td><input name="custom_field[154]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[155]">收據寄送地址：</label></td>
+                        <td><input name="custom_field[155]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="additional_support">捐款金額：</label></td>
+                        <td><input name="additional_support" required="required" type="number" value="">
+                          元</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>捐款人注意事項</h4>
+                  <p>一、捐款人必須為本國國民且年滿 20 歲。<br>
+
+二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。<br>
+
+三、任何人不得以本人以外之名義捐贈。<br>
+
+四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+台幣20萬元。<br>
+
+五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+
+其他規定請參閱政治獻金法或監察院網站。</p>
+                    <div class="form-btn">
+                      <button class="fbt01">確認捐款</button>
+                      </div>
+                    </form>'
     }
   ]
 

@@ -1,0 +1,40 @@
+.page-intro
+  .container
+    .row
+      .col-md-12
+        ol.breadcrumb
+          li 捐款支持
+
+section.main-container
+  .politics-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 捐款支持
+          .separator-2
+          #abgneBlock
+            ul.list
+              li
+                = link_to image_tag(@candidate.donate_image), "", target: "_blank"
+            ul.playerControl
+              li
+                = link_to "社會民主黨", donate_path
+                div
+              - @candidates.each do |c|
+                - if c == @candidate
+                  li.current
+                    = link_to "#{c.constituency} #{c.name}", donate_candidate_path(c)
+                    div
+                - else
+                  li
+                    = link_to "#{c.constituency} #{c.name}", donate_candidate_path(c)
+                    div
+          .row
+            .col-md-12.editor-block
+              .lltxt
+                | 政治，是為了更好的生活
+                br
+                | 2016小額募款
+              .donation-form
+                = @candidate.donate_form.html_safe
+

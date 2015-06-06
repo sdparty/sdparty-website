@@ -1,3 +1,9 @@
+.page-intro
+  .container
+    .row
+      .col-md-12
+        ol.breadcrumb
+          li 捐款支持
 section.main-container
   .politics-block.custom-wrap
     .container
@@ -5,64 +11,74 @@ section.main-container
         .main.col-md-12
           h2.page-title 捐款支持
           .separator-2
+          #abgneBlock
+            ul.list
+              li
+                = link_to image_tag('donation05.jpg'), donate_path
+              - @candidates.each do |c|
+                li
+                  = link_to image_tag(c.donate_image), donate_candidate_path(c)
           .row
-            .col-md-12 style="margin:0 0 40px 0;"
-              .don-block.don-block-2
-                p
-                  span.bname 社會民主黨政治獻金專戶
-                  br
-                  span.btxt
-                    | 國泰世華台北分行
-                    br
-                    | 007-03-500494-1
-                  br
-                  | 銀行代碼：013
-                p 
-                  | 請電
-                  = link_to "02-2709-6205", "tel:0227096205"
-                  | 聯繫相關資訊
-              .don-block
-                p
-                  | 105年立法委員擬參選人
-                  br
-                  span.bname = link_to "范雲", candidate_path(1)
-                  | 政治獻金專戶
-                  br
-                  span.btxt 郵政劃撥 50328876
-              .don-block
-                p
-                  | 105年立法委員擬參選人
-                  br
-                  span.bname = link_to "呂欣潔", candidate_path(2)
-                  | 政治獻金專戶
-                  br
-                  span.btxt 郵政劃撥 50329385
-              .don-block
-                p
-                  | 105年立法委員擬參選人
-                  br
-                  span.bname = link_to "苗博雅", candidate_path(3)
-                  | 政治獻金專戶
-                  br
-                  span.btxt
-                    | 台北富邦（012）
-                    br
-                    | 731-102-00-7772
-                  br
-              .don-block
-                p
-                  | 105年立法委員擬參選人
-                  br
-                  span.bname = link_to "李晏榕", candidate_path(4)
-                  | 政治獻金專戶
-                  br
-                  span.btxt 郵政劃撥 50328982
-              .ditxt
-                p
-                  | 政治獻金依法可抵稅，捐款後歡迎和黨部聯繫以便開立收據。
-                  br
-                  | 捐贈一萬元以上，依法「必須」開立收據，否則須退回捐款。請與各參選人聯繫以便確認收據資料。
             .col-md-12.editor-block
-              = @article.content.try :html_safe
+              .lltxt
+                | 政治，是為了更好的生活
+                br
+                | 2016小額募款
+              .donation-form
+                form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" 
+                  input name="project_id" type="hidden" value="74" /
+                  input name="reward_id" type="hidden" value="247" /
+                  h3 募款單位:社會民主黨(政治獻金)
+                  h4 請填寫捐款人基本資料
+                  p 所有欄位皆為必填
+                  table border="0" width="920" 
+                    tbody
+                      tr
+                        td align="right" width="220" 
+                          label for="custom_field[130]"  捐款人姓名（公司名稱）：
+                        td width="690" 
+                          input name="custom_field[130]" required="required" type="text" value="" /
+                      tr
+                        td align="right" 
+                          label for="custom_field[131]"  身分證字號（統一編號）：
+                        td
+                          input name="custom_field[131]" required="required" type="text" value="" /
+                      tr
+                        td align="right" 
+                          label for="custom_field[133]"  聯絡電話（行動電話）：
+                        td
+                          input name="custom_field[133]" required="required" type="text" value="" /
+                      tr
+                        td align="right" 
+                          label for="custom_field[134]"  戶籍地址：
+                        td
+                          input.long-input name="custom_field[134]" required="required" type="text" value="" /
+                      tr
+                        td align="right" 
+                          label for="custom_field[135]"  收據寄送地址：
+                        td
+                          input.long-input name="custom_field[135]" required="required" type="text" value="" /
+                      tr
+                        td align="right" 
+                          label for="additional_support"  捐款金額：
+                        td
+                          input name="additional_support" required="required" type="number" value="" /
+                          | 元
+                  h4 捐款人注意事項
+                  p
+                    | 一、捐款人必須為本國國民且年滿 20 歲。
+                    br/
+                    | 二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。
+                    br/
+                    | 三、任何人不得以本人以外之名義捐贈。
+                    br/
+                    | 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+                    | 台幣20萬元。
+                    br/
+                    | 五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+                    
+                    | 其他規定請參閱政治獻金法或監察院網站。
+                  .form-btn
+                    button.fbt01 確認捐款
 
 

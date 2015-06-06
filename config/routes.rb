@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   match "/constructing", to: 'static_pages#constructing', via: 'get'
   match "/sitemap.xml",  to: 'static_pages#sitemap',      format: 'xml', via: 'get'
 
-  resources :candidates, only: [:index, :show]
+  resources :candidates, only: [:index, :show] do
+    member do
+      get :donate
+    end
+  end
   match '/articles/presses',     to: 'articles#presses',      via: 'get', as: 'articles_presses'
   match '/articles/activities',  to: 'articles#activities',   via: 'get', as: 'articles_activities'
   match '/articles/issues',      to: 'articles#issues',       via: 'get', as: 'articles_issues'

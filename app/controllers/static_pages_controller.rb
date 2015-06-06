@@ -18,6 +18,9 @@ class StaticPagesController < ApplicationController
   end
 
   def donate
+    @candidates = Candidate.all
+    puts @candidates[1].name
+    puts @candidates[2].name
     @article = Article.find(1)
     set_meta_tags({
       title: "捐款支持",
