@@ -111,6 +111,14 @@ var ready = function(){
       $playerControlLi.eq((_index + 1) % $playerControlLi.length).click();
     }
   }
+  if ($('#donate-form').length) {
+    $('#submit_button').click(function() {
+      $('#address').val($('#recipient_address').val());
+      $('#name').val($('#recipient_name').val());
+      $('#cellphone').val($('#recipient_cellphone').val());
+      $('#donate-form').submit();
+    });
+  }
 };
 
 $(document).ready(ready);

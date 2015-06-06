@@ -130,18 +130,17 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   <p>社會民主的象徵玫瑰，就是要提醒我們，政治，是為了追求更好的生活。
     <br />讓我們共同努力。</p>',
       donate_image: 'donation01.jpg',
-      donate_form: '<form 
- action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="248">
-                  <h3>募款單位:范雲</h3>
+                  <h3>募款單位：范雲</h3>
                   <h4>請填寫捐款人基本資料</h4>
                   <p>所有欄位皆為必填</p>
                   <table width="920" border="0">
                     <tbody>
                       <tr>
                         <td width="220" align="right"><label for="custom_field[136]">捐款人姓名（公司名稱）：</label></td>
-                        <td width="690"><input name="custom_field[136]" required="required" type="text" value=""></td>
+                        <td width="690"><input id="recipient_name" name="custom_field[136]" required="required" type="text" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[137]">身分證字號（統一編號）：</label></td>
@@ -149,7 +148,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[138]">聯絡電話（行動電話）：</label></td>
-                        <td><input name="custom_field[138]" required="required" type="text" value=""></td>
+                        <td><input id="recipient_cellphone" name="custom_field[138]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[138]">email：</label></td>
+                        <td><input id="email" name="email" required="required" type="email" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[139]">戶籍地址：</label></td>
@@ -157,7 +160,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[140]">收據寄送地址：</label></td>
-                        <td><input name="custom_field[140]" required="required" type="text" value="" class="long-input"></td>
+                        <td><input id="recipient_address" name="custom_field[140]" required="required" type="text" value="" class="long-input"></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="additional_support">捐款金額：</label></td>
@@ -179,10 +182,14 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
 
 其他規定請參閱政治獻金法或監察院網站。</p>
-                    <div class="form-btn">
-                      <button class="fbt01">確認捐款</button>
-                      </div>
-                    </form>'
+<input type="hidden" name="name" id="name" value="">
+<input type="hidden" name="address" id="address" value="">
+<input type="hidden" name="cellphone" id="cellphone" value="">
+
+<div class="form-btn">
+  <button id="submit_button" type ="button" class="fbt01">確認捐款</button>
+  </div>
+</form>'
     }, {
       id: 2,
       name: '呂欣潔',
@@ -218,18 +225,17 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
     在此邀請大家從今天開始認識我、監督我；最後，如果你認同我，請把票投給我，讓我們一起來改變令人無感的腐敗政治，讓人民重新信任國會。</p>
   <p>改變就從今天、現在開始！</p>',
       donate_image: 'donation03.jpg',
-      donate_form: '<form 
- action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="250">
-                  <h3>募款單位: 呂欣潔</h3>
+                  <h3>募款單位：呂欣潔</h3>
                   <h4>請填寫捐款人基本資料</h4>
                   <p>所有欄位皆為必填</p>
                   <table width="920" border="0">
                     <tbody>
                       <tr>
                         <td width="220" align="right"><label for="custom_field[146]">捐款人姓名（公司名稱）：</label></td>
-                        <td width="690"><input name="custom_field[146]" required="required" type="text" value=""></td>
+                        <td width="690"><input id="recipient_name" name="custom_field[146]" required="required" type="text" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[147]">身分證字號（統一編號）：</label></td>
@@ -237,7 +243,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[148]">聯絡電話（行動電話）：</label></td>
-                        <td><input name="custom_field[148]" required="required" type="text" value=""></td>
+                        <td><input id="recipient_cellphone" name="custom_field[148]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[148]">email：</label></td>
+                        <td><input id="email" name="email" required="required" type="email" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[149]">戶籍地址：</label></td>
@@ -245,7 +255,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[150]">收據寄送地址：</label></td>
-                        <td><input name="custom_field[150]" required="required" type="text" value="" class="long-input"></td>
+                        <td><input id="recipient_address" name="custom_field[150]" required="required" type="text" value="" class="long-input"></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="additional_support">捐款金額：</label></td>
@@ -267,6 +277,9 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
 
 其他規定請參閱政治獻金法或監察院網站。</p>
+<input type="hidden" name="name" id="name" value="">
+<input type="hidden" name="address" id="address" value="">
+<input type="hidden" name="cellphone" id="cellphone" value="">
                     <div class="form-btn">
                       <button class="fbt01">確認捐款</button>
                       </div>
@@ -311,18 +324,17 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
     <br />請你和我，一起行動，讓三十年之後，我們的下一代不再失落。</p>
   <p>讓我們共同努力。</p>',
       donate_image: 'donation02.jpg',
-      donate_form: '<form 
- action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="249">
-                  <h3>募款單位:苗博雅</h3>
+                  <h3>募款單位：苗博雅</h3>
                   <h4>請填寫捐款人基本資料</h4>
                   <p>所有欄位皆為必填</p>
                   <table width="920" border="0">
                     <tbody>
                       <tr>
                         <td width="220" align="right"><label for="custom_field[141]">捐款人姓名（公司名稱）：</label></td>
-                        <td width="690"><input name="custom_field[141]" required="required" type="text" value=""></td>
+                        <td width="690"><input id="recipient_name" name="custom_field[141]" required="required" type="text" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[142]">身分證字號（統一編號）：</label></td>
@@ -330,7 +342,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[143]">聯絡電話（行動電話）：</label></td>
-                        <td><input name="custom_field[143]" required="required" type="text" value=""></td>
+                        <td><input id="recipient_cellphone" name="custom_field[143]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[143]">email：</label></td>
+                        <td><input id="email" name="email" required="required" type="email" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[144]">戶籍地址：</label></td>
@@ -338,7 +354,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[145]">收據寄送地址：</label></td>
-                        <td><input name="custom_field[145]" required="required" type="text" value="" class="long-input"></td>
+                        <td><input id="recipient_address" name="custom_field[145]" required="required" type="text" value="" class="long-input"></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="additional_support">捐款金額：</label></td>
@@ -360,6 +376,9 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
 
 其他規定請參閱政治獻金法或監察院網站。</p>
+<input type="hidden" name="name" id="name" value="">
+<input type="hidden" name="address" id="address" value="">
+<input type="hidden" name="cellphone" id="cellphone" value="">
                     <div class="form-btn">
                       <button class="fbt01">確認捐款</button>
                       </div>
@@ -395,19 +414,18 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   <p>
     如果你/妳相信「人，不分性別、性傾向、性別認同與性別氣質，應該一律平等」，如果你/妳認為「人，不分出身地域、經濟條件、社會階級，應該一律平等」，請支持我進入國會，扭轉台灣既有的框架，創造一個更平等、更幸福的社會。</p>',
       donate_image: 'donation04.jpg',
-      donate_form: '<form 
- action="http://sdparty.backme.tw:80/cashflow/checkout" method="get">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="251">
   <h4>捐款給李晏榕</h4>
-                  <h3>募款單位: 李晏榕</h3>
+                  <h3>募款單位：李晏榕</h3>
                   <h4>請填寫捐款人基本資料</h4>
                   <p>所有欄位皆為必填</p>
                   <table width="920" border="0">
                     <tbody>
                       <tr>
                         <td width="220" align="right"><label for="custom_field[151]">捐款人姓名（公司名稱）：</label></td>
-                        <td width="690"><input name="custom_field[151]" required="required" type="text" value=""></td>
+                        <td width="690"><input id="recipient_name" name="custom_field[151]" required="required" type="text" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[152]">身分證字號（統一編號）：</label></td>
@@ -415,7 +433,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[153]">聯絡電話（行動電話）：</label></td>
-                        <td><input name="custom_field[153]" required="required" type="text" value=""></td>
+                        <td><input id="recipient_cellphone" name="custom_field[153]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[153]">email：</label></td>
+                        <td><input id="email" name="email" required="required" type="email" value=""></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[154]">戶籍地址：</label></td>
@@ -423,7 +445,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       </tr>
                       <tr>
                         <td align="right"><label for="custom_field[155]">收據寄送地址：</label></td>
-                        <td><input name="custom_field[155]" required="required" type="text" value="" class="long-input"></td>
+                        <td><input id="recipient_address" name="custom_field[155]" required="required" type="text" value="" class="long-input"></td>
                       </tr>
                       <tr>
                         <td align="right"><label for="additional_support">捐款金額：</label></td>
@@ -445,6 +467,9 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
 
 其他規定請參閱政治獻金法或監察院網站。</p>
+<input type="hidden" name="name" id="name" value="">
+<input type="hidden" name="address" id="address" value="">
+<input type="hidden" name="cellphone" id="cellphone" value="">
                     <div class="form-btn">
                       <button class="fbt01">確認捐款</button>
                       </div>

@@ -14,7 +14,7 @@ section.main-container
           #abgneBlock
             ul.list
               li
-                = link_to image_tag('donation05.jpg'), donate_path
+                = link_to image_tag('donation000.jpg'), donate_path
               - @candidates.each do |c|
                 li
                   = link_to image_tag(c.donate_image), donate_candidate_path(c)
@@ -25,29 +25,34 @@ section.main-container
                 br
                 | 2016小額募款
               .donation-form
-                form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" 
+                form#donate-form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" 
                   input name="project_id" type="hidden" value="74" /
                   input name="reward_id" type="hidden" value="247" /
-                  h3 募款單位:社會民主黨(政治獻金)
+                  h3 募款單位：社會民主黨（政治獻金）
                   h4 請填寫捐款人基本資料
                   p 所有欄位皆為必填
                   table border="0" width="920" 
                     tbody
                       tr
                         td align="right" width="220" 
-                          label for="custom_field[130]"  捐款人姓名（公司名稱）：
+                          label for="custom_field[130]" 捐款人姓名（公司名稱）：
                         td width="690" 
-                          input name="custom_field[130]" required="required" type="text" value="" /
+                          input#recipient_name name="custom_field[130]" required="required" type="text" value="" /
                       tr
                         td align="right" 
-                          label for="custom_field[131]"  身分證字號（統一編號）：
+                          label for="custom_field[131]" 身分證字號（統一編號）：
                         td
                           input name="custom_field[131]" required="required" type="text" value="" /
                       tr
                         td align="right" 
-                          label for="custom_field[133]"  聯絡電話（行動電話）：
+                          label for="custom_field[133]" 聯絡電話（行動電話）：
                         td
-                          input name="custom_field[133]" required="required" type="text" value="" /
+                          input#recipient_cellphone name="custom_field[133]" required="required" type="text" value="" /
+                      tr
+                        td align="right" 
+                          label for="custom_field[133]"  email：
+                        td
+                          input#email name="email" required="required" type="email" value="" /
                       tr
                         td align="right" 
                           label for="custom_field[134]"  戶籍地址：
@@ -57,7 +62,7 @@ section.main-container
                         td align="right" 
                           label for="custom_field[135]"  收據寄送地址：
                         td
-                          input.long-input name="custom_field[135]" required="required" type="text" value="" /
+                          input#recipient_address.long-input name="custom_field[135]" required="required" type="text" value="" /
                       tr
                         td align="right" 
                           label for="additional_support"  捐款金額：
@@ -78,6 +83,10 @@ section.main-container
                     | 五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
                     
                     | 其他規定請參閱政治獻金法或監察院網站。
+                  input#name name="name" type="hidden" value=""
+                  input#address name="address" type="hidden" value=""
+                  input#cellphone name="cellphone" type="hidden" value=""
+
                   .form-btn
                     button.fbt01 確認捐款
 
