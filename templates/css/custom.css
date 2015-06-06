@@ -708,9 +708,9 @@ strong.fz{
 #abgneBlock ul.playerControl li:nth-child(2) div{
 	background:#e70036;}
 #abgneBlock ul.playerControl li:nth-child(3) div{
-	background:#00aeea;}
-#abgneBlock ul.playerControl li:nth-child(4) div{
 	background:#fdd001;}
+#abgneBlock ul.playerControl li:nth-child(4) div{
+	background:#00aeea;}
 #abgneBlock ul.playerControl li:nth-child(5) div{
 	background:#e62f8b;}
 #abgneBlock ul.playerControl li:nth-child(1) div{
@@ -724,9 +724,9 @@ strong.fz{
 #abgneBlock ul.playerControl li:nth-child(2) span:after{
 	content: "大安 范雲";}
 #abgneBlock ul.playerControl li:nth-child(3) span:after{
-	content: "中正文山 苗博雅";}
-#abgneBlock ul.playerControl li:nth-child(4) span:after{
 	content: "信義南松山 呂欣潔";}
+#abgneBlock ul.playerControl li:nth-child(4) span:after{
+	content: "中正文山 苗博雅";}
 #abgneBlock ul.playerControl li:nth-child(5) span:after{
 	content: "中山北松山 李晏榕";}
 #abgneBlock ul.playerControl li:nth-child(1) span:after{
