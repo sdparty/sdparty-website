@@ -187,7 +187,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 <input type="hidden" name="cellphone" id="cellphone" value="">
 
 <div class="form-btn">
-  <button id="submit_button" type ="button" class="fbt01">確認捐款</button>
+  <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
   </div>
 </form>'
     }, {
@@ -281,7 +281,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
                     <div class="form-btn">
-                      <button class="fbt01">確認捐款</button>
+                      <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
                     </form>'
     }, {
@@ -380,7 +380,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
                     <div class="form-btn">
-                      <button class="fbt01">確認捐款</button>
+                      <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
                     </form>'
     }, {
@@ -471,7 +471,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
                     <div class="form-btn">
-                      <button class="fbt01">確認捐款</button>
+                      <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
                     </form>'
     }

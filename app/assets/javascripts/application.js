@@ -112,7 +112,7 @@ var ready = function(){
     }
   }
   if ($('#donate-form').length) {
-    $('#submit_button').click(function() {
+    $('#donate_submit').click(function() {
       $('#address').val($('#recipient_address').val());
       $('#name').val($('#recipient_name').val());
       $('#cellphone').val($('#recipient_cellphone').val());
