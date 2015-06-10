@@ -3,7 +3,57 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all.page params[:page]
+    if params[:format] == "json"
+      unless params[:issue].blank?
+        @issue = Issue.where(name: params[:issue]).first
+        @issue = nil unless @issue
+      end
+      if @issue
+        if params[:query]
+          @articles = @issue.articles.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = @issue.articles.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = @issue.articles.published.count
+        end
+      else
+        if params[:query]
+          @articles = Article.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.published.ransack({title_or_content_cont: params[:query]}).result(distinct: true)
+            .published.count
+        else
+          @articles = Article.published.offset(params[:offset]).limit(params[:limit])
+          @articles_count = Article.published.count
+        end
+      end
+    else
+      unless params[:i].blank?
+        @issue = Issue.find(params[:i])
+        @issue = nil unless @issue
+      end
+      if @issue
+        @articles = @issue.articles.published.page params[:page]
+      else
+        @articles = Article.published.page params[:page]
+      end
+      @issues = Article.published.get_issues
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => {
+          status: "success",
+          articles: JSON.parse(
+            @articles.to_json({include: [:issues], except: [:published]})
+          ),
+          count: @articles_count
+        },
+        callback: params[:callback]
+      }
+    end
   end
 
   # GET /articles/1
