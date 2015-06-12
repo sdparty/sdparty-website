@@ -56,7 +56,7 @@ if FIRST_TIME
         title: '范雲',
         image: 'banner01.png',
         button: '幫助范雲',
-        link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&amp;reset=1',
+        link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&reset=1',
         published: true
       }, {
         id: 3, 
@@ -64,7 +64,7 @@ if FIRST_TIME
         title: '呂欣潔',
         image: 'banner02.png',
         button: '幫助呂欣潔',
-        link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&amp;reset=1',
+        link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&reset=1',
         published: true
       }, {
         id: 4, 
@@ -72,7 +72,7 @@ if FIRST_TIME
         title: '苗博雅',
         image: 'banner03.png',
         button: '幫助苗博雅',
-        link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&amp;reset=1',
+        link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&reset=1',
         published: true
       }
     ]
@@ -105,7 +105,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       image: 'candidate01.jpg',
       help_image: 'help01.png',
       fb_link: 'https://www.facebook.com/yun.fan1',
-      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&amp;reset=1',
+      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=9&reset=1',
       description: '<p>
     <span class="bww">對</span>我而言，這是很特別的一刻。作為一個沒有家世背景，沒有大黨奧援的新興政黨候選人，在這裡宣布參選，就已經證明，台灣是一個令人驕傲的民主國度。</p>
   <p>
@@ -199,7 +199,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       image: 'candidate02.jpg',
       help_image: 'help02.png',
       fb_link: 'https://www.facebook.com/JenniferLuTw',
-      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&amp;reset=1',
+      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=14&reset=1',
       description: '<h3 class="sub-title-01">打拼，在來不及之前</h3>
   <p>
     <span class="bww">許</span>人認識我，是從我的同志運動身分和工作認識我。我從 19 歲開始，投身同志運動，至今已邁入十三個年頭。我的大半人生，多在思考怎麼讓全台灣的同志過得更好，怎麼讓這個社會更認識同志、破除汙名與歧視，讓每個同志和他們的家人相信，我們都值得更好的愛、更好的生活。
@@ -293,7 +293,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       image: 'candidate03.jpg',
       help_image: 'help03.png',
       fb_link: 'https://www.facebook.com/miaopoya',
-      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&amp;reset=1',
+      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=15&reset=1',
       description: '<h3 class="sub-title-01">台灣，已經沒有時間等我們變老</h3>
   <p>「<span class="bww">為</span>什麼你要出來選立委？」
     <br />是每個人聽到我要選舉時，第一個提出的問題。
@@ -392,7 +392,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       image: 'candidate04.jpg',
       help_image: 'help04.png',
       fb_link: '',
-      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=17&amp;reset=1',
+      help_link: 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=17&reset=1',
       description: '<h3 class="sub-title-01">曾幾何時，政治離我何其遙遠，卻又如此接近。</h3>
   <p>
     <span class="bww">我</span>來自一個富裕家庭，從小衣食無虞，學業表現優秀，大學畢業後順利考取專業證照，工作了幾年後出國深造，回國後與好友共同創業，目前是一家小型律師事務所的合夥人。如果以一個流行的術語來形容，我就是所謂的「人生勝利組」。</p>
