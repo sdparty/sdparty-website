@@ -474,6 +474,113 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                       <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
                     </form>'
+    }, {
+      id: 5,
+      name: '陳尚志',
+      published: true,
+      constituency: '內湖南港區',
+      avatar: 'people05.jpg',
+      image: 'candidate05.jpg',
+      help_image: 'help05.jpg',
+      fb_link: 'https://www.facebook.com/SCCSDP',
+      help_link: 'https://docs.google.com/forms/d/10hgEq_VfE8ALqluAVHGiWRRUTZzoz9iMiZv1LpNZW_k/viewform?c=0&w=1',
+      description: '<p>「<span class="bww">台</span>灣當前的所有問題，追根究底，就是「政治財團化」。
+    <br>過去，輪流執政的兩大政黨，大多順著財團的意思來制訂政策、治理國家；可以想見未來，也會是如此。這是台灣民主化二十年來最大的悲劇：政治上看起來好像更自由，但在社會經濟上卻越來越不平等。如果平等是民主政治的重要目標之一，那麼台灣這些年來一定是走錯路線了。</p>
+
+  <h3 class="sub-title-01">舊政治，忽視人民生活</h3>
+  <p>
+    工作、幼托、老人照顧，是我們每天要面對的生活。</br>
+我們努力工作，但薪水就是不夠用。不想失業，只好做個常常加班的「窮忙族」。老闆違法壓榨，政府也不曾幫助我們。反而縱容財團炒作高房價，讓我們買不起房子；即使勉強買間市郊公寓，也得縮衣節食、加班兼差，來還高房貸。付不起的幼兒托育費用，讓許多人不敢生小孩。照顧工作家庭化，讓我們為長輩親屬的病痛與安養，日日奔波與煩憂。不公平的退休制度，更讓我們對自己的老年生活，感到不安。這些才是我們每天要面對的生活，才是政治應優先處理的事，但兩大黨又做了什麼？
+  </p>
+  <p>
+    他們說，財政困窘，無力支付社會福利花費；但我們卻看到，政府有錢幫財團減稅、補貼、徵地、蓋園區。他們說，政府不宜干預市場，薪資、工時讓老闆們決定就好。他們還說，打房會傷害經濟，再貴的房子都有人買。他們說，使用者付費，自己的生活自己救。他們更說，現在年輕人都不夠努力，低薪是應該的。這些說法我都無法接受。這些思維就是「舊政治」！
+  </p>
+  <h3 class="sub-title-01">鬥世代，拚出新政治</h3>
+  <p>在這社會日愈不平等的過程中，受害最深的是當前青年世代。我在大學教書，親眼見證年輕人是這麼的優秀、努力、和成長學習。但沈重的高等教育費用和學貸，可能就壓得一半人喘不過氣來。台灣的年輕人正被迫面對「工作貧窮」的威脅。讓一整個世代的優秀青年，承擔整個台灣社會的不平等和崩壞。我無法接受。<p>
+
+社會民主黨的組成，就是要和青年世代肩並肩站在一起，共同面對、解決台灣的不平等問題。什麼是新政治？新政治就是「分配政治」。是以青年世代為核心的政治、以受薪平民為立場的政治、以社會民主為價值的政治。我們要用集體的、草根的、公民的、組織的力量，促成「財團加稅、平民加薪」、「老人小孩有照顧、全民退休有年金」。這就是鬥世代！讓我們「團結鬥陣抗財團」。<p>
+
+內湖、南港，歷經公民罷免運動的洗禮、是新興的民主聖地，為了「淘汰國民黨、監督民進黨」，追求新政治的社會民主黨不會缺席。<p>
+
+在此，我宣佈願代表社會民主黨在港湖區參選立委，組織草根力量、爭取選民認同，為社會平等和新政治貢獻一己之力。我從20歲就積極參與公共事務，至今從未停止。這一路從事政治工作的過程中，我始終堅持做對的事，這個信念從未改變。從小到大，我的朋友都覺得我很固執，但這就是我！<p>
+
+我是陳尚志，我挺新政治！
+</p>
+
+陳尚志簡歷<br>
+現職：<br>
+國立中正大學政治學系助理教授<br>
+高等教育產業工會理事<br>
+人民作主教育基金會董事<br>
+學歷：<br>
+美國紐約雪城大學政治學博士<br>
+國立清華大學社會學碩士<br>
+國立中興法商學院法學士<br>
+經歷：<br>
+台灣守護民主平台協會理事<br>
+慈林教育基金會台北辦公室主任<br>
+核四公投促進會執行秘書<br>',
+      donate_image: 'donation05.jpg',
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
+  <input type="hidden" name="project_id" value="74">
+  <input type="hidden" name="reward_id" value="251">
+  <h4>捐款給陳尚志</h4>
+                  <h3>募款單位：陳尚志</h3>
+                  <h4>請填寫捐款人基本資料</h4>
+                  <p>所有欄位皆為必填</p>
+                  <table width="920" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="220" align="right"><label for="custom_field[254]">捐款人姓名（公司名稱）：</label></td>
+                        <td width="690"><input id="recipient_name" name="custom_field[151]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[253]">身分證字號（統一編號）：</label></td>
+                        <td><input name="custom_field[152]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[252]">聯絡電話（行動電話）：</label></td>
+                        <td><input id="recipient_cellphone" name="custom_field[153]" required="required" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[255]">email：</label></td>
+                        <td><input id="email" name="email" required="required" type="email" value=""></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[251]">戶籍地址：</label></td>
+                        <td><input name="custom_field[154]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="custom_field[250]">收據寄送地址：</label></td>
+                        <td><input id="recipient_address" name="custom_field[155]" required="required" type="text" value="" class="long-input"></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><label for="additional_support">捐款金額：</label></td>
+                        <td><input name="additional_support" required="required" type="number" value="">
+                          元</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>捐款人注意事項</h4>
+                  <p>一、捐款人必須為本國國民且年滿 20 歲。<br>
+
+二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。<br>
+
+三、任何人不得以本人以外之名義捐贈。<br>
+
+四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+台幣20萬元。<br>
+
+五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+
+其他規定請參閱政治獻金法或監察院網站。</p>
+<input type="hidden" name="name" id="name" value="">
+<input type="hidden" name="address" id="address" value="">
+<input type="hidden" name="cellphone" id="cellphone" value="">
+                    <div class="form-btn">
+                      <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
+                      </div>
+                    </form>'
     }
   ]
 

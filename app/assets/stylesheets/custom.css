@@ -686,7 +686,7 @@ strong.fz{
 }
 #abgneBlock ul.playerControl li {
 	float: left;
-	width: 184px;
+	width: 153.33px;
 	height: 20px;
 	cursor: pointer;
 	margin: 0px;
@@ -715,6 +715,8 @@ strong.fz{
 	background:#e62f8b;}
 #abgneBlock ul.playerControl li:nth-child(1) div{
 	background:#00921a;}
+#abgneBlock ul.playerControl li:nth-child(6) div{
+  background: #952b8d;}
 #abgneBlock ul.playerControl li.current { 
 	background:#e7e7e7;
 	color:#969594;
@@ -729,6 +731,8 @@ strong.fz{
 	content: "中正文山 苗博雅";}
 #abgneBlock ul.playerControl li:nth-child(5) span:after{
 	content: "中山北松山 李晏榕";}
+#abgneBlock ul.playerControl li:nth-child(6) span:after{
+	content: "內湖南港 陳尚志";}
 #abgneBlock ul.playerControl li:nth-child(1) span:after{
 	content: "社會民主黨";}
 
