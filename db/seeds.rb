@@ -130,7 +130,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   <p>社會民主的象徵玫瑰，就是要提醒我們，政治，是為了追求更好的生活。
     <br />讓我們共同努力。</p>',
       donate_image: 'donation01.jpg',
-      donate_form: '<form action="https://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="248">
                   <h3>募款單位：范雲</h3>
@@ -225,7 +225,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
     在此邀請大家從今天開始認識我、監督我；最後，如果你認同我，請把票投給我，讓我們一起來改變令人無感的腐敗政治，讓人民重新信任國會。</p>
   <p>改變就從今天、現在開始！</p>',
       donate_image: 'donation03.jpg',
-      donate_form: '<form action="https://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="250">
                   <h3>募款單位：呂欣潔</h3>
@@ -324,7 +324,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
     <br />請你和我，一起行動，讓三十年之後，我們的下一代不再失落。</p>
   <p>讓我們共同努力。</p>',
       donate_image: 'donation02.jpg',
-      donate_form: '<form action="https://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="249">
                   <h3>募款單位：苗博雅</h3>
@@ -414,7 +414,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   <p>
     如果你/妳相信「人，不分性別、性傾向、性別認同與性別氣質，應該一律平等」，如果你/妳認為「人，不分出身地域、經濟條件、社會階級，應該一律平等」，請支持我進入國會，扭轉台灣既有的框架，創造一個更平等、更幸福的社會。</p>',
       donate_image: 'donation04.jpg',
-      donate_form: '<form action="https://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="251">
   <h4>捐款給李晏榕</h4>
@@ -521,7 +521,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 慈林教育基金會台北辦公室主任<br>
 核四公投促進會執行秘書<br>',
       donate_image: 'donation05.jpg',
-      donate_form: '<form action="https://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
+      donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
   <input type="hidden" name="reward_id" value="251">
   <h4>捐款給陳尚志</h4>
