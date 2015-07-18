@@ -523,7 +523,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       donate_image: 'donation05.jpg',
       donate_form: '<form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" id="donate-form">
   <input type="hidden" name="project_id" value="74">
-  <input type="hidden" name="reward_id" value="251">
+  <input type="hidden" name="reward_id" value="314">
   <h4>捐款給陳尚志</h4>
                   <h3>募款單位：陳尚志</h3>
                   <h4>請填寫捐款人基本資料</h4>
