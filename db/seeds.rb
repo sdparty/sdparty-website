@@ -183,7 +183,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 
 其他規定請參閱政治獻金法或監察院網站。<br>
 
-提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+提醒您：可自行至<a target="_blank" href="http://sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
 
 </p>
 <input type="hidden" name="name" id="name" value="">
@@ -282,7 +282,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 
 其他規定請參閱政治獻金法或監察院網站。<br>
 
-提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+提醒您：可自行至<a target="_blank" href="http://sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
 
 </p>
 <input type="hidden" name="name" id="name" value="">
@@ -385,7 +385,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 
 其他規定請參閱政治獻金法或監察院網站。<br>
 
-提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+提醒您：可自行至<a target="_blank" href="http://sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
 
 </p>
 <input type="hidden" name="name" id="name" value="">
@@ -480,7 +480,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 
 其他規定請參閱政治獻金法或監察院網站。<br>
 
-提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+提醒您：可自行至<a target="_blank" href="http://sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
 
 </p>
 <input type="hidden" name="name" id="name" value="">
@@ -591,7 +591,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 
 其他規定請參閱政治獻金法或監察院網站。<br>
 
-提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+提醒您：可自行至<a target="_blank" href="http://sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
 
 </p>
 <input type="hidden" name="name" id="name" value="">
