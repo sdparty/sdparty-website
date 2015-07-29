@@ -179,9 +179,13 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
 台幣20萬元。<br>
 
-五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+五、超過10萬元的現金捐贈，需以支票或經金融機構匯款；個人捐贈一萬元以上者，不得以匿名捐贈。<br>
 
-其他規定請參閱政治獻金法或監察院網站。</p>
+其他規定請參閱政治獻金法或監察院網站。<br>
+
+提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+
+</p>
 <input type="hidden" name="name" id="name" value="">
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
@@ -274,9 +278,13 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
 台幣20萬元。<br>
 
-五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+五、超過10萬元的現金捐贈，需以支票或經金融機構匯款；個人捐贈一萬元以上者，不得以匿名捐贈。<br>
 
-其他規定請參閱政治獻金法或監察院網站。</p>
+其他規定請參閱政治獻金法或監察院網站。<br>
+
+提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+
+</p>
 <input type="hidden" name="name" id="name" value="">
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
@@ -373,9 +381,13 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
 台幣20萬元。<br>
 
-五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+五、超過10萬元的現金捐贈，需以支票或經金融機構匯款；個人捐贈一萬元以上者，不得以匿名捐贈。<br>
 
-其他規定請參閱政治獻金法或監察院網站。</p>
+其他規定請參閱政治獻金法或監察院網站。<br>
+
+提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+
+</p>
 <input type="hidden" name="name" id="name" value="">
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
@@ -464,9 +476,13 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
 台幣20萬元。<br>
 
-五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+五、超過10萬元的現金捐贈，需以支票或經金融機構匯款；個人捐贈一萬元以上者，不得以匿名捐贈。<br>
 
-其他規定請參閱政治獻金法或監察院網站。</p>
+其他規定請參閱政治獻金法或監察院網站。<br>
+
+提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+
+</p>
 <input type="hidden" name="name" id="name" value="">
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
@@ -571,9 +587,13 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
 台幣20萬元。<br>
 
-五、於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額20%，且上限為新台幣20萬元。
+五、超過10萬元的現金捐贈，需以支票或經金融機構匯款；個人捐贈一萬元以上者，不得以匿名捐贈。<br>
 
-其他規定請參閱政治獻金法或監察院網站。</p>
+其他規定請參閱政治獻金法或監察院網站。<br>
+
+提醒您：可自行至<a target="_blank" href="http://www.sunshine.cy.gov.tw">陽光法案網站</a>檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信<a href="mailto:contact@sdparty.tw">contact@sdparty.tw</a>洽詢，以保障您的權益。
+
+</p>
 <input type="hidden" name="name" id="name" value="">
 <input type="hidden" name="address" id="address" value="">
 <input type="hidden" name="cellphone" id="cellphone" value="">
