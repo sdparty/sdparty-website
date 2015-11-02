@@ -48,6 +48,7 @@ gem 'chosen-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+gem 'chosen-rails'
 gem 'unicode-display_width'
 gem 'jquery-datetimepicker-rails'
 # gem "font-awesome-rails"
@@ -59,6 +60,10 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 # gem "animate-rails"
 # gem 'google-webfonts'
+gem 'lograge'
+gem 'rollbar', '~> 2.5.1'
+gem 'oj', '~> 2.12.14'
+gem "skylight"
 
 source 'https://rails-assets.org' do
   # gem 'rails-assets-jquery'
