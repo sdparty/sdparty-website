@@ -55,6 +55,7 @@ File Description: Place here your custom CSS styles
 	border-left:1px solid #dbdbdb;
 	border-right:1px solid #dbdbdb;}
 
+/*候選人*/
 
 .candidates h2{
 	text-align:center;
@@ -63,9 +64,16 @@ File Description: Place here your custom CSS styles
 	padding-bottom:30px;
 	font-weight:bold;
 	}
+
 .candidates .container{
 	width:75%;
 	}
+
+.candidates .title{
+	max-height:60px;
+	width: auto;
+	}
+
 .candidates .image-box{
 	background:#ccc;
 	margin:0 0 30px 0;
@@ -98,6 +106,32 @@ text-shadow:1px 1px 5px #000;}
 	width:20%;}
 .candidates .col-md-2 img{
 	width:100%;}
+
+.candidates .job_list {
+list-style:none;
+margin-left: -50px;
+font-size: 15px;
+line-height: 1.6em;
+margin-top: 20px;
+margin-bottom: 0px;
+}
+
+.candidates .info {
+	border-radius:6px; 
+	background-color: #f3d922;
+	height: auto;
+	padding: 20px;
+	color: #3f3a39;
+	font-size: 14px;
+	line-height: 1.6em;
+	min-height: 233px
+	line-height: 233px;
+}
+
+/*政見*/
+
+
+
 .politics-info-together{
 	list-style:none;
 	padding:0px;
@@ -458,10 +492,21 @@ a.overlay{
 	right:0px;
 	top:0px;
 	margin-right:10%;}
+
 .candidate-img img{
-	width:100%;}
+	width:100%;
+	border-top-left-radius: 12px;
+    border-top-right-radius: 12px;}
+
+.candidate-img img:hover{
+	opacity: 0.8;
+	}
+
 .candidate-img{
-	margin:35px 0;}
+	margin:35px 0 0 0;}
+
+.can-info { background:#efefef;margin:0 0 30px 0;padding-bottom:15px;margin-bottom:25px;border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;padding-left: 15px;}
+
 .help-img{
 	margin:55px 0;}
 .editor-block img{
@@ -891,4 +936,6 @@ strong.fz{
 	width:auto;}
 	
 }
+
+
 
