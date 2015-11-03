@@ -8,5 +8,10 @@ FactoryGirl.define do
     help_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }
     published true
+    sequence(:donate_form) { |n| "Candidate donate form #{n}" }
+    sequence(:donate_image) { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }
+    sequence(:job) { |n| "Candidate job #{n}" }
+    sequence(:education) { |n| "Candidate education #{n}" }
+    sequence(:experience) { |n| "Candidate experience #{n}" }
   end
 end

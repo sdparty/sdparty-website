@@ -193,7 +193,10 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
 <div class="form-btn">
   <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
   </div>
-</form>'
+</form>',
+      job: '台大社會系副教授<br>社民黨召集人',
+      education: '耶魯大學社會學博士',
+      experience: '婦女新知基金會董事長<br>三一八街頭民主教室召集人<br>野百合學運總指揮'
     }, {
       id: 2,
       name: '呂欣潔',
@@ -291,7 +294,10 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                     <div class="form-btn">
                       <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
-                    </form>'
+                    </form>',
+      job: '同志諮詢熱線文宣部主任<br>國際特赦組織台灣分會理事',
+      education: '台大社工系<br>雪梨大學政策碩士',
+      experience: '民進黨婦女部幹事‭<br>同志大遊行總召<br>台大社科院學生代表<br>聯合國人權倡議團亞洲代表'
     }, {
       id: 3,
       name: '苗博雅',
@@ -394,7 +400,10 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                     <div class="form-btn">
                       <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
-                    </form>'
+                    </form>',
+      job: '社民黨全國委員',
+      education: '台大法律系財經法學組<br>北一女中',
+      experience: '廢死聯盟法務主任'
     }, {
       id: 4,
       name: '李晏榕',
@@ -489,7 +498,10 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                     <div class="form-btn">
                       <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
-                    </form>'
+                    </form>',
+      job: '德臻法律事務所合夥律師<br>婦女新知基金會常務董事',
+      education: '法國高等社會科學院、第十大學雙碩士<br>台大法律系雙修社工系<br>台灣、法國律師高考及格',
+      experience: '離婚、家暴、性侵案件律師'
     }, {
       id: 5,
       name: '陳尚志',
@@ -500,7 +512,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       help_image: 'help05.jpg',
       fb_link: 'https://www.facebook.com/SCCSDP',
       help_link: 'https://docs.google.com/forms/d/10hgEq_VfE8ALqluAVHGiWRRUTZzoz9iMiZv1LpNZW_k/viewform?c=0&w=1',
-      description: '<p>「<span class="bww">台</span>灣當前的所有問題，追根究底，就是「政治財團化」。
+      description: '<p><span class="bww">台</span>灣當前的所有問題，追根究底，就是「政治財團化」。
     <br>過去，輪流執政的兩大政黨，大多順著財團的意思來制訂政策、治理國家；可以想見未來，也會是如此。這是台灣民主化二十年來最大的悲劇：政治上看起來好像更自由，但在社會經濟上卻越來越不平等。如果平等是民主政治的重要目標之一，那麼台灣這些年來一定是走錯路線了。</p>
 
   <h3 class="sub-title-01">舊政治，忽視人民生活</h3>
@@ -600,7 +612,10 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
                     <div class="form-btn">
                       <button id="donate_submit" type ="button" class="fbt01">確認捐款</button>
                       </div>
-                    </form>'
+                    </form>',
+      job: '國立中正大學政治系副教授',
+      education: '美國雪城大學政治學博士<br>國立清華大學社會學碩士',
+      experience: '林義雄秘書<br>台灣高等教育產業工會理事<br>「核四公投，千里苦行」執行委員<br>野百合學運決策小組'
     }
   ]
 

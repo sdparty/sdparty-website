@@ -19,9 +19,24 @@ describe "Candidate" do
     end
   end
 
+  describe "#proportional" do
+    it "success" do
+      2.times { FactoryGirl.create(:candidate) }
+      get "/candidates/proportional"
+      expect(response).to be_success
+    end
+  end
+
   describe "#show" do
     it "success" do
       get "/candidates/#{candidate.id}"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#donate" do
+    it "success" do
+      get "/candidates/#{candidate.id}/donate"
       expect(response).to be_success
     end
   end

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { omniauth_callbacks: "admin/omniauth_callbacks", sessions: "admin/sessions" }
-  root 'static_pages#home'
+  root  'static_pages#home'
   match '/about',        to: 'static_pages#about',        via: 'get'
   match '/donate',       to: 'static_pages#donate',       via: 'get'
+  match '/fundraising',  to: 'static_pages#fundraising',  via: 'get'
   match '/join',         to: 'static_pages#join',         via: 'get'
+  match '/party_vote',   to: 'static_pages#party_vote',   via: 'get'
   match "/programs",     to: 'static_pages#programs',     via: 'get'
   match "/programs/1",   to: 'static_pages#programs_1',   via: 'get'
   match "/programs/2",   to: 'static_pages#programs_2',   via: 'get'
@@ -23,6 +25,9 @@ Rails.application.routes.draw do
   resources :candidates, only: [:index, :show] do
     member do
       get :donate
+    end
+    collection do
+      get :proportional
     end
   end
   match '/articles/presses',     to: 'articles#presses',      via: 'get', as: 'articles_presses'

@@ -33,6 +33,20 @@ describe "Static pages" do
     end
   end
 
+  describe "#party_vote" do
+    it "success" do
+      get "/party_vote"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#fundraising" do
+    it "success" do
+      get "/fundraising"
+      expect(response).to be_success
+    end
+  end
+
   describe "#constructing" do
     it "success" do
       get "/constructing"

@@ -9,6 +9,16 @@ section.main-container
             .col-md-12.candidate-sblock
               .candidate-img
                 = link_to image_tag(@candidate.image, alt: ''), @candidate.fb_link, target: '_blank'
+              .row.can-info
+                .col-md-4
+                  h3 現職
+                  = @candidate.job.html_safe
+                .col-md-4
+                  h3 學歷
+                  = @candidate.education.html_safe
+                .col-md-4
+                  h3 經歷
+                  = @candidate.experience.html_safe
               = @candidate.description.html_safe
               p.help-img
                 = link_to image_tag(@candidate.help_image, alt: ''), @candidate.help_link, target: '_blank'
@@ -24,3 +34,27 @@ section.main-container
             = link_to image_tag('icon-big-05.png', alt: ''), policies_5_path
             = link_to image_tag('icon-big-06.png', alt: ''), policies_6_path
       = link_to '更多候選人', candidates_path, class: 'inner-link'
+
+
+
+.row
+  .col-md-12.candidate-sblock
+    .candidate-img
+      a href="https://www.facebook.com/yun.fan1" target="_blank" 
+        img alt="" src="images/candidate01.jpg" /
+    .row.can-info
+      .col-md-4
+        h3 現職
+        | 台大社會系副教授
+        br/
+        | 社民黨召集人
+      .col-md-4
+        h3 學歷
+        | 耶魯大學社會學博士
+      .col-md-4
+        h3 經歷
+        | 婦女新知基金會董事長
+        br/
+        | 三一八街頭民主教室召集人
+        br>/
+        | 野百合學運總指揮

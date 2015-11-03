@@ -19,8 +19,6 @@ class StaticPagesController < ApplicationController
 
   def donate
     @candidates = Candidate.all
-    puts @candidates[1].name
-    puts @candidates[2].name
     @article = Article.find(1)
     set_meta_tags({
       title: "捐款支持",
@@ -30,6 +28,19 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "捐款支持",
         description: "立刻捐款支持社會民主黨，幫助我們一起打造台灣的新政治！"
+      }
+    })
+  end
+
+  def fundraising
+    set_meta_tags({
+      title: "小額捐款",
+      description: "小額捐款支持社會民主黨，幫助我們一起打造台灣的新政治！",
+      keywords: "小額捐款,捐款支持,社會民主黨,社民黨,sdparty",
+      og: {
+        type: 'article',
+        title: "小額捐款",
+        description: "小額捐款支持社會民主黨，幫助我們一起打造台灣的新政治！"
       }
     })
   end

@@ -25,6 +25,7 @@
 //= require jquery.validate
 //= require template
 //= require custom
+//= require jquery.stackslider
 //= require social-share-button
 //= require analytics
 

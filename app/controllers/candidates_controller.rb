@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :set_candidate, except: [:index, :new]
+  before_action :set_candidate, except: [:index, :new, :proportional]
 
   # GET /candidates
   def index
@@ -9,12 +9,12 @@ class CandidatesController < ApplicationController
       keywords = keywords + ",#{c.name}"
     end
     set_meta_tags({
-      title: "候選人介紹",
+      title: "區域立委候選人介紹",
       description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。",
       keywords: keywords,
       og: {
         type: 'article',
-        title: "候選人介紹",
+        title: "區域立委候選人介紹",
         description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
       }
     })
@@ -33,8 +33,22 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def proportional
+    set_meta_tags({
+      title: "不分區立委候選人介紹",
+      description: "綠社盟有哪些不分區候選人？他們為什麼要出來參選?一起來了解。",
+      keywords: '張麗芬,李根正,詹順貴,葉大華,謝英俊,許秀雯,尊嚴勞動,永續環境,土地正義,世代正義,居住正義,多元成家',
+      og: {
+        type: 'article',
+        title: "不分區立委候選人介紹",
+        description: "綠社盟有哪些不分區候選人？他們為什麼要出來參選?一起來了解。"
+      }
+    })
+  end
+
   # GET /candidates/1
   def show
+    not_found unless @candidate.published
     set_meta_tags({
       title: "#{@candidate.name}介紹",
       description: "為什麼#{@candidate.name}要出來參選？一起來深入了解#{@candidate.name}吧！",

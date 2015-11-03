@@ -1,0 +1,45 @@
+section.main-container
+  .candidate-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          h2.page-title 小額募款
+          .separator-2
+          .row
+            .col-md-12.candidate-sblock
+    .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300" 
+      .container
+        .row.col-md-12
+          = image_tag("fundraising/heroimage.jpg")
+          = image_tag("fundraising/good_1.png", style: "max-width:70%;margin:40px 0;")
+          = image_tag("fundraising/good_2.png", style: "max-width:90%;margin:20px 0;")
+          = image_tag("fundraising/good_3.png", style: "max-width:90%;margin:20px 0;")
+          = image_tag("fundraising/call.png", style: "max-width:100%;margin:20px auto;margin-top:40px;")
+        .row.col-md-12 style="background:#efefef;padding:10px;"
+          form action="https://sdparty.backme.tw:443/cashflow/checkout" method="get" 
+            input name="project_id" type="hidden" value="74"
+            input name="reward_id" type="hidden" value="542"
+            h4 style="margin-bottom:25px" 募款小物
+            table style="background-color: transparent;"
+              tbody style="background: none;"
+                tr
+                  td align="right" width="400" 
+                    label for="custom_field[622]"  運動毛巾 三條：
+                  td width="400" 
+                    input name="custom_field[622]" required="required" type="number" value="" /
+                tr
+                  td align="right" width="400" 
+                    label for="custom_field[621]"  更好的徽章 一組：
+                  td width="400" 
+                    input name="custom_field[621]" required="required" type="number" value="" /
+                tr
+                  td align="right" width="400" 
+                    label for="custom_field[620]"  社會民主運動毛巾：
+                  td width="400" 
+                    input name="custom_field[620]" required="required" type="number" value="" /
+              tbody style=("background: none;") 
+                tr align="center" 
+                  td colspan="2" height="60" valign="bottom" 
+                    button 送出
+      .container.candidate-block
+        .row

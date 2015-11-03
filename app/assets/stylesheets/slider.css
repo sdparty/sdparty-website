@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+#abgneBlock {
+	width: 940px;
+	height: 329px;
+	position: relative;
+	overflow: hidden;
+}
+#abgneBlock ul.list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	position: absolute;
+	top:50px;
+	width: 9999px;
+	height: 100%;
+}
+#abgneBlock ul.list li {
+	float: left;
+	width: 940px;
+	height: 100%;
+}
+#abgneBlock .list img{
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+#abgneBlock ul.playerControl {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	height: 14px;
+}
+#abgneBlock ul.playerControl li {
+	float: left;
+	width: 188px;
+	height: 20px;
+	cursor: pointer;
+	margin: 0px;
+	height:50px;
+	position:relative;
+	text-align:center;
+	line-height:30px;
+	font-family:微軟正黑體;
+	font-weight:bold;
+	color:#797775;
+}
+#abgneBlock ul.playerControl li div{
+	height: 20px;
+	width:100%;
+	position:absolute;
+	bottom:0px;}
+#abgneBlock ul.playerControl li:nth-child(1) div{
+	background:#d84e6d;}
+#abgneBlock ul.playerControl li:nth-child(2) div{
+	background:#00aeea;}
+#abgneBlock ul.playerControl li:nth-child(3) div{
+	background:#fdd001;}
+#abgneBlock ul.playerControl li:nth-child(4) div{
+	background:#e62f8b;}
+#abgneBlock ul.playerControl li:nth-child(5) div{
+	background:#00921a;}
+#abgneBlock ul.playerControl li.current { 
+	background:#e7e7e7;
+	color:#969594;
+}
+
+#abgneBlock ul.playerControl li:nth-child(1) span:after{
+	content: "大安 范雲";}
+#abgneBlock ul.playerControl li:nth-child(2) span:after{
+	content: "中正文山 苗博雅";}
+#abgneBlock ul.playerControl li:nth-child(3) span:after{
+	content: "信義南松山 呂欣潔";}
+#abgneBlock ul.playerControl li:nth-child(4) span:after{
+	content: "中山北松山 李晏榕";}
+#abgneBlock ul.playerControl li:nth-child(5) span:after{
+	content: "社會民主黨";}
+
+
+
+

@@ -17,8 +17,10 @@
  *= require animate
  *= require animations
  *= require owl.carousel
+ *= require slider
  *= require style
  *= require skins/red
  *= require custom
+ *= require voteforparty
  *= require_self
  */
