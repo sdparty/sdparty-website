@@ -22,14 +22,14 @@ Rails.application.routes.draw do
   match "/constructing", to: 'static_pages#constructing', via: 'get'
   match "/sitemap.xml",  to: 'static_pages#sitemap',      format: 'xml', via: 'get'
 
-  resources :candidates, only: [:index, :show] do
-    member do
-      get :donate
-    end
-    collection do
-      get :proportional
-    end
-  end
+  # resources :candidates, only: [:index, :show] do
+  #   member do
+  #     get :donate
+  #   end
+  #   collection do
+  #     get :proportional
+  #   end
+  # end
   match '/articles/presses',     to: 'articles#presses',      via: 'get', as: 'articles_presses'
   match '/articles/activities',  to: 'articles#activities',   via: 'get', as: 'articles_activities'
   match '/articles/issues',      to: 'articles#issues',       via: 'get', as: 'articles_issues'
@@ -52,27 +52,7 @@ Rails.application.routes.draw do
   match "/422" => "errors#error422", via: [ :get, :post, :patch, :delete ]
   match "/500" => "errors#error500", via: [ :get, :post, :patch, :delete ]
 
-  get 'about.html', to: redirect('/about')
-  get 'candidate00.html', to: redirect('/candidates')
-  get 'candidate01.html', to: redirect('/candidates/1')
-  get 'candidate02.html', to: redirect('/candidates/2')
-  get 'candidate03.html', to: redirect('/candidates/3')
-  get 'candidate04.html', to: redirect('/candidates/4')
-  get 'constructed.html', to: redirect('/constructing')
-  get 'donation.html', to: redirect('/donate')
-  get 'index.html', to: redirect('/')
-  get 'join01.html', to: redirect('/join')
-  get 'politics00.html', to: redirect('/policies')
-  get 'politics01.html', to: redirect('/policies/1')
-  get 'politics02.html', to: redirect('/policies/2')
-  get 'politics03.html', to: redirect('/policies/3')
-  get 'politics04.html', to: redirect('/policies/4')
-  get 'politics05.html', to: redirect('/policies/5')
-  get 'politics06.html', to: redirect('/policies/6')
-  get 'principle00.html', to: redirect('/programs')
-  get 'principle01.html', to: redirect('/programs/1')
-  get 'principle02.html', to: redirect('/programs/2')
-  get 'principle03.html', to: redirect('/programs/3')
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

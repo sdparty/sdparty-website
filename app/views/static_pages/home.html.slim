@@ -35,24 +35,6 @@
                 = image_tag 'politics-03.png', alt: ''
                 = link_to '', programs_3_path, class: "overlay small"
       .sline
-.section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
-  .container
-    h2.title 你想支持誰？
-    .row.grid-space-20
-      - @candidates.each do |c|
-        .col-md-2
-          .image-box
-            .overlay-container
-              = image_tag(c.avatar, alt: '')
-              = link_to candidate_path(c), class: 'overlay small' do
-                h4
-                  = c.name
-                  span = c.constituency
-      - (@candidates.length + 1).upto(10).each do |i|
-        .col-md-2
-          .image-box
-            .overlay-container
-              = image_tag("cc%02d.png" % i, alt: '')
 .section.clearfix.object-non-visible.candidates.custom-block-02 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
   .container
     h2.title 共同政見
