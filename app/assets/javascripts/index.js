@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require modernizr
 //= require jquery.themepunch.tools.min
 //= require jquery.themepunch.revolution
 //= require isotope.pkgd
