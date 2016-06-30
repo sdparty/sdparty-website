@@ -1,14 +1,14 @@
 base_url = "https://#{request.host_with_port}"
 xml.instruct! :xml, :version=>'1.0'
- 
+
 xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
- 
+
   xml.url do
     xml.loc "#{base_url}"
     xml.changefreq "daily"
     xml.priority 1.0
   end
- 
+
   xml.url do
     xml.loc "#{base_url}/about"
     xml.lastmod Time.now.to_date
@@ -24,7 +24,14 @@ xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
   end
 
   xml.url do
-    xml.loc "#{base_url}/donate"
+    xml.loc "#{base_url}/donate_plan"
+    xml.lastmod Time.now.to_date
+    xml.changefreq "monthly"
+    xml.priority 1.0
+  end
+
+  xml.url do
+    xml.loc "#{base_url}/donate_one"
     xml.lastmod Time.now.to_date
     xml.changefreq "monthly"
     xml.priority 1.0
@@ -127,7 +134,7 @@ xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     xml.changefreq "daily"
     xml.priority 1.0
   end
- 
+
   @articles.each do |article|
     xml.url do
       xml.loc article_url(article)
@@ -143,7 +150,7 @@ xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     xml.changefreq "daily"
     xml.priority 1.0
   end
- 
+
   @candidates.each do |candidate|
     xml.url do
       xml.loc candidate_url(candidate)

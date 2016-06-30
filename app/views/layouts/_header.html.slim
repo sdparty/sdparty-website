@@ -37,15 +37,8 @@ header.header.fixed.header-small.clearfix
                       ul.dropdown-menu
                         li = link_to '成為黨員', join_path
                         li = link_to '成為志工', 'https://sdparty.neticrm.tw/civicrm/profile/create?gid=12&amp;reset=1', target: '_blank'
-                    li.dropdown
-                      = link_to '#', class: "dropdown-toggle", data: {toggle: "dropdown"} do
-                        | 捐款支持
-                        span.dt-hot-icon hot
-                      end
-                      ul.dropdown-menu
-                        li = link_to '一般捐款', donate_path
-                        li = link_to '小額捐款', fundraising_path
-                        li = link_to '定期定額捐款', 'https://ezpos.ezpay.com.tw/ezPos/PayPage/ezpospaypage.jsp?merchantnumber=5010327', target: '_blank'
+                    li
+                      = link_to '捐款支持', donate_plan_path
+                      span.dt-hot-icon hot
   #fb-icon
     = link_to image_tag('fb-icon.png', alt: ''), 'https://www.facebook.com/sdparty.tw', target: "_blank"
-

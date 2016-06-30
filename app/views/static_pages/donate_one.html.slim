@@ -1,16 +1,18 @@
-.page-intro
-  .container
-    .row
-      .col-md-12
-        ol.breadcrumb
-          li 捐款支持
 section.main-container
   .politics-block.custom-wrap
     .container
       .row
         .main.col-md-12
-          h2.page-title 捐款支持
-          .separator-2
+          .page-title-group
+            a.not-action href="donate_plan"
+              h2.page-title 定期定額捐款
+              .separator-2
+            a
+              h2.page-title 單筆捐款
+              .separator-2
+            a.not-action href="fundraising"
+              h2.page-title 募款小物
+              .separator-2
           .row
             .col-md-12.editor-block
               .lltxt
@@ -18,50 +20,58 @@ section.main-container
                 br
                 | 2016小額募款
               .donation-form
-                form#donate-form action="http://sdparty.backme.tw:80/cashflow/checkout" method="get" 
+                form#donate-one action="http://sdparty.backme.tw:80/cashflow/checkout" method="get"
                   input name="project_id" type="hidden" value="74" /
                   input name="reward_id" type="hidden" value="247" /
                   h3 募款單位：社會民主黨（政治獻金）
                   h4 請填寫捐款人基本資料
                   p 所有欄位皆為必填
-                  table border="0" width="920" 
+                  table border="0" width="920"
                     tbody
                       tr
-                        td align="right" width="220" 
+                        td align="right" width="220"
                           label for="custom_field[130]" 捐款人姓名（公司名稱）：
-                        td width="690" 
+                        td width="690"
                           input#recipient_name name="custom_field[130]" required="required" type="text" value="" /
                       tr
-                        td align="right" 
+                        td align="right"
                           label for="custom_field[131]" 身分證字號（統一編號）：
                         td
                           input name="custom_field[131]" required="required" type="text" value="" /
                       tr
-                        td align="right" 
+                        td align="right"
                           label for="custom_field[133]" 聯絡電話（行動電話）：
                         td
                           input#recipient_cellphone name="custom_field[133]" required="required" type="text" value="" /
                       tr
-                        td align="right" 
-                          label for="custom_field[133]"  email：
-                        td
-                          input#email name="email" required="required" type="email" value="" /
-                      tr
-                        td align="right" 
+                        td align="right"
                           label for="custom_field[134]"  戶籍地址：
                         td
                           input.long-input name="custom_field[134]" required="required" type="text" value="" /
                       tr
-                        td align="right" 
+                        td align="right"
                           label for="custom_field[135]"  收據寄送地址：
                         td
                           input#recipient_address.long-input name="custom_field[135]" required="required" type="text" value="" /
                       tr
-                        td align="right" 
+                        td align="right"
+                          label for="email"  email：
+                        td
+                          input#email name="email" required="required" type="email" value="" /
+                      tr
+                        td align="right"
                           label for="additional_support"  捐款金額：
                         td
                           input name="additional_support" required="required" type="number" value="" /
                           | 元
+                      tr
+                        td align="right"
+                          label for="tax"  抵稅需求：
+                        td
+                          input type="radio" name="tax" required="required" value="1" /
+                          | 是
+                          input type="radio" name="tax" required="required" value="0" /
+                          | 否
                   h4 捐款人注意事項
                   p
                     | 一、捐款人必須為本國國民且年滿 20 歲。
@@ -88,5 +98,3 @@ section.main-container
 
                   .form-btn
                     button.fbt01#donate_submit 確認捐款
-
-

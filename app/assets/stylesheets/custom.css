@@ -3,7 +3,7 @@ Theme Name: iDea - Clean & Powerful Bootstrap Theme
 Author: HtmlCoder
 Author URI: http://www.htmlcoder.me
 Author e-mail: htmlcoder.me@gmail.com
-Version: 1.2.0 
+Version: 1.2.0
 Created: August 2014
 License URI: http://support.wrapbootstrap.com/
 File Description: Place here your custom CSS styles
@@ -101,7 +101,7 @@ File Description: Place here your custom CSS styles
 	}
 .candidates .image-box h4 a{color:#fff;
 text-shadow:1px 1px 5px #000;}
-	
+
 .candidates .col-md-2{
 	width:20%;}
 .candidates .col-md-2 img{
@@ -117,7 +117,7 @@ margin-bottom: 0px;
 }
 
 .candidates .info {
-	border-radius:6px; 
+	border-radius:6px;
 	background-color: #f3d922;
 	height: auto;
 	padding: 20px;
@@ -202,7 +202,7 @@ margin-bottom: 0px;
 	width:auto;
 	font-size:18px;
 	line-height:2em;
-	
+
 	}
 .sdp-about{
 	background:url(../images/ccbg.png) repeat-y 90% top;}
@@ -218,8 +218,28 @@ margin-bottom: 0px;
 	margin:30px 0 55px 0;}
 .custom-wrap .container .separator-2{
 	width: 45px;
-height: 8px;
-background-color: #f8c8c3;}
+	height: 8px;
+	background-color: #f8c8c3;
+}
+.page-title-group {
+	display: flex;
+	flex-direction: row;
+}
+.page-title-group > a,
+.page-title-group > div {
+	margin-right: 10px;
+}
+.page-title-group > a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.page-title-group .not-action .page-title {
+	color: #D6D6D6;
+}
+.page-title-group .not-action .separator-2{
+	background-color: #D6D6D6;
+}
 .custom-wrap .politics-02{
 	border:none;}
 .list-icons li{
@@ -411,7 +431,7 @@ background-color: #f8c8c3;}
 	margin:0 12px 0 0;}
 .politics-tag a.active img{
 	visibility:hidden;}
-	
+
 .pol-list{
 	list-style:none;
 	padding:0px;
@@ -616,7 +636,7 @@ a.overlay{
 	font-size:15px;
 	margin:3px 5px 5px 0;}
 .issue-top-tag a.active{
-	background:#eee;	
+	background:#eee;
 	}
 .dlbtn-group{
 	overflow:hidden;}
@@ -668,7 +688,7 @@ strong.fz{
 .lltxt{
 	font-size:24px;
 	color:#797775;
-	font-weight:bold;}	
+	font-weight:bold;}
 .donation-form h3{
 	font-size:30px;
 	color:#e70036;
@@ -761,7 +781,7 @@ strong.fz{
 	background:#00921a;}
 #abgneBlock ul.playerControl li:nth-child(6) div{
   background: #952b8d;}
-#abgneBlock ul.playerControl li.current { 
+#abgneBlock ul.playerControl li.current {
 	background:#e7e7e7;
 	color:#969594;
 }
@@ -823,7 +843,7 @@ strong.fz{
 	.principle-side-block ul li:nth-child(2) h5, .principle-side-block ul li:nth-child(3) h5{
 		padding-top:18%;
 		top:0px;
-		margin:0px;}	
+		margin:0px;}
 		.prlist span,.moreline span,.pol-list span{
 	width:90%;}
 	.can-title-02{
@@ -873,7 +893,7 @@ strong.fz{
 .candidate-block .politics-tag{
 	margin:0 0 0 10%;
 	width:90%;
-	}	
+	}
 .don-block,.don-block-2{
 	float:none;
 	width:auto;
@@ -881,7 +901,7 @@ strong.fz{
 	margin-bottom:30px;	}
 .don-block-2 span br{
 	display:inline;}
-	
+
 }
 @media screen and (max-width: 680px){
 
@@ -894,7 +914,7 @@ strong.fz{
 	width:100%;
 	margin:0 0 20px 0;
 	}
-	
+
 		}
 @media screen and (max-width: 640px) {
 .candidates .container{
@@ -910,16 +930,16 @@ strong.fz{
 		display:block;
 		text-align:left;
 		margin:0 0 5px 0;}
-		
+
 	.politics-tag{
 	position:relative;
 	overflow:hidden;
-	left:25%;}	
+	left:25%;}
 	.candidate-block .politics-tag{
 	margin:0 0 0 10%;
 	width:90%;
 	left:0px;
-	}	
+	}
 	.candidate-block .politics-tag a{
 	width:25%;}
 }
@@ -933,8 +953,5 @@ strong.fz{
 		.candidates .col-md-2{
 			float:none;
 	width:auto;}
-	
+
 }
-
-
-

@@ -1,0 +1,103 @@
+section.main-container
+  .politics-block.custom-wrap
+    .container
+      .row
+        .main.col-md-12
+          .page-title-group
+            a
+              h2.page-title 定期定額捐款
+              .separator-2
+            a.not-action href="donate_one"
+              h2.page-title 單筆捐款
+              .separator-2
+            a.not-action href="fundraising"
+              h2.page-title 募款小物
+              .separator-2
+          .row
+            .col-md-12.editor-block
+              .lltxt
+                | 政治，是為了更好的生活
+                br
+                | 2016小額募款
+              .donation-form
+                form#donate-plan action="" method="get"
+                  input name="project_id" type="hidden" value="74" /
+                  input name="reward_id" type="hidden" value="247" /
+                  h3 募款單位：社會民主黨（政治獻金）
+                  h4 請填寫捐款人基本資料
+                  p 所有欄位皆為必填
+                  table border="0" width="920"
+                    tbody
+                      tr
+                        td align="right" width="220"
+                          label for="customername" 捐款人姓名（公司名稱）：
+                        td width="690"
+                          input#recipient_name name="customername" required="required" type="text" value="" /
+                      tr
+                        td align="right"
+                          label for="productname" 身分證字號（統一編號）：
+                        td
+                          input name="productname" required="required" type="text" value="" /
+                      tr
+                        td align="right"
+                          label for="tel" 聯絡電話（行動電話）：
+                        td
+                          input#recipient_cellphone name="tel" required="required" type="text" value="" /
+                      tr
+                        td align="right"
+                          label for="email"  email：
+                        td
+                          input#email name="email" required="required" type="email" value="" /
+                      tr
+                        td align="right"
+                          label for="address"  收據寄送地址：
+                        td
+                          input#recipient_address.long-input name="address" required="required" type="text" value="" /
+                      tr
+                        td align="right"
+                          label for="cycle"  捐款期數：
+                        td
+                          select
+                            option value="3" 3
+                            option value="6" 6
+                            option value="9" 9
+                      tr
+                        td align="right"
+                          label for="amount"  捐款金額：
+                        td
+                          input name="amount" required="required" type="number" value="" /
+                          | 元
+                      tr
+                        td align="right"
+                          label for="tax"  抵稅需求：
+                        td
+                          input type="radio" name="tax" required="required" value="1" /
+                          | 是
+                          input type="radio" name="tax" required="required" value="0" /
+                          | 否
+                  h4 捐款人注意事項
+                  p
+                    | 一、捐款人必須為本國國民且年滿 20 歲。
+                    br/
+                    | 二、請註明捐款人姓名、身分證字號、地址(含戶籍地址與收件人地址以便寄發收據)、電話。
+                    br/
+                    | 三、任何人不得以本人以外之名義捐贈。
+                    br/
+                    | 四、個人對同一擬參選人每年捐贈總額不得超過新台幣10萬元；對不同擬參選人每年捐贈總額合計不得超過新
+                    | 台幣20萬元。
+                    br/
+                    | 五、超過10萬元的現金捐贈，需以支票或經金融機構匯款；個人捐贈一萬元以上者，不得以匿名捐贈。
+                    br/
+                    | 其他規定請參閱政治獻金法或監察院網站。
+                    br/
+                    | 提醒您：可自行至
+                    = link_to '陽光法案網站', 'http://sunshine.cy.gov.tw', target: '_blank'
+                    | 檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信
+                    = mail_to 'contact@sdparty.tw'
+                    | 洽詢，以保障您的權益。
+                  input#name name="name" type="hidden" value=""
+                  input#address name="address" type="hidden" value=""
+                  input#cellphone name="cellphone" type="hidden" value=""
+
+                  .form-btn
+                    button.fbt01#donate_submit 確認捐款

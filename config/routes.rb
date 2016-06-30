@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: "admin/omniauth_callbacks", sessions: "admin/sessions" }
   root  'static_pages#home'
   match '/about',        to: 'static_pages#about',        via: 'get'
-  match '/donate',       to: 'static_pages#donate',       via: 'get'
+  match '/donate_plan',  to: 'static_pages#donate_plan',       via: 'get'
+  match '/donate_one',   to: 'static_pages#donate_one',       via: 'get'
   match '/fundraising',  to: 'static_pages#fundraising',  via: 'get'
   match '/join',         to: 'static_pages#join',         via: 'get'
   match '/party_vote',   to: 'static_pages#party_vote',   via: 'get'
@@ -52,7 +53,7 @@ Rails.application.routes.draw do
   match "/422" => "errors#error422", via: [ :get, :post, :patch, :delete ]
   match "/500" => "errors#error500", via: [ :get, :post, :patch, :delete ]
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
