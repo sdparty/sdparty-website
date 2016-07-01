@@ -18,10 +18,18 @@ describe "Static pages" do
     end
   end
 
-  describe "#donate" do
+  describe "#donate_one" do
     it "success" do
       FactoryGirl.create :donate_article
-      get "/donate"
+      get "/donate_one"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#donate_plan" do
+    it "success" do
+      FactoryGirl.create :donate_article
+      get "/donate_plan"
       expect(response).to be_success
     end
   end
