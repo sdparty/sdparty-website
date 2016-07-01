@@ -18,7 +18,7 @@ section.main-container
                 = link_to image_tag(@candidate.donate_image), "", target: "_blank"
             ul.playerControl
               li
-                = link_to "社會民主黨", donate_path
+                = link_to "社會民主黨", donate_plan_path
                 div
               - @candidates.each do |c|
                 - if c == @candidate
