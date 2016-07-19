@@ -16,6 +16,10 @@ class CandidatesController < ApplicationController
         type: 'article',
         title: "區域立委候選人介紹",
         description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -42,6 +46,10 @@ class CandidatesController < ApplicationController
         type: 'article',
         title: "不分區立委候選人介紹",
         description: "綠社盟有哪些不分區候選人？他們為什麼要出來參選?一起來了解。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
   end
@@ -57,6 +65,10 @@ class CandidatesController < ApplicationController
         type: 'article',
         title: "#{@candidate.name}介紹",
         description: "為什麼#{@candidate.name}要出來參選？一起來深入了解#{@candidate.name}吧！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 

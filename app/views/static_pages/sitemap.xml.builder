@@ -144,19 +144,4 @@ xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     end
   end
 
-  xml.url do
-    xml.loc "#{base_url}/candidates"
-    xml.lastmod Time.now.to_date
-    xml.changefreq "daily"
-    xml.priority 1.0
-  end
-
-  @candidates.each do |candidate|
-    xml.url do
-      xml.loc candidate_url(candidate)
-      xml.lastmod Time.now.to_date
-      xml.changefreq "monthly"
-      xml.priority 0.9
-    end
-  end
 end

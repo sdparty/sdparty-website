@@ -42,6 +42,21 @@ class ArticlesController < ApplicationController
       @issues = Article.published.get_issues
     end
 
+    set_meta_tags({
+      title: "文章列表",
+      description: "所有社會民主黨的文章都在這！",
+      keywords: "文章,社民黨文章",
+      og: {
+        type: 'article',
+        title: "文章列表",
+        description: "所有社會民主黨的文章都在這！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
+      }
+    })
+
     respond_to do |format|
       format.html
       format.json { render :json => {
@@ -71,6 +86,12 @@ class ArticlesController < ApplicationController
           type: 'article',
           title: @article.title,
           description: @article.title
+        },
+        article: {
+          author: Setting.url.fb,
+          publisher: Setting.url.fb,
+          published_time: @article.created_at.strftime('%FT%T%:z'),
+          modified_time: @article.updated_at.strftime('%FT%T%:z')
         }
       })
     elsif @article.kind == 'activity'
@@ -82,6 +103,12 @@ class ArticlesController < ApplicationController
           type: 'article',
           title: @article.title,
           description: @article.title
+        },
+        article: {
+          author: Setting.url.fb,
+          publisher: Setting.url.fb,
+          published_time: @article.created_at.strftime('%FT%T%:z'),
+          modified_time: @article.updated_at.strftime('%FT%T%:z')
         }
       })
     elsif @article.kind == 'issue'
@@ -93,6 +120,12 @@ class ArticlesController < ApplicationController
           type: 'article',
           title: @article.title,
           description: @article.title
+        },
+        article: {
+          author: Setting.url.fb,
+          publisher: Setting.url.fb,
+          published_time: @article.created_at.strftime('%FT%T%:z'),
+          modified_time: @article.updated_at.strftime('%FT%T%:z')
         }
       })
     end
@@ -157,6 +190,10 @@ class ArticlesController < ApplicationController
         type: 'article',
         title: "新聞稿",
         description: "社會民主黨發新聞稿啦！所有社會民主黨的新稿資訊都在這！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -221,6 +258,10 @@ class ArticlesController < ApplicationController
         type: 'article',
         title: "近期活動",
         description: "想知道關於社會民主黨的最新活動嗎？所有社會民主黨活動資訊都在近期活動中。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -285,6 +326,10 @@ class ArticlesController < ApplicationController
         type: 'article',
         title: "熱門議題",
         description: "想了解社民黨針對各種特定熱門議題的看法嗎？帶你來了解。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 

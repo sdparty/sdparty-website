@@ -13,6 +13,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "黨組織及主要成員",
         description: "社會民主黨是由一群長期關心台灣各個議題的公民所組成。和你一樣，我們對既有政治的不滿已經很久了。現在，我們決定自己捲起袖子，動手打造台灣的新政治。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
   end
@@ -28,6 +32,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "捐款支持",
         description: "立刻捐款支持社會民主黨，幫助我們一起打造台灣的新政治！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
   end
@@ -43,6 +51,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "捐款支持",
         description: "立刻捐款支持社會民主黨，幫助我們一起打造台灣的新政治！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
   end
@@ -56,6 +68,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "小額捐款",
         description: "小額捐款支持社會民主黨，幫助我們一起打造台灣的新政治！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
   end
@@ -69,6 +85,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "成為黨員",
         description: "加入社會民主黨，成為社會民主黨黨員，一起改革台灣政治！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
   end
@@ -82,6 +102,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "政綱",
         description: "政綱內容包含三大類：新經濟、新政治、新社會。一起來了解社會民主黨政綱。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -100,6 +124,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "新經濟政綱",
         description: "新經濟政綱 - 社民黨認為當務之急是改革稅制與產業政策，並強化財產的社會責任。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -118,6 +146,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "新政治政綱政綱",
         description: "新政治政綱 - 社民黨主張，新的政治力量必須進入國會，重新設定政治議題，改革政治體制，重塑政治文化，最終改變台灣的政治版圖。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -136,6 +168,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "新社會政綱",
         description: "新社會政綱 - 社民黨主張國家應積極保障社會不同群體尊嚴與基本權益，創造平等的多元社會，促進實質平等與社會正義的實現。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -154,6 +190,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "2016大選的五大政見草案",
         description: "政治能改變這一切。社會民主國家的經驗告訴我們，只要受雇者們能團結、組織起來，對抗財團資本，對抗新自由主義體制，我們就不用再忍受目前的不平等和無奈，可以自由地合作、創造和發展。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -174,6 +214,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "#{title}",
         description: "#{description}"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -194,6 +238,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "#{title}",
         description: "#{description}"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -214,6 +262,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "#{title}",
         description: "#{description}"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -234,6 +286,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "#{title}",
         description: "#{description}"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -254,6 +310,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "#{title}",
         description: "#{description}"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -274,6 +334,10 @@ class StaticPagesController < ApplicationController
         type: 'article',
         title: "#{title}",
         description: "#{description}"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -291,6 +355,5 @@ class StaticPagesController < ApplicationController
 
   def sitemap
     @articles = Article.all
-    @candidates = Candidate.all
   end
 end
