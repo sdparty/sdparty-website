@@ -80,52 +80,64 @@ class ArticlesController < ApplicationController
     if @article.kind == 'press'
       set_meta_tags({
         title: @article.title,
-        description: @article.title,
+        description: display_shorter(@article.content, 150),
         keywords: "#{@article.title},#{issues},新聞稿,社民黨新聞稿",
         og: {
           type: 'article',
           title: @article.title,
-          description: @article.title
+          description: display_shorter(@article.content, 150),
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         },
         article: {
           author: Setting.url.fb,
           publisher: Setting.url.fb,
-          published_time: @article.created_at.strftime('%FT%T%:z'),
+          published_time: @article.published_at.strftime('%FT%T%:z'),
           modified_time: @article.updated_at.strftime('%FT%T%:z')
+        },
+        twitter: {
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         }
       })
     elsif @article.kind == 'activity'
       set_meta_tags({
         title: @article.title,
-        description: @article.title,
+        description: display_shorter(@article.content, 150),
         keywords: "#{@article.title},#{issues},活動資訊,社民黨活動",
         og: {
           type: 'article',
           title: @article.title,
-          description: @article.title
+          description: display_shorter(@article.content, 150),
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         },
         article: {
           author: Setting.url.fb,
           publisher: Setting.url.fb,
-          published_time: @article.created_at.strftime('%FT%T%:z'),
+          published_time: @article.published_at.strftime('%FT%T%:z'),
           modified_time: @article.updated_at.strftime('%FT%T%:z')
+        },
+        twitter: {
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         }
       })
     elsif @article.kind == 'issue'
       set_meta_tags({
         title: @article.title,
-        description: @article.title,
+        description: display_shorter(@article.content, 150),
         keywords: "#{@article.title},#{issues},熱門議題,社民黨議題",
         og: {
           type: 'article',
           title: @article.title,
-          description: @article.title
+          description: display_shorter(@article.content, 150),
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         },
         article: {
           author: Setting.url.fb,
           publisher: Setting.url.fb,
-          published_time: @article.created_at.strftime('%FT%T%:z'),
+          published_time: @article.published_at.strftime('%FT%T%:z'),
           modified_time: @article.updated_at.strftime('%FT%T%:z')
+        },
+        twitter: {
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         }
       })
     end
