@@ -138,4 +138,14 @@ describe "Static pages" do
       expect(response).to be_success
     end
   end
+
+  describe "#sitemap" do
+    it "success" do
+      2.times { FactoryGirl.create :press_article }
+      2.times { FactoryGirl.create :activity_article }
+      2.times { FactoryGirl.create :issue_article }
+      get "/sitemap.xml"
+      expect(response).to be_success
+    end
+  end
 end

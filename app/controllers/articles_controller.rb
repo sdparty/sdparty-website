@@ -42,6 +42,21 @@ class ArticlesController < ApplicationController
       @issues = Article.published.get_issues
     end
 
+    set_meta_tags({
+      title: "文章列表",
+      description: "所有社會民主黨的文章都在這！",
+      keywords: "文章,社民黨文章",
+      og: {
+        type: 'article',
+        title: "文章列表",
+        description: "所有社會民主黨的文章都在這！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
+      }
+    })
+
     respond_to do |format|
       format.html
       format.json { render :json => {
@@ -65,34 +80,64 @@ class ArticlesController < ApplicationController
     if @article.kind == 'press'
       set_meta_tags({
         title: @article.title,
-        description: @article.title,
+        description: display_shorter(@article.content, 150),
         keywords: "#{@article.title},#{issues},新聞稿,社民黨新聞稿",
         og: {
           type: 'article',
           title: @article.title,
-          description: @article.title
+          description: display_shorter(@article.content, 150),
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
+        },
+        article: {
+          author: Setting.url.fb,
+          publisher: Setting.url.fb,
+          published_time: @article.published_at.strftime('%FT%T%:z'),
+          modified_time: @article.updated_at.strftime('%FT%T%:z')
+        },
+        twitter: {
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         }
       })
     elsif @article.kind == 'activity'
       set_meta_tags({
         title: @article.title,
-        description: @article.title,
+        description: display_shorter(@article.content, 150),
         keywords: "#{@article.title},#{issues},活動資訊,社民黨活動",
         og: {
           type: 'article',
           title: @article.title,
-          description: @article.title
+          description: display_shorter(@article.content, 150),
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
+        },
+        article: {
+          author: Setting.url.fb,
+          publisher: Setting.url.fb,
+          published_time: @article.published_at.strftime('%FT%T%:z'),
+          modified_time: @article.updated_at.strftime('%FT%T%:z')
+        },
+        twitter: {
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         }
       })
     elsif @article.kind == 'issue'
       set_meta_tags({
         title: @article.title,
-        description: @article.title,
+        description: display_shorter(@article.content, 150),
         keywords: "#{@article.title},#{issues},熱門議題,社民黨議題",
         og: {
           type: 'article',
           title: @article.title,
-          description: @article.title
+          description: display_shorter(@article.content, 150),
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
+        },
+        article: {
+          author: Setting.url.fb,
+          publisher: Setting.url.fb,
+          published_time: @article.published_at.strftime('%FT%T%:z'),
+          modified_time: @article.updated_at.strftime('%FT%T%:z')
+        },
+        twitter: {
+          image: @article.image.blank? ? "#{Setting.url.protocol}://#{Setting.url.host}/images/logo.png" : "#{Setting.url.protocol}://#{Setting.url.host}#{@article.image}"
         }
       })
     end
@@ -157,6 +202,10 @@ class ArticlesController < ApplicationController
         type: 'article',
         title: "新聞稿",
         description: "社會民主黨發新聞稿啦！所有社會民主黨的新稿資訊都在這！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -221,6 +270,10 @@ class ArticlesController < ApplicationController
         type: 'article',
         title: "近期活動",
         description: "想知道關於社會民主黨的最新活動嗎？所有社會民主黨活動資訊都在近期活動中。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 
@@ -285,6 +338,10 @@ class ArticlesController < ApplicationController
         type: 'article',
         title: "熱門議題",
         description: "想了解社民黨針對各種特定熱門議題的看法嗎？帶你來了解。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
       }
     })
 

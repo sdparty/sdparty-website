@@ -1,19 +1,19 @@
 defaults: &defaults
 
   google_auth_key:
-    client_id: ""
-    client_secret: ""
+    client_id: ''
+    client_secret: ''
 
   google_public_key:
-    api_key: ""
+    api_key: <%= ENV['GOOGLE_PUBLIC_KEY'] %>
 
   facebook_auth_key:
     app_id: ""
     app_secret: ""
 
   url:
-    host: ""
-    protocol: ""
+    host: "localhost:3000"
+    protocol: "http"
     fb: ""
 
   email:
@@ -29,10 +29,10 @@ defaults: &defaults
     authentication: ""
 
   google_analytics:
-    id: ""
+    id: "UA-58871054-1"
 
   rollbar:
-    access_token: ""
+    access_token: "32e4d4c515c447c584e42ba7ef9b7d24"
 
   fb:
     pages: ""
