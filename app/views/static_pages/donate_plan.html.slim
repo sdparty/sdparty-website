@@ -20,9 +20,24 @@ section.main-container
                 br
                 | 2016小額募款
               .donation-form
-                form#donate-plan action="" method="get"
-                  input name="project_id" type="hidden" value="74" /
-                  input name="reward_id" type="hidden" value="247" /
+                form#donate-plan action="https://ezpos.neweb.com.tw/ezPos/ezpospayment" method="post"
+                  input type="hidden" name="memo" value="指定社民黨使用" /
+                  input type="hidden" name="paymenttype" value="2" /
+                  input type="hidden" name="CardNumberIn" /
+                  input type="hidden" name="merchantnumber" id="merchantnumber" /
+                  input type="hidden" name="createtype" value="1" /
+                  input type="hidden" name="OrderURL" value="http://192.168.22.104/ezPos/ezposwriteoff" /
+                  input type="hidden" name="ReturnURL" value="https://ezpos.neweb.com.tw/ezPos/PayPage/ezpospayresult.jsp" /
+                  input type="hidden" name="language" value="0" /
+                  input type="hidden" name="productlist_xml" value="null" /
+                  input type="hidden" name="checkbills" value="null" /
+                  input type="hidden" name="gamount" /
+                  input type="hidden" name="gcustomername" /
+                  input type="hidden" name="gemail" /
+                  input type="hidden" name="gproductname" /
+                  input type="hidden" name="gtel" /
+                  input type="hidden" name="orgordernumber" id="orgordernumber" /
+                  input type="hidden" name="gaddress" /
                   h3 募款單位：社會民主黨（政治獻金）
                   h4 請填寫捐款人基本資料
                   p 所有欄位皆為必填
@@ -57,7 +72,7 @@ section.main-container
                         td align="right"
                           label for="cycle"  捐款期數：
                         td
-                          select
+                          select name="totalperiods"
                             option value="6" 6
                             option value="12" 12
                             option value="24" 24
@@ -96,9 +111,5 @@ section.main-container
                     | 檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信
                     = mail_to 'contact@sdparty.tw'
                     | 洽詢，以保障您的權益。
-                  input#name name="name" type="hidden" value=""
-                  input#address name="address" type="hidden" value=""
-                  input#cellphone name="cellphone" type="hidden" value=""
-
                   .form-btn
                     button.fbt01#donate_submit 確認捐款

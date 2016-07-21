@@ -10,9 +10,9 @@
 
 $('#donate-plan [name="tax"]').click(function(e) {
   if (e.target.value === '1') {
-    $('#donate-plan').attr('action', 'http://www.ezcash.tw/gsparty');
+    $('#merchantnumber').val(5010328);
   } else {
-    $('#donate-plan').attr('action', 'http://www.ezcash.tw/socialparty');
+    $('#merchantnumber').val(5010327);
   }
 });
 

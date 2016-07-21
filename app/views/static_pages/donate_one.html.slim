@@ -23,6 +23,7 @@ section.main-container
                 form#donate-one action="http://sdparty.backme.tw:80/cashflow/checkout" method="get"
                   input name="project_id" type="hidden" value="74" /
                   input name="reward_id" type="hidden" value="247" /
+                  input name="custom_field[136]" type="hidden" value="指定社民黨使用" /
                   h3 募款單位：社會民主黨（政治獻金）
                   h4 請填寫捐款人基本資料
                   p 所有欄位皆為必填
@@ -53,11 +54,6 @@ section.main-container
                           label for="custom_field[135]"  收據寄送地址：
                         td
                           input#recipient_address.long-input name="custom_field[135]" required="required" type="text" value="" /
-                      tr
-                        td align="right"
-                          label for="email"  email：
-                        td
-                          input#email name="email" required="required" type="email" value="" /
                       tr
                         td align="right"
                           label for="additional_support"  捐款金額：
@@ -92,9 +88,6 @@ section.main-container
                     | 檢測確認是否符合捐款資格。有關捐款相關事宜，歡迎來信
                     = mail_to 'contact@sdparty.tw'
                     | 洽詢，以保障您的權益。
-                  input#name name="name" type="hidden" value=""
-                  input#address name="address" type="hidden" value=""
-                  input#cellphone name="cellphone" type="hidden" value=""
 
                   .form-btn
                     button.fbt01#donate_submit 確認捐款
