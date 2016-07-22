@@ -38,6 +38,13 @@ xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
   end
 
   xml.url do
+    xml.loc "#{base_url}/fundraising"
+    xml.lastmod Time.now.to_date
+    xml.changefreq "monthly"
+    xml.priority 1.0
+  end
+
+  xml.url do
     xml.loc "#{base_url}/programs"
     xml.lastmod Time.now.to_date
     xml.changefreq "monthly"
