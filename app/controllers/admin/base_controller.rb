@@ -28,7 +28,7 @@ class Admin::BaseController < ApplicationController
   end
 
   def set_system_articles
-    @donate_article = Article.where(kind: 'system', system_type: 'donate')
+    @donate_article = Article.where(kind: 'system', system_type: 'donate').first
   end
 
 end
