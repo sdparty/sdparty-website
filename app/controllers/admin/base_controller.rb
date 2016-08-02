@@ -1,7 +1,7 @@
 class Admin::BaseController < ApplicationController
   layout 'admin'
   before_filter :authenticate_user!
-  before_action :require_admin
+  before_action :require_admin, :set_system_articles
 
   def upload
     allowed_exts = ['gif', 'jpeg', 'jpg', 'png']
@@ -25,6 +25,10 @@ class Admin::BaseController < ApplicationController
       sign_out current_user
       redirect_to '/'
     end
+  end
+
+  def set_system_articles
+    @donate_article = Article.where(kind: 'system', system_type: 'donate')
   end
 
 end

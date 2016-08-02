@@ -20,9 +20,10 @@
         = link_to '文章子分類管理', admin_issues_path
       li
         = link_to '新增子分類', new_admin_issue_path
-  .side_block
-    h4
-      = link_to '捐款支持', edit_admin_article_path(1)
+  - unless @donate_article.blank?
+    .side_block
+      h4
+        = link_to '捐款支持', edit_admin_article_path(@donate_article)
   .side_block
     h4
       = link_to '管理員設定', admin_users_path

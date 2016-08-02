@@ -19,6 +19,7 @@ if FIRST_TIME
     {
       id: 1,
       kind: 'system',
+      system_type: 'donate',
       published: false,
       published_at: Time.now,
       image: 'logo.png',
