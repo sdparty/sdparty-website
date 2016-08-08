@@ -25,6 +25,15 @@ if FIRST_TIME
       image: 'logo.png',
       title: '捐款支持',
       content: ''
+    }, {
+      id: 2,
+      kind: 'system',
+      system_type: 'fundraising',
+      published: false,
+      published_at: Time.now,
+      image: 'logo.png',
+      title: '小額捐款',
+      content: ''
     }
   ]
 

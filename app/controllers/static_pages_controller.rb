@@ -60,6 +60,7 @@ class StaticPagesController < ApplicationController
   end
 
   def fundraising
+    @article = Article.where(kind: 'system', system_type: 'fundraising').first
     set_meta_tags({
       title: "小額捐款",
       description: "小額捐款支持社會民主黨，幫助我們一起打造台灣的新政治！",

@@ -24,6 +24,10 @@
     .side_block
       h4
         = link_to '捐款支持', edit_admin_article_path(@donate_article)
+  - unless @fundraising_article.blank?
+    .side_block
+      h4
+        = link_to '小額捐款', edit_admin_article_path(@fundraising_article)
   .side_block
     h4
       = link_to '管理員設定', admin_users_path

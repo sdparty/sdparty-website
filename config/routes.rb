@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
 
   namespace :admin do
+    get '/', to: redirect('/admin/banners')
     #match 'update_banners',  to: 'banners#update_banners',  via: 'put'
     #match 'update_issues',   to: 'issues#update_issues',    via: 'put'
     resources :articles

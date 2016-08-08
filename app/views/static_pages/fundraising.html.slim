@@ -19,6 +19,7 @@ section.main-container
       .container
         .row.col-md-12
           #fundraising
+            = @article.content.try :html_safe if @article.present?
         .row.col-md-12 style="background:#efefef;padding:10px;"
           form action="https://sdparty.backme.tw:443/cashflow/checkout" method="get"
             input name="project_id" type="hidden" value="74"
