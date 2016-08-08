@@ -34,6 +34,19 @@ describe "Static pages" do
     end
   end
 
+  describe "#fundraising" do
+    it "success" do
+      FactoryGirl.create :fundraising_article
+      get "/fundraising"
+      expect(response).to be_success
+    end
+
+    it "success with no article" do
+      get "/fundraising"
+      expect(response).to be_success
+    end
+  end
+
   describe "#join" do
     it "success" do
       get "/join"
