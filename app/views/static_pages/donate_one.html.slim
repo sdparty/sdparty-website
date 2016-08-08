@@ -27,47 +27,45 @@ section.main-container
                   h3 募款單位：社會民主黨（政治獻金）
                   h4 請填寫捐款人基本資料
                   p 所有欄位皆為必填
-                  table border="0" width="920"
-                    tbody
-                      tr
-                        td align="right" width="220"
-                          label for="custom_field[130]" 捐款人姓名（公司名稱）：
-                        td width="690"
-                          input#recipient_name name="custom_field[130]" required="required" type="text" value="" /
-                      tr
-                        td align="right"
-                          label for="custom_field[131]" 身分證字號（統一編號）：
-                        td
-                          input name="custom_field[131]" required="required" type="text" value="" /
-                      tr
-                        td align="right"
-                          label for="custom_field[133]" 聯絡電話（行動電話）：
-                        td
-                          input#recipient_cellphone name="custom_field[133]" required="required" type="text" value="" /
-                      tr
-                        td align="right"
-                          label for="custom_field[134]"  戶籍地址：
-                        td
-                          input.long-input name="custom_field[134]" required="required" type="text" value="" /
-                      tr
-                        td align="right"
-                          label for="custom_field[135]"  收據寄送地址：
-                        td
-                          input#recipient_address.long-input name="custom_field[135]" required="required" type="text" value="" /
-                      tr
-                        td align="right"
-                          label for="additional_support"  捐款金額：
-                        td
-                          input name="additional_support" required="required" type="number" value="" /
-                          | 元
-                      tr
-                        td align="right"
-                          label for="tax"  抵稅需求：
-                        td
-                          input type="radio" name="tax" required="required" value="1" /
-                          | 是
-                          input type="radio" name="tax" required="required" value="0" /
-                          | 否
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="custom_field[130]" 捐款人姓名（公司名稱）：
+                    .col-xs-12.col-sm-8
+                      input#recipient_name name="custom_field[130]" required="required" type="text" value="" /
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="custom_field[131]" 身分證字號（統一編號）：
+                    .col-xs-12.col-sm-8
+                      input name="custom_field[131]" required="required" type="text" value="" /
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="custom_field[133]" 聯絡電話（行動電話）：
+                    .col-xs-12.col-sm-8
+                      input#recipient_cellphone name="custom_field[133]" required="required" type="text" value="" /
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="custom_field[134]"  戶籍地址：
+                    .col-xs-12.col-sm-8
+                      input.long-input name="custom_field[134]" required="required" type="text" value="" /
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="custom_field[135]"  收據寄送地址：
+                    .col-xs-12.col-sm-8
+                      input#recipient_address.long-input name="custom_field[135]" required="required" type="text" value="" /
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="additional_support"  捐款金額：
+                    .col-xs-12.col-sm-8
+                      input name="additional_support" required="required" type="number" value="" /
+                      | 元
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="tax"  抵稅需求：
+                    .col-xs-12.col-sm-8
+                      input type="radio" name="tax" required="required" value="1" /
+                      | 是
+                      input type="radio" name="tax" required="required" value="0" /
+                      | 否
                   h4 捐款人注意事項
                   p
                     | 一、捐款人必須為本國國民且年滿 20 歲。

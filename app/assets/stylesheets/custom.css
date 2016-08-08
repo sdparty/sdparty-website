@@ -233,6 +233,11 @@ margin-bottom: 0px;
 	text-decoration: none;
 	cursor: pointer;
 }
+@media screen and (max-width: 767px) {
+	.page-title-group {
+		flex-direction: column;
+	}
+}
 
 .page-title-group .not-action .page-title {
 	color: #D6D6D6;
@@ -945,13 +950,38 @@ strong.fz{
 }
 
 @media screen and (max-width: 420px) {
-
 	.politics-info  .col-md-4{
 		float:none;
 		width:auto;
 		margin:0 0 30px 0;}
 		.candidates .col-md-2{
 			float:none;
-	width:auto;}
+			width:auto;
+		}
+}
 
+.donate-input-group {
+	margin-top: 5px;
+}
+.donate-input-group input[type="radio"] {
+	margin-left: 10px;
+	margin-right: 3px;
+}
+.donate-input-group input[type="radio"]:first-child {
+	margin-left: 0;
+}
+.fundraising-form {
+	width: 100%;
+	max-width: 460px;
+	margin: 0 auto;
+}
+.fundraising-form .submit {
+	width: 100%;
+	margin-top: 10px;
+	background: #E70036;
+	border: none;
+	color: #FFFFFF;
+}
+.fundraising-form input {
+	width: 100%;
 }
