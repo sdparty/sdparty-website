@@ -16,6 +16,30 @@ $('#donate-plan [name="tax"]').click(function(e) {
   }
 });
 
+$('#donate-plan').submit(function(e) {
+  var memo = '指定社民黨使用；';
+
+  if ($('#donate-plan [name="anonymous"]:checked').val() === 1) {
+    memo += '匿名捐款；';
+  } else {
+    memo += '本名捐款；';
+  }
+
+  if ($('#donate-plan [name="receipt"]:checked').val() === 1) {
+    memo += '年底寄送；';
+  } else {
+    memo += '不需寄送；';
+  }
+
+  memo += '介紹人：' + $('#donate-plan [name="referrals"]').val();
+
+  $('#memo').val(memo);
+
+  return true;
+});
+
+memo
+
 $('#donate-one').submit(function(e) {
   var input;
   var form = $('#donate-one');

@@ -21,7 +21,7 @@ section.main-container
                 | 2016小額募款
               .donation-form
                 form#donate-plan action="https://ezpos.neweb.com.tw/ezPos/ezpospayment" method="post"
-                  input type="hidden" name="memo" value="指定社民黨使用" /
+                  input type="hidden" name="memo" id="memo" value="指定社民黨使用" /
                   input type="hidden" name="paymenttype" value="2" /
                   input type="hidden" name="CardNumberIn" /
                   input type="hidden" name="merchantnumber" id="merchantnumber" /
@@ -89,6 +89,27 @@ section.main-container
                       | 是
                       input type="radio" name="tax" required="required" value="0" /
                       | 否
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="anonymous"  匿名捐款：
+                    .col-xs-12.col-sm-8
+                      input type="radio" name="anonymous" required="required" value="1" /
+                      | 是
+                      input type="radio" name="anonymous" required="required" value="0" /
+                      | 否
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="receipt"  收據寄送：
+                    .col-xs-12.col-sm-8
+                      input type="radio" name="receipt" required="required" value="1" /
+                      | 年底寄送
+                      input type="radio" name="receipt" required="required" value="0" /
+                      | 不需寄送
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="referrals"  介紹人：
+                    .col-xs-12.col-sm-8
+                      input name="referrals" type="text" value="" /
                   h4 捐款人注意事項
                   p
                     | 一、捐款人必須為本國國民且年滿 20 歲。
