@@ -38,8 +38,6 @@ $('#donate-plan').submit(function(e) {
   return true;
 });
 
-memo
-
 $('#donate-one').submit(function(e) {
   var input;
   var form = $('#donate-one');
