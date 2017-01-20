@@ -245,6 +245,23 @@ margin-bottom: 0px;
 .page-title-group .not-action .separator-2{
 	background-color: #D6D6D6;
 }
+.page-subtitle {
+	font-size: 27px;
+	color: #666666;
+	margin-bottom: 20px;
+}
+.page-toggle .page-title {
+	cursor: pointer;
+}
+.page-toggle-hide .page-title.page-title {
+	color: #C8C9C9;
+}
+.page-toggle-hide .separator-2 {
+	display: none;
+}
+.page-toggle-hide .row {
+	display: none;
+}
 .custom-wrap .politics-02{
 	border:none;}
 .list-icons li{

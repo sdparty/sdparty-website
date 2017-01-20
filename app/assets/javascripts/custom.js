@@ -70,3 +70,7 @@ $('#donate-one').submit(function(e) {
 
   return false;
 });
+
+$('.page-toggle .page-title').on('click', function(e) {
+  $(e.target).parent().toggleClass('page-toggle-hide');
+});
