@@ -351,6 +351,9 @@ class StaticPagesController < ApplicationController
   def constitution
   end
 
+  def constitution_area
+  end
+
   def constructing
   end
 

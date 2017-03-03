@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   match "/policies/5",   to: 'static_pages#policies_5',   via: 'get'
   match "/policies/6",   to: 'static_pages#policies_6',   via: 'get'
   match "/constitution", to: 'static_pages#constitution', via: 'get'
+  match "/constitution_area", to: 'static_pages#constitution_area', via: 'get'
   match "/constructing", to: 'static_pages#constructing', via: 'get'
   match "/sitemap.xml",  to: 'static_pages#sitemap',      format: 'xml', via: 'get'
 
