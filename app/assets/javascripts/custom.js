@@ -19,13 +19,13 @@ $('#donate-plan [name="tax"]').click(function(e) {
 $('#donate-plan').submit(function(e) {
   var memo = '指定社民黨使用；';
 
-  if ($('#donate-plan [name="anonymous"]:checked').val() === 1) {
+  if (parseInt($('#donate-plan [name="anonymous"]:checked').val(), 10)) {
     memo += '匿名捐款；';
   } else {
     memo += '本名捐款；';
   }
 
-  if ($('#donate-plan [name="receipt"]:checked').val() === 1) {
+  if (parseInt($('#donate-plan [name="receipt"]:checked').val(), 10)) {
     memo += '年底寄送；';
   } else {
     memo += '不需寄送；';
@@ -33,12 +33,11 @@ $('#donate-plan').submit(function(e) {
 
   memo += '介紹人：' + $('#donate-plan [name="referrals"]').val();
 
+  alert(memo);
   $('#memo').val(memo);
 
   return true;
 });
-
-memo
 
 $('#donate-one').submit(function(e) {
   var input;
@@ -70,4 +69,8 @@ $('#donate-one').submit(function(e) {
   location.href = 'http://sdparty.backme.tw/cashflow/checkout?' + $.param(query);
 
   return false;
+});
+
+$('.page-toggle .page-title').on('click', function(e) {
+  $(e.target).parent().toggleClass('page-toggle-hide');
 });
