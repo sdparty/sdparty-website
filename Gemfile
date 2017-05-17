@@ -78,7 +78,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-mhuggins--jquery-countTo'
   gem 'rails-assets-jquery.parallax'
   gem 'rails-assets-jquery.validate'
-  gem 'rails-assets-html.sortable'
 end
 
 # Use Capistrano for deployment
