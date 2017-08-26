@@ -5,13 +5,13 @@
  * Version: 1.2.0
  * Created:October 2014
  * License URI:http://support.wrapbootstrap.com/
- * File Description: Initializations of plugins 
+ * File Description: Initializations of plugins
  */
 
 (function($){
 	$(document).ready(function(){
 
-		$(window).load(function() {
+		$(window).on('load', function() {
 			$("body").removeClass("no-trans");
 		});
 
@@ -27,7 +27,7 @@
 					$this.find('.dropdown-toggle').addClass('disabled');
 				}, delay);
 
-			},	function(){ 
+			},	function(){
 				clearTimeout(setTimeoutConst );
 				$(this).removeClass('open');
 				$(this).find('.dropdown-toggle').removeClass('disabled');
@@ -39,9 +39,9 @@
 		if (Modernizr.mq('only all and (max-width: 767px)') || Modernizr.touch) {
 			$('.main-navigation [data-toggle=dropdown], .header-top [data-toggle=dropdown]').on('click', function(event) {
 			// Avoid following the href location when clicking
-			event.preventDefault(); 
+			event.preventDefault();
 			// Avoid having the menu to close when clicking
-			event.stopPropagation(); 
+			event.stopPropagation();
 			// close all the siblings
 			$(this).parent().siblings().removeClass('open');
 			// close all the submenus of siblings
@@ -56,16 +56,16 @@
 
 		//Revolution Slider
 		if ($(".slider-banner-container").length>0) {
-			
+
 			$(".tp-bannertimer").show();
 
 			$('.slider-banner-container .slider-banner').show().revolution({
 				delay:10000,
 				startwidth:1140,
 				startheight:520,
-				
+
 				navigationArrows:"solo",
-				
+
 				navigationStyle: "round",
 				navigationHAlign:"center",
 				navigationVAlign:"bottom",
@@ -85,23 +85,23 @@
 				fullWidth:"on",
 
 				spinner:"spinner0",
-				
+
 				stopLoop:"off",
 				stopAfterLoops:-1,
 				stopAtSlide:-1,
 				onHoverStop: "off",
 
 				shuffle:"off",
-				
-				autoHeight:"off",						
-				forceFullWidth:"off",						
-										
+
+				autoHeight:"off",
+				forceFullWidth:"off",
+
 				hideThumbsOnMobile:"off",
-				hideNavDelayOnMobile:1500,						
+				hideNavDelayOnMobile:1500,
 				hideBulletsOnMobile:"off",
 				hideArrowsOnMobile:"off",
 				hideThumbsUnderResolution:0,
-				
+
 				hideSliderAtLimit:0,
 				hideCaptionAtLimit:0,
 				hideAllCaptionAtLilmit:0,
@@ -112,9 +112,9 @@
 				delay:10000,
 				startwidth:1140,
 				startheight:520,
-				
+
 				navigationArrows:"solo",
-				
+
 				navigationStyle: "preview4",
 				navigationHAlign:"center",
 				navigationVAlign:"bottom",
@@ -134,23 +134,23 @@
 				fullWidth:"on",
 
 				spinner:"spinner0",
-				
+
 				stopLoop:"off",
 				stopAfterLoops:-1,
 				stopAtSlide:-1,
 				onHoverStop: "off",
 
 				shuffle:"off",
-				
-				autoHeight:"off",						
-				forceFullWidth:"off",						
-										
+
+				autoHeight:"off",
+				forceFullWidth:"off",
+
 				hideThumbsOnMobile:"off",
-				hideNavDelayOnMobile:1500,						
+				hideNavDelayOnMobile:1500,
 				hideBulletsOnMobile:"off",
 				hideArrowsOnMobile:"off",
 				hideThumbsUnderResolution:0,
-				
+
 				hideSliderAtLimit:0,
 				hideCaptionAtLimit:0,
 				hideAllCaptionAtLilmit:0,
@@ -166,9 +166,9 @@
 				parallax:"mouse",
 				parallaxBgFreeze:"on",
 				parallaxLevels:[3,2,1],
-				
+
 				navigationArrows:"solo",
-				
+
 				navigationStyle: "preview5",
 				navigationHAlign:"center",
 				navigationVAlign:"bottom",
@@ -188,29 +188,29 @@
 				fullWidth:"on",
 
 				spinner:"spinner0",
-				
+
 				stopLoop:"off",
 				stopAfterLoops:-1,
 				stopAtSlide:-1,
 				onHoverStop: "off",
 
 				shuffle:"off",
-				
-				autoHeight:"off",						
-				forceFullWidth:"off",						
-										
+
+				autoHeight:"off",
+				forceFullWidth:"off",
+
 				hideThumbsOnMobile:"off",
-				hideNavDelayOnMobile:1500,						
+				hideNavDelayOnMobile:1500,
 				hideBulletsOnMobile:"off",
 				hideArrowsOnMobile:"off",
 				hideThumbsUnderResolution:0,
-				
+
 				hideSliderAtLimit:0,
 				hideCaptionAtLimit:0,
 				hideAllCaptionAtLilmit:0,
 				startWithSlide:0
 			});
-			
+
 			if ($(".transparent.header").length>0 || $(".offcanvas-container").length>0) {
 				$('.slider-banner-container .slider-banner-fullscreen').show().revolution({
 					delay:10000,
@@ -222,7 +222,7 @@
 					fullScreenOffset: "",
 
 					navigationArrows:"solo",
-					
+
 					navigationStyle: "preview4",
 					navigationHAlign:"center",
 					navigationVAlign:"bottom",
@@ -240,7 +240,7 @@
 					soloArrowRightVOffset:0,
 
 					spinner:"spinner4",
-					
+
 					stopLoop:"off",
 					stopAfterLoops:-1,
 					stopAtSlide:-1,
@@ -249,15 +249,15 @@
 					shuffle:"off",
 					hideTimerBar:"on",
 
-					autoHeight:"off",						
-					forceFullWidth:"off",						
-											
+					autoHeight:"off",
+					forceFullWidth:"off",
+
 					hideThumbsOnMobile:"off",
-					hideNavDelayOnMobile:1500,						
+					hideNavDelayOnMobile:1500,
 					hideBulletsOnMobile:"off",
 					hideArrowsOnMobile:"off",
 					hideThumbsUnderResolution:0,
-					
+
 					hideSliderAtLimit:0,
 					hideCaptionAtLimit:0,
 					hideAllCaptionAtLilmit:0,
@@ -274,7 +274,7 @@
 					fullScreenOffset: "82px",
 
 					navigationArrows:"solo",
-					
+
 					navigationStyle: "preview4",
 					navigationHAlign:"center",
 					navigationVAlign:"bottom",
@@ -292,7 +292,7 @@
 					soloArrowRightVOffset:0,
 
 					spinner:"spinner4",
-					
+
 					stopLoop:"off",
 					stopAfterLoops:-1,
 					stopAtSlide:-1,
@@ -301,15 +301,15 @@
 					shuffle:"off",
 					hideTimerBar:"on",
 
-					autoHeight:"off",						
-					forceFullWidth:"off",						
-											
+					autoHeight:"off",
+					forceFullWidth:"off",
+
 					hideThumbsOnMobile:"off",
-					hideNavDelayOnMobile:1500,						
+					hideNavDelayOnMobile:1500,
 					hideBulletsOnMobile:"off",
 					hideArrowsOnMobile:"off",
 					hideThumbsUnderResolution:0,
-					
+
 					hideSliderAtLimit:0,
 					hideCaptionAtLimit:0,
 					hideAllCaptionAtLilmit:0,
@@ -415,7 +415,7 @@
 		// Isotope filters
 		//-----------------------------------------------
 		if ($('.isotope-container').length>0 || $('.masonry-grid').length>0 || $('.masonry-grid-fitrows').length>0) {
-			$(window).load(function() {
+			$(window).on('load', function() {
 				$('.masonry-grid').isotope({
 					itemSelector: '.masonry-grid-item',
 					layoutMode: 'masonry'
@@ -445,11 +445,11 @@
 		//hc-tabs
 		//-----------------------------------------------
 		if ($('.hc-tabs').length>0) {
-			$(window).load(function() {
+			$(window).on('load', function() {
 				var currentTab = $(".hc-tabs .nav.nav-tabs li.active a").attr("href"),
 				tabsImageAnimation = $(".hc-tabs-top").find("[data-tab='" + currentTab + "']").attr("data-tab-animation-effect");
 				$(".hc-tabs-top").find("[data-tab='" + currentTab + "']").addClass("current-img show " + tabsImageAnimation + " animated");
-				
+
 				$('.hc-tabs .nav.nav-tabs li a').on('click', function(event) {
 					var currentTab = $(this).attr("href"),
 					tabsImageAnimation = $(".hc-tabs-top").find("[data-tab='" + currentTab + "']").attr("data-tab-animation-effect");
@@ -481,7 +481,7 @@
 
 		// Magnific popup
 		//-----------------------------------------------
-		if (($(".popup-img").length > 0) || ($(".popup-iframe").length > 0) || ($(".popup-img-single").length > 0)) { 		
+		if (($(".popup-img").length > 0) || ($(".popup-iframe").length > 0) || ($(".popup-img-single").length > 0)) {
 			$(".popup-img").magnificPopup({
 				type:"image",
 				gallery: {
@@ -500,14 +500,14 @@
 				preloader: false,
 				fixedContentPos: false
 			});
-		};		
+		};
 
 		// Fixed header
 		//-----------------------------------------------
 		var	headerTopHeight = $(".header-top").outerHeight(),
 		headerHeight = $("header.header.fixed").outerHeight();
 		$(window).scroll(function() {
-			if (($(".header.fixed").length > 0)) { 
+			if (($(".header.fixed").length > 0)) {
 				if(($(this).scrollTop() > headerTopHeight+headerHeight) && ($(window).width() > 767)) {
 					$("body").addClass("fixed-header-on");
 					$(".header.fixed").addClass('animated object-visible fadeInDown');
@@ -560,7 +560,7 @@
 		};
 
 		// Contact forms validation
-		//-----------------------------------------------		
+		//-----------------------------------------------
 		if($("#contact-form").length>0) {
 			$("#contact-form").validate({
 				submitHandler: function(form) {
@@ -620,7 +620,7 @@
 							submitButton.button("reset");
 						}
 					});
-				},				
+				},
 				// debug: true,
 				errorPlacement: function(error, element) {
 					error.insertBefore( element );
@@ -659,16 +659,16 @@
 					message: {
 						required: "Please enter a message",
 						minlength: "Your message must be longer than 10 characters"
-					}					
+					}
 				},
 				errorElement: "span",
 				highlight: function (element) {
 					$(element).parent().removeClass("has-success").addClass("has-error");
-					$(element).siblings("label").addClass("hide"); 
+					$(element).siblings("label").addClass("hide");
 				},
 				success: function (element) {
 					$(element).parent().removeClass("has-error").addClass("has-success");
-					$(element).siblings("label").removeClass("hide"); 
+					$(element).siblings("label").removeClass("hide");
 				}
 			});
 		};
@@ -732,7 +732,7 @@
 							submitButton.button("reset");
 						}
 					});
-				},				
+				},
 				// debug: true,
 				errorPlacement: function(error, element) {
 					error.insertAfter( element );
@@ -770,11 +770,11 @@
 				errorElement: "span",
 				highlight: function (element) {
 					$(element).parent().removeClass("has-success").addClass("has-error");
-					$(element).siblings("label").addClass("hide"); 
+					$(element).siblings("label").addClass("hide");
 				},
 				success: function (element) {
 					$(element).parent().removeClass("has-error").addClass("has-success");
-					$(element).siblings("label").removeClass("hide"); 
+					$(element).siblings("label").removeClass("hide");
 				}
 			});
 		};
@@ -840,7 +840,7 @@
 							submitButton.button("reset");
 						}
 					});
-				},				
+				},
 				// debug: true,
 				errorPlacement: function(error, element) {
 					error.insertAfter( element );
@@ -873,7 +873,7 @@
 					message3: {
 						required: "Please enter a message",
 						minlength: "Your message must be longer than 10 characters"
-					}					
+					}
 				},
 				errorElement: "span",
 				highlight: function (element) {
@@ -889,11 +889,11 @@
 		// Affix plugin
 		//-----------------------------------------------
 		if ($("#affix").length>0) {
-			$(window).load(function() {
+			$(window).on('load', function() {
 
 				var affixBottom = $(".footer").outerHeight(true) + $(".subfooter").outerHeight(true) + $(".blogpost footer").outerHeight(true),
 				affixTop = $("#affix").offset().top;
-				
+
 				if ($(".comments").length>0) {
 					affixBottom = affixBottom + $(".comments").outerHeight(true);
 				}
@@ -938,7 +938,7 @@
 							var affixBottom = $(".footer").outerHeight(true) + $(".subfooter").outerHeight(true)
 							if ($(".footer-top").length>0) {
 								affixBottom = affixBottom + $(".footer-top").outerHeight(true)
-							}						
+							}
 							return (this.bottom = affixBottom+50)
 						}
 					}
@@ -983,12 +983,12 @@
 		if($(".scrollspy").length>0) {
 			$("body").addClass("scroll-spy");
 			if($(".fixed.header").length>0) {
-				$('body').scrollspy({ 
+				$('body').scrollspy({
 					target: '.scrollspy',
 					offset: 85
 				});
 			} else {
-				$('body').scrollspy({ 
+				$('body').scrollspy({
 					target: '.scrollspy',
 					offset: 20
 				});
@@ -999,16 +999,16 @@
 		//-----------------------------------------------
 		$(window).scroll(function() {
 			if($(this).scrollTop() != 0) {
-				$(".scrollToTop").fadeIn();	
+				$(".scrollToTop").fadeIn();
 			} else {
 				$(".scrollToTop").fadeOut();
 			}
 		});
-		
+
 		$(".scrollToTop").click(function() {
 			$("body,html").animate({scrollTop:0},800);
 		});
-		
+
 		//Modal
 		//-----------------------------------------------
 		if($(".modal").length>0) {
@@ -1016,7 +1016,7 @@
 				$(".modal").prependTo( "body" );
 			});
 		}
-		
+
 		// Pricing tables popovers
 		//-----------------------------------------------
 		if ($(".pricing-tables").length>0) {
@@ -1053,7 +1053,7 @@
 		//This will prevent the event from bubbling up and close the dropdown when you type/click on text boxes (Header Top).
 		//-----------------------------------------------
 		$('.header-top .dropdown-menu input').click(function(e) {
-			e.stopPropagation(); 
+			e.stopPropagation();
 		});
 
 		// Offcanvas side navbar
@@ -1069,9 +1069,9 @@
 		if ($("#offcanvas").length>0) {
 			$('#offcanvas [data-toggle=dropdown]').on('click', function(event) {
 			// Avoid following the href location when clicking
-			event.preventDefault(); 
+			event.preventDefault();
 			// Avoid having the menu to close when clicking
-			event.stopPropagation(); 
+			event.stopPropagation();
 			// close all the siblings
 			$(this).parent().siblings().removeClass('open');
 			// close all the submenus of siblings

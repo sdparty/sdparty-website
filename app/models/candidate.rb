@@ -1,3 +1,3 @@
-class Candidate < ActiveRecord::Base
+class Candidate < ApplicationRecord
   scope :published, -> { where(published: true) }
 end

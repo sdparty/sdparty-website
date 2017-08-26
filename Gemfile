@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem "bundler", ">= 1.8.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '5.1.3'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -30,6 +30,7 @@ gem "compass-rails", '>=  2.0.2'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'jquery-turbolinks'
 gem 'factory_girl_rails'
 gem 'kaminari'
 gem 'devise'
@@ -41,8 +42,8 @@ gem 'ransack'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'meta-tags', '~> 2.0.0'
-gem 'rails-i18n', '~> 4.0.0'
+gem 'meta-tags'
+gem 'rails-i18n', '~> 5.0.0'
 gem 'social-share-button'
 gem 'chosen-rails'
 gem 'carrierwave'
@@ -50,12 +51,9 @@ gem 'mini_magick'
 gem 'ckeditor', '4.1.2'
 gem 'unicode-display_width'
 gem 'jquery-datetimepicker-rails'
-# gem "font-awesome-rails"
+gem "font-awesome-rails"
 gem 'fontello_rails_converter'
-# gem 'magnific-popup-rails'
-gem 'owlcarousel-rails'
 gem "therubyracer"
-gem "less-rails"
 gem "twitter-bootstrap-rails"
 # gem "animate-rails"
 # gem 'google-webfonts'
@@ -68,10 +66,9 @@ source 'https://rails-assets.org' do
   # gem 'rails-assets-jquery'
   # gem 'rails-assets-bootstrap'
   # gem 'rails-assets-owlcarousel'
-  gem 'rails-assets-fontawesome'
+  # gem 'rails-assets-fontawesome'
   gem 'rails-assets-magnific-popup'
   gem 'rails-assets-animate.css'
-  gem 'rails-assets-owl-carousel'
   gem 'rails-assets-modernizr'
   gem 'rails-assets-isotope'
   gem 'rails-assets-jquery-appear'

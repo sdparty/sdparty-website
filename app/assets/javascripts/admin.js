@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
@@ -114,4 +115,3 @@ var ready = function(){
 
 
 $(document).ready(ready);
-$(document).on('page:load', ready);

@@ -8,10 +8,10 @@ html lang="zh-Hant-TW"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     link rel="shortcut icon" href="/images/favicon.ico"
-    link href="/images/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"
-    link href="/images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"
-    link href="/images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"
-    link href="/images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"
+    link href="#{image_path('apple-icon-57x57.png')}" rel="apple-touch-icon" sizes="57x57"
+    link href="#{image_path('apple-icon-72x72.png')}" rel="apple-touch-icon" sizes="72x72"
+    link href="#{image_path('apple-icon-114x114.png')}" rel="apple-touch-icon" sizes="114x114"
+    link href="#{image_path('apple-icon-144x144.png')}" rel="apple-touch-icon" sizes="144x144"
     - if params[:controller] == 'static_pages' and params[:action] == 'home'
       = stylesheet_link_tag  'index', media: 'all', 'data-turbolinks-track' => true
     - else
@@ -29,7 +29,6 @@ html lang="zh-Hant-TW"
       = yield
     = render 'layouts/footer'
     = debug(params) if Rails.env.development?
-    - console if Rails.env.development?
     - if params[:controller] == 'static_pages' and params[:action] == 'home'
       = javascript_include_tag 'index', 'data-turbolinks-track' => true
     - else

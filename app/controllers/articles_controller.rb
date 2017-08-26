@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
           status: "success",
           articles: JSON.parse(
             @articles.to_json({include: [:issues], except: [:published]})
@@ -144,7 +144,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
         status: "success",
         article: JSON.parse(
             @article.to_json({include: [:issues], except: [:published]})
@@ -211,7 +211,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
           status: "success",
           articles: JSON.parse(
             @articles.to_json({include: [:issues], except: [:published]})
@@ -279,7 +279,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
           status: "success",
           articles: JSON.parse(
             @articles.to_json({include: [:issues], except: [:published]})
@@ -347,7 +347,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
           status: "success",
           articles: JSON.parse(
             @articles.to_json({include: [:issues], except: [:published]})

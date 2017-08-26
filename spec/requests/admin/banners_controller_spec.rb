@@ -39,7 +39,7 @@ describe "Admin/Banner" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/banners", :banner => new_banner
+        post "/admin/banners", params: { banner: new_banner }
         expect(response).to be_redirect
       end
     end
@@ -47,8 +47,8 @@ describe "Admin/Banner" do
     describe "#update" do
       it "redirect" do
         banner
-        update_data = { :title => "new_title" }
-        put "/admin/banners/#{banner.id}", :banner => update_data
+        update_data = { title: "new_title" }
+        put "/admin/banners/#{banner.id}", params: { banner: update_data }
         expect(response).to be_redirect
       end
     end
@@ -81,7 +81,7 @@ describe "Admin/Banner" do
             }
           }
         }
-        put "/admin/banners/sort", sort_data
+        put "/admin/banners/sort", params: sort_data
         banner1.reload
         banner2.reload
         expect(Banner.all).to eq([banner1, banner2])
@@ -116,7 +116,7 @@ describe "Admin/Banner" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/banners", :banner => new_banner
+        post "/admin/banners", params: { banner: new_banner }
         expect(response).to be_redirect
       end
     end
@@ -124,8 +124,8 @@ describe "Admin/Banner" do
     describe "#update" do
       it "redirect" do
         banner
-        update_data = { :title => "new_title" }
-        put "/admin/banners/#{banner.id}", :banner => update_data
+        update_data = { title: "new_title" }
+        put "/admin/banners/#{banner.id}", params: { banner: update_data }
         expect(response).to be_redirect
       end
     end
@@ -158,7 +158,7 @@ describe "Admin/Banner" do
             }
           }
         }
-        put "/admin/banners/sort", sort_data
+        put "/admin/banners/sort", params: sort_data
         banner1.reload
         banner2.reload
         expect(Banner.all).to eq([banner1, banner2])
@@ -193,7 +193,7 @@ describe "Admin/Banner" do
 
     describe "#create" do
       it "success" do
-        post "/admin/banners", :banner => new_banner
+        post "/admin/banners", params: { banner: new_banner }
         expect(response).to be_success
       end
     end
@@ -201,8 +201,8 @@ describe "Admin/Banner" do
     describe "#update" do
       it "success" do
         banner
-        update_data = { :title => "new_title" }
-        put "/admin/banners/#{banner.id}", :banner => update_data
+        update_data = { title: "new_title" }
+        put "/admin/banners/#{banner.id}", params: { banner: update_data }
         expect(response).to be_redirect
         banner.reload
         expect(banner.title).to match(update_data[:title])
@@ -238,7 +238,7 @@ describe "Admin/Banner" do
             }
           }
         }
-        put "/admin/banners/sort", sort_data
+        put "/admin/banners/sort", params: sort_data
         banner1.reload
         banner2.reload
         expect(Banner.all).to eq([banner2, banner1])

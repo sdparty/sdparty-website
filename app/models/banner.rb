@@ -1,4 +1,4 @@
-class Banner < ActiveRecord::Base
+class Banner < ApplicationRecord
   default_scope { order(position: :asc) }
   mount_uploader :image, ImageUploader
   scope :published, -> { where(published: true) }
