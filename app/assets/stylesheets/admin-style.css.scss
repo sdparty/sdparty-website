@@ -4,7 +4,7 @@ body{
 	margin:0px;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:15px;
-	background:url(../images/aside.gif) -150px top repeat-y;}
+	background: image-url("aside.gif") -150px top repeat-y;}
 #longin_page{
 	background:#fff;}
 a{
@@ -21,7 +21,7 @@ a img{
 	position:relative;
 	line-height:36px;
 	margin-bottom:10px;
-	background:url(../images/hbar.gif) no-repeat;
+	background: image-url("hbar.gif") no-repeat;
 	text-align:center;
 	margin-top:5px;}
 
@@ -60,11 +60,11 @@ a img{
 	line-height:24px;
 	}
 #side_menu li.select,#side_menu h4.select{
-	background:url(../images/aside_select.gif) -115px top no-repeat;}
+	background: image-url("aside_select.gif") -115px top no-repeat;}
 #side_menu li.select a,#side_menu h4.select a{
 	color:#fff;}
 .side_block{
-	background:url(../images/aside_line.gif) no-repeat -150px bottom;
+	background: image-url("aside_line.gif") no-repeat -150px bottom;
 	padding:7px 0px;}
 .side_block li a{
 	display:block;
@@ -145,7 +145,7 @@ background:#7bc142;
 	width:20px;
 	}
 .submit{
-	background:url(../images/submit.gif) no-repeat;
+	background: image-url("submit.gif") no-repeat;
 	color:#fff;
 	border:none;
 	width:90px;
@@ -160,7 +160,7 @@ a.submit{
 	text-align:center;
 	line-height:45px;}
 .back{
-	background:url(../images/back.gif) no-repeat;
+	background: image-url("back.gif") no-repeat;
 	color:#333;
 	border:none;
 	width:120px;
@@ -222,7 +222,7 @@ em.top{
 	overflow:hidden;
 	width:519px;
 	height:235px;
-	background:url(../images/login.jpg);
+	background: image-url("login.jpg");
 	margin:15px auto 30px auto;
 	position:relative;
 	}
@@ -237,7 +237,7 @@ em.top{
 	height:35px;
 	font-size:28px;
 	padding:5px 5px 10px 12px;
-	background:url(../images/login_input.gif) no-repeat;
+	background: image-url("login_input.gif") no-repeat;
 	border:none;
 	}
 #admin_id{
@@ -334,7 +334,7 @@ table td th{
 	bottom:22px;}
 #operate_bar a{
 	display:block;
-	background:url(../images/btn_02.gif);
+	background: image-url("btn_02.gif");
 	width:78px;
 	height:30px;
 	text-align:center;
@@ -346,18 +346,18 @@ table td th{
 #search_bar{
 	padding:0px 10px;
 	margin-bottom:5px;
-	background:url(../images/sbar.gif) no-repeat;
+	background: image-url("sbar.gif") no-repeat;
 	height:45px;
 	line-height:45px;}
 #search_bar　input{
 	}
 #search_bar.search_bar_fix{
-	background:url(../images/sbar2.gif) no-repeat;
+	background: image-url("sbar2.gif") no-repeat;
 	padding:8px 0 0 0;
 	margin-bottom:20px;
 	height:auto;}
 #search_bar_inner{
-	background:url(../images/sbar2.gif) no-repeat left bottom;
+	background: image-url("sbar2.gif") no-repeat left bottom;
 	padding:0 12px 8px 12px;}
 /*聯絡我們*/
 table.replay{
@@ -370,7 +370,7 @@ table.replay{
 	margin-bottom:5px;
 	padding:5px;}
 .reply_form .submit,.replay input.delete{
-	background:url(../images/btn_02.gif);
+	background: image-url("btn_02.gif");
 	width:78px;
 	height:30px;
 	color:#fff;

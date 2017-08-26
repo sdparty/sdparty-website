@@ -422,7 +422,7 @@ tbody {
 	box-shadow: 0px 0px 10px #cacaca;;
 }
 .pattern-1 { 
-	background-image: url("../images/pattern-1.png");
+	background-image: image-url("pattern-1.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
@@ -436,42 +436,42 @@ tbody {
 	box-shadow: none;
 }
 .pattern-2 { 
-	background-image: url("../images/pattern-2.png");
+	background-image: image-url("pattern-2.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-3 { 
-	background-image: url("../images/pattern-3.png");
+	background-image: image-url("pattern-3.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-4 { 
-	background-image: url("../images/pattern-4.png");
+	background-image: image-url("pattern-4.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-5 { 
-	background-image: url("../images/pattern-5.png");
+	background-image: image-url("pattern-5.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-6 { 
-	background-image: url("../images/pattern-6.png");
+	background-image: image-url("pattern-6.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-7 { 
-	background-image: url("../images/pattern-7.png");
+	background-image: image-url("pattern-7.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-8 { 
-	background-image: url("../images/pattern-8.png");
+	background-image: image-url("pattern-8.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
 .pattern-9 { 
-	background-image: url("../images/pattern-9.png");
+	background-image: image-url("pattern-9.png");
 	background-repeat: repeat;
 	background-position: 0 0; 
 }
@@ -744,13 +744,13 @@ tbody {
 	position: relative;
 }
 .parallax-bg {
-	background: url("../images/parallax-bg.jpg") 50% 0px no-repeat;
+	background: image-url("parallax-bg.jpg") 50% 0px no-repeat;
 }
 .parallax-bg-2 {
-	background: url("../images/parallax-bg-2.jpg") 50% 0px no-repeat;
+	background: image-url("parallax-bg-2.jpg") 50% 0px no-repeat;
 }
 .parallax-bg-3 {
-	background: url("../images/parallax-bg-3.jpg") 50% 0px no-repeat;
+	background: image-url("parallax-bg-3.jpg") 50% 0px no-repeat;
 }
 
 /* Custom Grid
@@ -1715,7 +1715,7 @@ tbody {
 /* Coming Soon Page
 ---------------------------------- */
 .fullscreen-bg {
-	background: url("../images/fullscreen-bg.jpg") 50% 0px no-repeat;
+	background: image-url("fullscreen-bg.jpg") 50% 0px no-repeat;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -5651,7 +5651,7 @@ ul.tweets li span {
 	display: none;
 }
 .tp-loader.spinner0 {
-	background: url("../images/loader.gif") no-repeat center center;
+	background: image-url("loader.gif") no-repeat center center;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	-webkit-animation: none;

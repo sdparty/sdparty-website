@@ -553,4 +553,3 @@ var stackslider = function( $, window, undefined ) {
 };
 
 $(document).ready(stackslider(jQuery, window));
-$(document).on('page:load', stackslider(jQuery, window));

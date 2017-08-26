@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
           status: "success",
           candidates: JSON.parse(
             @candidates.to_json({except: [:published]})
@@ -74,7 +74,7 @@ class CandidatesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {
+      format.json { render json: {
           status: "success",
           candidate: JSON.parse(
             @candidate.to_json({except: [:published]})

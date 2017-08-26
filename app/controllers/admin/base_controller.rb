@@ -1,6 +1,6 @@
 class Admin::BaseController < ApplicationController
   layout 'admin'
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   before_action :require_admin, :set_system_articles
 
   def upload
@@ -14,7 +14,7 @@ class Admin::BaseController < ApplicationController
       img_path = Rails.root.join('public', 'uploads', name + '.' + extension)
       FileUtils.mv params['file'].tempfile, img_path
       web_img_path = '/uploads/' + name + '.' + extension
-      render json: {:link => web_img_path}
+      render json: {link: web_img_path}
     end
   end
 
