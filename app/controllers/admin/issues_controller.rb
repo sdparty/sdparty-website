@@ -72,7 +72,7 @@ class Admin::IssuesController < Admin::BaseController
     issue_params[:order].each do |key,value|
       Issue.find(value[:id]).update_attribute(:position, value[:position])
     end
-    render :nothing => true
+    render body: nil
   end
 
   private

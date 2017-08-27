@@ -1,5 +1,5 @@
-class Article < ActiveRecord::Base
-  has_and_belongs_to_many :issues, -> { uniq }
+class Article < ApplicationRecord
+  has_and_belongs_to_many :issues, index: { unique: true }
   belongs_to :user
   mount_uploader :image, ImageUploader
   default_scope { includes(:issues).order(published_at: :desc) }
@@ -89,13 +89,14 @@ class Article < ActiveRecord::Base
     else
       self.youtube_url = nil
       errors.add(:base, 'youtube網址錯誤')
-      return false
+      throw(:abort)
     end
   end
 
   def check_content
     unless self.kind == 'system'
       errors.add(:content, '內容不能為空') if self.content.strip.blank?
+      throw(:abort)
     end
   end
 end

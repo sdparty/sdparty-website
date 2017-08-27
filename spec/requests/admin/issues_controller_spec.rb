@@ -35,7 +35,7 @@ describe "Admin/Issue" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/issues", :issue => new_issue
+        post "/admin/issues", params: { issue: new_issue }
         expect(response).to be_redirect
       end
     end
@@ -43,8 +43,8 @@ describe "Admin/Issue" do
     describe "#update" do
       it "redirect" do
         issue
-        update_data = { :name => "new_name" }
-        put "/admin/issues/#{issue.id}", :issue => update_data
+        update_data = { name: "new_name" }
+        put "/admin/issues/#{issue.id}", params: { issue: update_data }
         expect(response).to be_redirect
       end
     end
@@ -77,7 +77,7 @@ describe "Admin/Issue" do
             }
           }
         }
-        put "/admin/issues/sort", sort_data
+        put "/admin/issues/sort", params: sort_data
         issue1.reload
         issue2.reload
         expect(Issue.all).to eq([issue1, issue2])
@@ -112,7 +112,7 @@ describe "Admin/Issue" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/issues", :issue => new_issue
+        post "/admin/issues", params: { issue: new_issue }
         expect(response).to be_redirect
       end
     end
@@ -120,8 +120,8 @@ describe "Admin/Issue" do
     describe "#update" do
       it "redirect" do
         issue
-        update_data = { :name => "new_name" }
-        put "/admin/issues/#{issue.id}", :issue => update_data
+        update_data = { name: "new_name" }
+        put "/admin/issues/#{issue.id}", params: { issue: update_data }
         expect(response).to be_redirect
       end
     end
@@ -154,7 +154,7 @@ describe "Admin/Issue" do
             }
           }
         }
-        put "/admin/issues/sort", sort_data
+        put "/admin/issues/sort", params: sort_data
         issue1.reload
         issue2.reload
         expect(Issue.all).to eq([issue1, issue2])
@@ -189,7 +189,7 @@ describe "Admin/Issue" do
 
     describe "#create" do
       it "success" do
-        post "/admin/issues", :issue => new_issue
+        post "/admin/issues", params: { issue: new_issue }
         expect(response).to be_redirect
       end
     end
@@ -197,8 +197,8 @@ describe "Admin/Issue" do
     describe "#update" do
       it "success" do
         issue
-        update_data = { :name => "new_name" }
-        put "/admin/issues/#{issue.id}", :issue => update_data
+        update_data = { name: "new_name" }
+        put "/admin/issues/#{issue.id}", params: { issue: update_data }
         expect(response).to be_redirect
       end
     end
@@ -231,7 +231,7 @@ describe "Admin/Issue" do
             }
           }
         }
-        put "/admin/issues/sort", sort_data
+        put "/admin/issues/sort", params: sort_data
         issue1.reload
         issue2.reload
         expect(Issue.all).to eq([issue2, issue1])

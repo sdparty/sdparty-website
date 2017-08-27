@@ -1,5 +1,5 @@
-class Issue < ActiveRecord::Base
-  has_and_belongs_to_many :articles, -> { uniq }
+class Issue < ApplicationRecord
+  has_and_belongs_to_many :articles, index: { unique: true }
   default_scope { order(position: :asc) }
   validates_uniqueness_of :name, message: '名稱不得重複'
 
@@ -17,7 +17,7 @@ class Issue < ActiveRecord::Base
 
   def detect_articles
     if self.articles.any?
-      return false
+      throw(:abort)
     end
   end
 end

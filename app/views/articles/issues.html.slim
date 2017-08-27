@@ -7,14 +7,14 @@ section.main-container
           .separator-2
           .issue-top-tag
             - unless @issue.blank?
-              = link_to '全部', url_for(params.merge({i: nil}))
+              = link_to '全部', url_for(i: nil)
             - else
-              = link_to '全部', url_for(params.merge({i: nil})), class: 'active'
+              = link_to '全部', url_for(i: nil), class: 'active'
             - @issues.each do |i|
               - unless i == @issue
-                = link_to i.name, url_for(params.merge({i: i.id}))
+                = link_to i.name, url_for(i: i.id)
               - else
-                = link_to i.name, url_for(params.merge({i: i.id})), class: 'active'
+                = link_to i.name, url_for(i: i.id), class: 'active'
           .row
             .col-md-12
               .issue-list-block

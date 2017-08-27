@@ -70,7 +70,7 @@ class Admin::BannersController < Admin::BaseController
     banner_params[:order].each do |key,value|
       Banner.find(value[:id]).update_attribute(:position, value[:position])
     end
-    render :nothing => true
+    render body: nil
   end
 
   private

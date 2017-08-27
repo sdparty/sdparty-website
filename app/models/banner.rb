@@ -1,4 +1,4 @@
-class Banner < ActiveRecord::Base
+class Banner < ApplicationRecord
   default_scope { order(position: :asc) }
   mount_uploader :image, ImageUploader
   scope :published, -> { where(published: true) }
@@ -27,13 +27,14 @@ class Banner < ActiveRecord::Base
       errors.add(:base, '標題文字過長')
       result = false
     end
-    result
+    throw(:abort) unless result
   end
 
   def validate_image_size
     unless self.image.file.blank?
       width, height = `identify -format "%wx%h" #{self.image.file.path}`.split(/x/).map{ |i| i.to_i }
       errors.add :image, "請上傳 1350 x 605 尺寸的圖片" unless width == 1350 && height == 605
+      throw(:abort)
     end
   end
 end

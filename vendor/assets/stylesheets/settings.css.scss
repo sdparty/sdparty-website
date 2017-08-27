@@ -2013,7 +2013,7 @@ border-style:none;
 .tp-bullets.preview4 .bullet.selected 		{	-webkit-box-shadow: none;
 											    -moz-box-shadow: none;
 											    box-shadow: none;
-												background: rgba(233, 34, 47, 1) !important;
+												background: rgba(181, 57, 87, 1) !important;
 												width: 6px !important;
 											    height: 6px !important;
 											    /*border: 5px solid rgba(0, 0, 0, 1) !important;*/
@@ -2262,11 +2262,11 @@ zoom: 1;
 
 @font-face {
   font-family: 'revicons';
-  src: font-url('revicons.eot?5510888');
-  src: font-url('revicons.eot?5510888#iefix') format('embedded-opentype'),
-       font-url('revicons.woff?5510888') format('woff'),
-       font-url('revicons.ttf?5510888') format('truetype'),
-       font-url('revicons.svg?5510888#revicons') format('svg');
+  src: asset-url('revicons.eot?5510888');
+  src: asset-url('revicons.eot?5510888#iefix') format('embedded-opentype'),
+       asset-url('revicons.woff?5510888') format('woff'),
+       asset-url('revicons.ttf?5510888') format('truetype'),
+       asset-url('revicons.svg?5510888#revicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
