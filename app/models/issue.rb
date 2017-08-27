@@ -17,7 +17,7 @@ class Issue < ApplicationRecord
 
   def detect_articles
     if self.articles.any?
-      return false
+      throw(:abort)
     end
   end
 end

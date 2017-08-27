@@ -89,13 +89,14 @@ class Article < ApplicationRecord
     else
       self.youtube_url = nil
       errors.add(:base, 'youtube網址錯誤')
-      return false
+      throw(:abort)
     end
   end
 
   def check_content
     unless self.kind == 'system'
       errors.add(:content, '內容不能為空') if self.content.strip.blank?
+      throw(:abort)
     end
   end
 end
