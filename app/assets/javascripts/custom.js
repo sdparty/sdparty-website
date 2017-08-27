@@ -33,7 +33,7 @@ $('#donate-plan').submit(function(e) {
 
   memo += '介紹人：' + $('#donate-plan [name="referrals"]').val();
 
-  alert(memo);
+  // alert(memo);
   $('#memo').val(memo);
 
   return true;
