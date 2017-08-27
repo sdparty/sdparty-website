@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery2
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
@@ -123,4 +123,4 @@ var ready = function(){
 };
 
 $(document).ready(ready);
-
+$(document).on('page:load', ready);
