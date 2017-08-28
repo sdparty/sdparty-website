@@ -65,6 +65,6 @@ table border="1" cellpadding="5" width="100%"
   tr
     th valign="top"  ＊內容
     td
-      = f.cktext_area :content, label: false, required: true
+      = f.input :content, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
 .btn
   = f.submit '儲存', id: 'button', class: 'submit'

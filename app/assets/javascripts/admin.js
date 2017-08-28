@@ -111,6 +111,12 @@ var ready = function(){
       });
     });
   }
+
+  $('textarea.ckeditor').each(function(){
+    if ($(this).css('visibility') != 'hidden') {
+      CKEDITOR.replace(this)
+    }
+  })
 };
 
 
