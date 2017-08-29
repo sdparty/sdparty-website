@@ -48,7 +48,7 @@ gem 'social-share-button'
 gem 'chosen-rails'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'ckeditor', '4.1.2'
+gem 'ckeditor'
 gem 'unicode-display_width'
 gem 'jquery-datetimepicker-rails'
 gem "font-awesome-rails"
