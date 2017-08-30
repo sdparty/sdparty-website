@@ -58,7 +58,7 @@ gem "twitter-bootstrap-rails"
 # gem "animate-rails"
 # gem 'google-webfonts'
 gem 'lograge'
-# gem 'rollbar', '~> 2.5.1'
+gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 # gem "skylight"
 
