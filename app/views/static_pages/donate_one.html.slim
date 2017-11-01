@@ -60,12 +60,25 @@ section.main-container
                       | 元
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
-                      label for="tax"  抵稅需求：
+                      label for="tax"  抵稅需求（需抵稅者應使用本名捐款）：
                     .col-xs-12.col-sm-8
                       input type="radio" name="tax" required="required" value="1" /
                       | 是
                       input type="radio" name="tax" required="required" value="0" /
                       | 否
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="anonymous"  匿名捐款：
+                    .col-xs-12.col-sm-8
+                      input type="radio" name="anonymous" required="required" value="1" /
+                      | 是
+                      input type="radio" name="anonymous" required="required" value="0" /
+                      | 否
+                  .row.donate-input-group
+                    .col-xs-12.col-sm-4
+                      label for="referrals"  介紹人：
+                    .col-xs-12.col-sm-8
+                      input name="referrals" type="text" value="" /
                   h4 捐款人注意事項
                   p
                     | 一、捐款人必須為本國國民且年滿 20 歲。
