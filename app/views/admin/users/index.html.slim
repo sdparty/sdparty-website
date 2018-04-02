@@ -27,13 +27,13 @@ table border="1" cellpadding="5" width="100%"
           td align="center" width="112" 管理員
           td align="center" width="333"
             = simple_form_for u, url: admin_user_path(u), method: :put do |f|
-              = f.input :admin, as: :hidden, input_html: { value : 0 }
+              = f.input :admin, as: :hidden, input_html: { value: 0 }
               = f.button :submit, "移除管理權限"
         - else
           td align="center" width="112" 無
           td align="center" width="333"
             = simple_form_for u, url: admin_user_path(u), method: :put do |f|
-              = f.input :admin, as: :hidden, input_html: { value : 1 }
+              = f.input :admin, as: :hidden, input_html: { value: 1 }
               = f.button :submit, "授與管理權限"
     - else
       tr.even
@@ -49,13 +49,13 @@ table border="1" cellpadding="5" width="100%"
           td align="center" width="112" 管理員
           td align="center" width="333"
             = simple_form_for u, url: admin_user_path(u), method: :put do |f|
-              = f.input :admin, as: :hidden, input_html: { value : 0 }
+              = f.input :admin, as: :hidden, input_html: { value: 0 }
               = f.button :submit, "移除管理權限"
         - else
           td align="center" width="112" 無
           td align="center" width="333"
             = simple_form_for u, url: admin_user_path(u), method: :put do |f|
-              = f.input :admin, as: :hidden, input_html: { value : 1 }
+              = f.input :admin, as: :hidden, input_html: { value: 1 }
               = f.button :submit, "授與管理權限"
 #page
   = paginate @users
