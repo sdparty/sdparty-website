@@ -61,15 +61,15 @@ $('#donate-one').submit(function(e) {
   memo += '介紹人：' + $('[name="referrals"]', form).val();
 
   if ($('[name="tax"]:checked', form).val() === '1') {
-    query['project_id'] = '274';
-    query['reward_id'] = '1153';
-    input = ['custom_field[1813]', 'custom_field[1814]', 'custom_field[1815]', 'custom_field[1816]', 'custom_field[1817]'];
-    query['custom_field[1818]'] = memo;
+    query['items[0][project_id]'] = '274';
+    query['items[0][reward_id]'] = '1153';
+    input = ['items[0][custom_field][1813]', 'items[0][custom_field][1814]', 'items[0][custom_field][1815]', 'items[0][custom_field][1816]', 'items[0][custom_field][1817]'];
+    query['items[0][note]'] = memo;
   } else {
-    query['project_id'] = '74';
-    query['reward_id'] = '247';
-    input = ['custom_field[130]', 'custom_field[131]', 'custom_field[133]', 'custom_field[134]', 'custom_field[135]'];
-    query['custom_field[136]'] = memo;
+    query['items[0][project_id]'] = '74';
+    query['items[0][reward_id]'] = '247';
+    input = ['items[0][custom_field][130]', 'items[0][custom_field][131]', 'items[0][custom_field][133]', 'items[0][custom_field][134]', 'items[0][custom_field][135]'];
+    query['items[0][note]'] = memo;
   }
 
   $('.donate-input-group input', form).each(function(idx, item) {
@@ -81,7 +81,7 @@ $('#donate-one').submit(function(e) {
   query['email'] = $('[name="email"]', form).val();
   query['additional_support'] = $('[name="additional_support"]', form).val();
 
-  location.href = 'http://sdparty.backme.tw/cashflow/checkout?' + $.param(query);
+  location.href = 'https://sdparty.backme.tw/checkout/' + query['items[0][project_id]'] + '/' + query['items[0][reward_id]'] + '?' + $.param(query);
 
   return false;
 });

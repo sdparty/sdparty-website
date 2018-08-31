@@ -20,38 +20,38 @@ section.main-container
                 br
                 | 小額募款
               .donation-form
-                form#donate-one action="http://sdparty.backme.tw:80/cashflow/checkout" method="get"
-                  input name="project_id" type="hidden" value="74" /
-                  input name="reward_id" type="hidden" value="247" /
-                  input name="custom_field[136]" type="hidden" value="指定社民黨使用" /
+                form#donate-one action="https://sdparty.backme.tw/checkout/74/247?locale=zh-TW" method="get"
+                  input name="items[0][project_id]" type="hidden" value="74" /
+                  input name="items[0][reward_id]" type="hidden" value="247" /
+                  input name="items[0][custom_field][136]" type="hidden" value="指定社民黨使用" /
                   h3 募款單位：社會民主黨（政治獻金）
                   h4 請填寫捐款人基本資料
                   p 所有欄位皆為必填
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
-                      label for="custom_field[130]" 捐款人姓名（公司名稱）：
+                      label for="items[0][custom_field][130]" 捐款人姓名（公司名稱）：
                     .col-xs-12.col-sm-8
-                      input#recipient_name name="custom_field[130]" required="required" type="text" value="" /
+                      input#recipient_name name="items[0][custom_field][130]" required="required" type="text" value="" /
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
-                      label for="custom_field[131]" 身分證字號（統一編號）：
+                      label for="items[0][custom_field][131]" 身分證字號（統一編號）：
                     .col-xs-12.col-sm-8
-                      input name="custom_field[131]" required="required" type="text" value="" /
+                      input name="items[0][custom_field][131]" required="required" type="text" value="" /
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
-                      label for="custom_field[133]" 聯絡電話（行動電話）：
+                      label for="items[0][custom_field][133]" 聯絡電話（行動電話）：
                     .col-xs-12.col-sm-8
-                      input#recipient_cellphone name="custom_field[133]" required="required" type="text" value="" /
+                      input#recipient_cellphone name="items[0][custom_field][133]" required="required" type="text" value="" /
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
-                      label for="custom_field[134]"  戶籍地址：
+                      label for="items[0][custom_field][134]"  戶籍地址：
                     .col-xs-12.col-sm-8
-                      input.long-input name="custom_field[134]" required="required" type="text" value="" /
+                      input.long-input name="items[0][custom_field][134]" required="required" type="text" value="" /
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
-                      label for="custom_field[135]"  收據寄送地址：
+                      label for="items[0][custom_field][135]"  收據寄送地址：
                     .col-xs-12.col-sm-8
-                      input#recipient_address.long-input name="custom_field[135]" required="required" type="text" value="" /
+                      input#recipient_address.long-input name="items[0][custom_field][135]" required="required" type="text" value="" /
                   .row.donate-input-group
                     .col-xs-12.col-sm-4
                       label for="additional_support"  捐款金額：
