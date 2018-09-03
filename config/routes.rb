@@ -14,23 +14,26 @@ Rails.application.routes.draw do
   match "/programs/2",   to: 'static_pages#programs_2',   via: 'get'
   match "/programs/3",   to: 'static_pages#programs_3',   via: 'get'
   match "/policies",     to: 'static_pages#policies',     via: 'get'
-  match "/policies/1",   to: 'static_pages#policies_1',   via: 'get'
-  match "/policies/2",   to: 'static_pages#policies_2',   via: 'get'
-  match "/policies/3",   to: 'static_pages#policies_3',   via: 'get'
-  match "/policies/4",   to: 'static_pages#policies_4',   via: 'get'
-  match "/policies/5",   to: 'static_pages#policies_5',   via: 'get'
-  match "/policies/6",   to: 'static_pages#policies_6',   via: 'get'
+  match "/policies/2016",     to: 'static_pages#policies_2016',     via: 'get'
+  match "/policies/2016/1",   to: 'static_pages#policies_2016_1',   via: 'get'
+  match "/policies/2016/2",   to: 'static_pages#policies_2016_2',   via: 'get'
+  match "/policies/2016/3",   to: 'static_pages#policies_2016_3',   via: 'get'
+  match "/policies/2016/4",   to: 'static_pages#policies_2016_4',   via: 'get'
+  match "/policies/2016/5",   to: 'static_pages#policies_2016_5',   via: 'get'
+  match "/policies/2016/6",   to: 'static_pages#policies_2016_6',   via: 'get'
   match "/constitution", to: 'static_pages#constitution', via: 'get'
   match "/constitution_area", to: 'static_pages#constitution_area', via: 'get'
   match "/constructing", to: 'static_pages#constructing', via: 'get'
   match "/sitemap.xml",  to: 'static_pages#sitemap',      format: 'xml', via: 'get'
 
   resources :candidates, only: [:index, :show] do
-    member do
-      get :donate
-    end
+    # member do
+    #   get :donate
+    # end
     collection do
-      get :proportional
+      # get :proportional
+      get :year2016
+      get :year2018
     end
   end
   match '/articles/presses',     to: 'articles#presses',      via: 'get', as: 'articles_presses'

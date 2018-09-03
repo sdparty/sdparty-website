@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :candidate do
+    year 2016
+    kind 'legislator'
     sequence(:name)  { |n| "Candidate #{n}" }
     sequence(:description)  { |n| "Candidate description #{n}" }
     sequence(:constituency)  { |n| "Candidate constituency #{n}" }

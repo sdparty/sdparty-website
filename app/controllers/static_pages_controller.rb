@@ -183,6 +183,9 @@ class StaticPagesController < ApplicationController
   end
 
   def policies
+  end
+
+  def policies_2016
     set_meta_tags({
       title: "2016大選的五大政見草案",
       description: "政治能改變這一切。社會民主國家的經驗告訴我們，只要受雇者們能團結、組織起來，對抗財團資本，對抗新自由主義體制，我們就不用再忍受目前的不平等和無奈，可以自由地合作、創造和發展。",
@@ -204,7 +207,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def policies_1
+  def policies_2016_1
     title = "捍衛勞動權"
     description = "社會民主黨第一箭：提高薪資，捍衛勞動權，強化受雇階級力量"
     set_meta_tags({
@@ -228,7 +231,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def policies_2
+  def policies_2016_2
     title = "全民年金改革"
     description = "社會民主黨第二箭：全民年金大改革，建構平等社會安全體系"
     set_meta_tags({
@@ -252,7 +255,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def policies_3
+  def policies_2016_3
     title = "匡正稅制"
     description = "社會民主黨第三箭：財團富人要加稅，增進國家財政能力，強化財產的社會責任"
     set_meta_tags({
@@ -276,7 +279,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def policies_4
+  def policies_2016_4
     title = "透明監督"
     description = "社會民主黨第四箭：政治要公平透明、要可受監督、要不被收買"
     set_meta_tags({
@@ -300,7 +303,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def policies_5
+  def policies_2016_5
     title = "尊重差異"
     description = "社會民主黨第五箭：尊重差異、反對歧視，共創多元社會"
     set_meta_tags({
@@ -324,7 +327,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def policies_6
+  def policies_2016_6
     title = "推動社會經濟"
     description = "社會民主黨之弓：推動「社會經濟」模式，創建兼顧社會正義、社會團結、資源共享的生產方式，管制資本，發展符合社會需求、環境永續、知識與技術創新、在地化與勞工合作的新產業。"
     set_meta_tags({
