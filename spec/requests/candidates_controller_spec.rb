@@ -19,6 +19,22 @@ describe "Candidate" do
     end
   end
 
+  describe "#year2016" do
+    it "success" do
+      2.times { FactoryGirl.create(:candidate) }
+      get "/candidates/year2016"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#year2018" do
+    it "success" do
+      2.times { FactoryGirl.create(:candidate) }
+      get "/candidates/year2018"
+      expect(response).to be_success
+    end
+  end
+
   # describe "#proportional" do
   #   it "success" do
   #     2.times { FactoryGirl.create(:candidate) }
