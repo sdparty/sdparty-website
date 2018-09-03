@@ -1,20 +1,86 @@
 class CandidatesController < ApplicationController
-  before_action :set_candidate, except: [:index, :new, :proportional]
+  before_action :set_candidate, except: [:index, :new, :proportional, :year2016, :year2018]
 
   # GET /candidates
   def index
-    @candidates = Candidate.published
     keywords = "社會民主黨候選人"
-    @candidates.each do |c|
-      keywords = keywords + ",#{c.name}"
-    end
     set_meta_tags({
-      title: "區域立委候選人介紹",
+      title: "社民黨歷屆候選人介紹",
       description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。",
       keywords: keywords,
       og: {
         type: 'article',
-        title: "區域立委候選人介紹",
+        title: "社民黨歷屆候選人介紹",
+        description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
+      }
+    })
+
+    respond_to do |format|
+      format.html
+      format.json { render json: {
+          status: "success",
+          candidates: JSON.parse(
+            @candidates.to_json({except: [:published]})
+          ),
+          count: @candidates.length
+          },
+        callback: params[:callback]
+      }
+    end
+  end
+
+  def year2016
+    @candidates = Candidate.year(2016).published
+    keywords = "社會民主黨2016年候選人"
+    @candidates.each do |c|
+      keywords = keywords + ",#{c.name}"
+    end
+    set_meta_tags({
+      title: "社民黨2016年候選人介紹",
+      description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。",
+      keywords: keywords,
+      og: {
+        type: 'article',
+        title: "社民黨2016年候選人介紹",
+        description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
+      }
+    })
+
+    respond_to do |format|
+      format.html
+      format.json { render json: {
+          status: "success",
+          candidates: JSON.parse(
+            @candidates.to_json({except: [:published]})
+          ),
+          count: @candidates.length
+          },
+        callback: params[:callback]
+      }
+    end
+  end
+
+  def year2018
+    @candidates = Candidate.year(2018).published
+    keywords = "社會民主黨2018年候選人"
+    @candidates.each do |c|
+      keywords = keywords + ",#{c.name}"
+    end
+    set_meta_tags({
+      title: "社民黨2018年候選人介紹",
+      description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。",
+      keywords: keywords,
+      og: {
+        type: 'article',
+        title: "社民黨2018年候選人介紹",
         description: "社會民主黨有哪些候選人？他們為什麼要出來參選?一起來了解。"
       },
       article: {

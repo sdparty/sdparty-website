@@ -10,16 +10,25 @@ section.main-container
               .candidate-img
                 = link_to image_tag(@candidate.image, alt: ''), @candidate.fb_link, target: '_blank'
               .row.can-info
-                .col-md-4
-                  h3 現職
-                  = @candidate.job.html_safe
-                .col-md-4
-                  h3 學歷
-                  = @candidate.education.html_safe
-                .col-md-4
-                  h3 經歷
-                  = @candidate.experience.html_safe
-              = @candidate.description.html_safe
+                - if @candidate.job.present?
+                  .col-md-4
+                    h3 現職
+                    = @candidate.job.html_safe
+                  .col-md-4
+                    h3 學歷
+                    = @candidate.education.html_safe
+                  .col-md-4
+                    h3 經歷
+                    = @candidate.experience.html_safe
+                - else
+                  .col-md-6
+                    h3 學歷
+                    = @candidate.education.html_safe
+                  .col-md-6
+                    h3 經歷
+                    = @candidate.experience.html_safe
+              - if @candidate.description.present?
+                = @candidate.description.html_safe
               p.help-img
                 = link_to image_tag(@candidate.help_image, alt: ''), @candidate.help_link, target: '_blank'
     .container.candidate-block
@@ -27,10 +36,14 @@ section.main-container
         .main.col-md-12
           h6.can-title-02 了解更多共同政見
           .politics-tag
-            = link_to image_tag('icon-big-01.png', alt: ''), policies_1_path
-            = link_to image_tag('icon-big-02.png', alt: ''), policies_2_path
-            = link_to image_tag('icon-big-03.png', alt: ''), policies_3_path
-            = link_to image_tag('icon-big-04.png', alt: ''), policies_4_path
-            = link_to image_tag('icon-big-05.png', alt: ''), policies_5_path
-            = link_to image_tag('icon-big-06.png', alt: ''), policies_6_path
-      = link_to '更多候選人', candidates_path, class: 'inner-link'
+            - if @candidate.year == 2016
+              = link_to image_tag('icon-big-01.png', alt: ''), policies_2016_1_path
+              = link_to image_tag('icon-big-02.png', alt: ''), policies_2016_2_path
+              = link_to image_tag('icon-big-03.png', alt: ''), policies_2016_3_path
+              = link_to image_tag('icon-big-04.png', alt: ''), policies_2016_4_path
+              = link_to image_tag('icon-big-05.png', alt: ''), policies_2016_5_path
+              = link_to image_tag('icon-big-06.png', alt: ''), policies_2016_6_path
+      - if @candidate.year == 2016
+        = link_to '更多候選人', year2016_candidates_path, class: 'inner-link'
+      - elsif @candidate.year == 2018
+        = link_to '更多候選人', year2018_candidates_path, class: 'inner-link'
