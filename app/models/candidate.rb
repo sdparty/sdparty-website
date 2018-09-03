@@ -5,6 +5,6 @@ class Candidate < ApplicationRecord
   scope :presidents, -> { where(kind: 'president') }
   scope :legislators, -> { where(kind: 'legislator') }
   scope :mayors, -> { where(kind: 'mayor') }
-  scope :councils, -> { where(kind: 'council') }
+  scope :councilors, -> { where(kind: 'councilor') }
 
 end
