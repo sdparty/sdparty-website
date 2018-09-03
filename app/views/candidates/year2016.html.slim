@@ -75,7 +75,7 @@ section.main-container
                       h4
                         = c.name
                         span = c.constituency
-    - if @candidates.councils.length > 0
+    - if @candidates.councilors.length > 0
       .container
         .row
           .main.col-md-12
@@ -91,7 +91,7 @@ section.main-container
         .container
           h2.title 你想支持誰？
           .row.grid-space-20
-            - @candidates.councils.each do |c|
+            - @candidates.councilors.each do |c|
               .col-md-2
                 .image-box
                   .overlay-container
