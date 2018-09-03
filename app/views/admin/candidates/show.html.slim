@@ -1,0 +1,50 @@
+h1 瀏覽文章
+table border="1" cellpadding="5" width="100%" 
+  tr
+    th width="95" ＊分類(活動or新聞稿)
+    td width="317"
+      - if @candidate.kind == 'press' 
+        p 新聞稿
+      - elsif @candidate.kind == 'activity'
+        p 活動
+      - elsif @candidate.kind == 'issue'
+        p 議題
+      - elsif @candidate.kind == 'system'
+        p 系統
+      - else
+        p 未知
+    th width="99"  建檔時間
+    td width="279" = @candidate.created_at.strftime('%Y-%m-%d %H:%M')
+  tr
+    th ＊發表日期
+    td colspan="3" = @candidate.published_at.strftime('%Y-%m-%d')
+  tr
+    th 小圖
+    td colspan="3"
+      - unless @candidate.image.blank?
+        = image_tag(@candidate.image, class: 'news-img banner-img')
+      - else
+        = image_tag(get_img_from_content(@candidate.content), class: 'news-img banner-img')
+  tr
+    th ＊標題
+    td colspan="3" = @candidate.title
+  - unless @candidate.youtube_id.blank?
+    tr
+      th 影片
+      td colspan="3"
+        iframe src="https://www.youtube.com/embed/#{@candidate.youtube_id}" frameborder="0" allowfullscreen="1"
+  tr
+    th valign="top" 標籤tag
+    td colspan="3"
+      - num = 0
+      - @candidate.issues.each do |i|
+        - unless num == 0
+          | 、
+        - num += 1
+        = i.name
+  tr
+    th valign="top"  ＊內容
+    td colspan="3"
+      = @candidate.content.try :html_safe
+.btn
+  = link_to "回上頁", admin_candidates_path, id: 'button', class: 'submit'
