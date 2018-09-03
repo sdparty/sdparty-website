@@ -77,6 +77,7 @@ class Admin::CandidatesController < Admin::BaseController
       :image, :image_cache, :remove_image, 
       :help_image, :help_image_cache, :remove_help_image,
       :donate_image, :donate_image_cache, :remove_donate_image,
-      :fb_link, :help_link, :donate_form, :job, :education, :experience)
+      :fb_link, :help_link, :donate_form, :job, :education, :experience,
+      :year, :kind, :in_campaign)
   end
 end
