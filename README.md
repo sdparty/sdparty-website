@@ -54,7 +54,15 @@ GRANT ALL PRIVILEGES ON DATABASE "your_name" to "your_name";
 ALTER USER "your_name" WITH SUPERUSER;
 ```
 
+## Run on Docker
+
+```
+docker run -it -v "$PWD":/usr/src/app -p 3000:3000 --link postgres:postgres -w /usr/src/app --name sdparty ruby:2.3 /bin/bash
+cd /usr/src/app
+bundle install
+rake db:create db:migrate
+rails server -b 0.0.0.0 -p 3000
+```
+
 ## LICENSE
 This project is release under MIT License.
-
-
