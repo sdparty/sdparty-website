@@ -89,3 +89,9 @@ $('#donate-one').submit(function(e) {
 $('.page-toggle .page-title').on('click', function(e) {
   $(e.target).parent().toggleClass('page-toggle-hide');
 });
+
+$('input[name="tax"]').on('click', function(e) {
+  const receipt = $('input[name="receipt"][value=0]');
+  receipt.attr('disabled', e.target.value === '1');
+  if (e.target.value === '1') receipt.attr('checked', false);
+});
