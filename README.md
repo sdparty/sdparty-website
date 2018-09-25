@@ -1,4 +1,4 @@
-# Judicial Reform Foundation Website
+# Social Democratic Party Website
 
 [![Build Status](https://travis-ci.org/sdparty/sdparty-website.svg?branch=master)](https://travis-ci.org/sdparty/sdparty-website)
 
@@ -60,7 +60,8 @@ ALTER USER "your_name" WITH SUPERUSER;
 docker run -it -v "$PWD":/usr/src/app -p 3000:3000 --link postgres:postgres -w /usr/src/app --name sdparty ruby:2.3 /bin/bash
 cd /usr/src/app
 bundle install
-rake db:create db:migrate
+rails db:create db:migrate
+rails db:seed
 rails server -b 0.0.0.0 -p 3000
 ```
 
