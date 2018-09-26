@@ -63,7 +63,7 @@ cd /usr/src/app
 bundle install
 rails db:create db:migrate
 rails db:seed
-rails server -b 0.0.0.0 -p 3000
+rails server -e production -b 0.0.0.0 -p 3000
 ```
 
 ## LICENSE
