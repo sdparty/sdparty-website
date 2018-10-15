@@ -110,44 +110,51 @@ describe "Static pages" do
     end
   end
 
-  describe "#policies_1" do
+  describe "#policies_2016" do
     it "success" do
-      get "/policies/1"
+      get "/policies/2016"
       expect(response).to be_success
     end
   end
 
-  describe "#policies_2" do
+  describe "#policies_2016_1" do
     it "success" do
-      get "/policies/2"
+      get "/policies/2016/1"
       expect(response).to be_success
     end
   end
 
-  describe "#policies_3" do
+  describe "#policies_2016_2" do
     it "success" do
-      get "/policies/3"
+      get "/policies/2016/2"
       expect(response).to be_success
     end
   end
 
-  describe "#policies_4" do
+  describe "#policies_2016_3" do
     it "success" do
-      get "/policies/4"
+      get "/policies/2016/3"
       expect(response).to be_success
     end
   end
 
-  describe "#policies_5" do
+  describe "#policies_2016_4" do
     it "success" do
-      get "/policies/5"
+      get "/policies/2016/4"
       expect(response).to be_success
     end
   end
 
-  describe "#policies_6" do
+  describe "#policies_2016_5" do
     it "success" do
-      get "/policies/6"
+      get "/policies/2016/5"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#policies_2016_6" do
+    it "success" do
+      get "/policies/2016/6"
       expect(response).to be_success
     end
   end

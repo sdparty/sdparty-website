@@ -2,22 +2,38 @@ require "rails_helper"
 
 describe "Candidate" do
 
-  # let(:candidate) { FactoryGirl.create(:candidate) }
+  let(:candidate) { FactoryGirl.create(:candidate) }
 
-  # describe "#index with nothing" do
-  #   it "success" do
-  #     get "/candidates/"
-  #     expect(response).to be_success
-  #   end
-  # end
+  describe "#index with nothing" do
+    it "success" do
+      get "/candidates/"
+      expect(response).to be_success
+    end
+  end
 
-  # describe "#index" do
-  #   it "success" do
-  #     2.times { FactoryGirl.create(:candidate) }
-  #     get "/candidates/"
-  #     expect(response).to be_success
-  #   end
-  # end
+  describe "#index" do
+    it "success" do
+      2.times { FactoryGirl.create(:candidate) }
+      get "/candidates/"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#year2016" do
+    it "success" do
+      2.times { FactoryGirl.create(:candidate) }
+      get "/candidates/year2016"
+      expect(response).to be_success
+    end
+  end
+
+  describe "#year2018" do
+    it "success" do
+      2.times { FactoryGirl.create(:candidate) }
+      get "/candidates/year2018"
+      expect(response).to be_success
+    end
+  end
 
   # describe "#proportional" do
   #   it "success" do
@@ -27,12 +43,12 @@ describe "Candidate" do
   #   end
   # end
 
-  # describe "#show" do
-  #   it "success" do
-  #     get "/candidates/#{candidate.id}"
-  #     expect(response).to be_success
-  #   end
-  # end
+  describe "#show" do
+    it "success" do
+      get "/candidates/#{candidate.id}"
+      expect(response).to be_success
+    end
+  end
 
   # describe "#donate" do
   #   it "success" do

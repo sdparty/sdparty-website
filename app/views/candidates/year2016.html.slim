@@ -1,0 +1,114 @@
+section.main-container
+  .candidate-block.custom-wrap
+    - if @candidates.presidents.length > 0
+      .container
+        .row
+          .main.col-md-12
+            h2.page-title 候選人介紹
+            .separator-2
+            .row
+              .col-md-12.candidate-sblock
+                h3.can-title-01
+                  | 誠心推薦的
+                  br
+                  | 總統候選人
+      .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+        .container
+          h2.title 你想支持誰？
+          .row.grid-space-20
+            - @candidates.presidents.each do |c|
+              .col-md-2
+                .image-box
+                  .overlay-container
+                    = image_tag(c.avatar, alt: '')
+                    = link_to candidate_path(c), class: 'overlay small' do
+                      h4
+                        = c.name
+                        span = c.constituency
+    - if @candidates.legislators.length > 0
+      .container
+        .row
+          .main.col-md-12
+            h2.page-title 候選人介紹
+            .separator-2
+            .row
+              .col-md-12.candidate-sblock
+                h3.can-title-01
+                  | 誠心推薦的
+                  br
+                  | 立委候選人
+      .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+        .container
+          h2.title 你想支持誰？
+          .row.grid-space-20
+            - @candidates.legislators.each do |c|
+              .col-md-2
+                .image-box
+                  .overlay-container
+                    = image_tag(c.avatar, alt: '')
+                    = link_to candidate_path(c), class: 'overlay small' do
+                      h4
+                        = c.name
+                        span = c.constituency
+    - if @candidates.mayors.length > 0
+      .container
+        .row
+          .main.col-md-12
+            h2.page-title 候選人介紹
+            .separator-2
+            .row
+              .col-md-12.candidate-sblock
+                h3.can-title-01
+                  | 誠心推薦的
+                  br
+                  | 縣市長候選人
+      .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+        .container
+          h2.title 你想支持誰？
+          .row.grid-space-20
+            - @candidates.mayors.each do |c|
+              .col-md-2
+                .image-box
+                  .overlay-container
+                    = image_tag(c.avatar, alt: '')
+                    = link_to candidate_path(c), class: 'overlay small' do
+                      h4
+                        = c.name
+                        span = c.constituency
+    - if @candidates.councilors.length > 0
+      .container
+        .row
+          .main.col-md-12
+            h2.page-title 候選人介紹
+            .separator-2
+            .row
+              .col-md-12.candidate-sblock
+                h3.can-title-01
+                  | 誠心推薦的
+                  br
+                  | 議員候選人
+      .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
+        .container
+          h2.title 你想支持誰？
+          .row.grid-space-20
+            - @candidates.councilors.each do |c|
+              .col-md-2
+                .image-box
+                  .overlay-container
+                    = image_tag(c.avatar, alt: '')
+                    = link_to candidate_path(c), class: 'overlay small' do
+                      h4
+                        = c.name
+                        span = c.constituency
+
+    .container.candidate-block
+      .row
+        .main.col-md-12
+          h6.can-title-02 共同政見
+          .politics-tag
+            = link_to image_tag('icon-big-01.png', alt: ''), policies_2016_1_path
+            = link_to image_tag('icon-big-02.png', alt: ''), policies_2016_2_path
+            = link_to image_tag('icon-big-03.png', alt: ''), policies_2016_3_path
+            = link_to image_tag('icon-big-04.png', alt: ''), policies_2016_4_path
+            = link_to image_tag('icon-big-05.png', alt: ''), policies_2016_5_path
+            = link_to image_tag('icon-big-06.png', alt: ''), policies_2016_6_path
