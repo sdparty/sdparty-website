@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   match "/programs/2",   to: 'static_pages#programs_2',   via: 'get'
   match "/programs/3",   to: 'static_pages#programs_3',   via: 'get'
   match "/policies",     to: 'static_pages#policies',     via: 'get'
-<<<<<<< HEAD
-=======
   match "/policies/2018",     to: 'static_pages#policies_2018',     via: 'get'
   match "/policies/2018/1",   to: 'static_pages#policies_2018_1',   via: 'get'
   match "/policies/2018/2",   to: 'static_pages#policies_2018_2',   via: 'get'
@@ -23,7 +21,6 @@ Rails.application.routes.draw do
   match "/policies/2018/4",   to: 'static_pages#policies_2018_4',   via: 'get'
   match "/policies/2018/5",   to: 'static_pages#policies_2018_5',   via: 'get'
   match "/policies/2018/6",   to: 'static_pages#policies_2018_6',   via: 'get'
->>>>>>> c19e72f3a7178b26c49227e1ef616dc2907ed8ec
   match "/policies/2016",     to: 'static_pages#policies_2016',     via: 'get'
   match "/policies/2016/1",   to: 'static_pages#policies_2016_1',   via: 'get'
   match "/policies/2016/2",   to: 'static_pages#policies_2016_2',   via: 'get'
