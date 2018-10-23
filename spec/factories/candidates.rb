@@ -5,6 +5,7 @@ FactoryGirl.define do
     sequence(:name)  { |n| "Candidate #{n}" }
     sequence(:description)  { |n| "Candidate description #{n}" }
     sequence(:constituency)  { |n| "Candidate constituency #{n}" }
+    avatar { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }
     fb_link "http://www.google.com/"
     help_link "http://www.google.com/"
     help_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'test.jpg')) }

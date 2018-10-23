@@ -185,6 +185,28 @@ class StaticPagesController < ApplicationController
   def policies
   end
 
+  def policies_2018
+    set_meta_tags({
+      title: "2018 大選的五大政見草案",
+      description: "進議會，為了更好的生活，為了更好的臺北！",
+      keywords: "共同政見,政見草案,2018大選,議員選舉",
+      og: {
+        type: 'article',
+        title: "2018 大選的五大政見草案",
+        description: "進議會，為了更好的生活，為了更好的臺北！"
+      },
+      article: {
+        author: Setting.url.fb,
+        publisher: Setting.url.fb
+      }
+    })
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def policies_2016
     set_meta_tags({
       title: "2016大選的五大政見草案",
