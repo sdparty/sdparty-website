@@ -34,16 +34,13 @@ section.main-container
     .container.candidate-block
       .row
         .main.col-md-12
-          h6.can-title-02 了解更多共同政見
-          .politics-tag
-            - if @candidate.year == 2016
-              = link_to image_tag('icon-big-01.png', alt: ''), policies_2016_1_path
-              = link_to image_tag('icon-big-02.png', alt: ''), policies_2016_2_path
-              = link_to image_tag('icon-big-03.png', alt: ''), policies_2016_3_path
-              = link_to image_tag('icon-big-04.png', alt: ''), policies_2016_4_path
-              = link_to image_tag('icon-big-05.png', alt: ''), policies_2016_5_path
-              = link_to image_tag('icon-big-06.png', alt: ''), policies_2016_6_path
-      - if @candidate.year == 2016
-        = link_to '更多候選人', year2016_candidates_path, class: 'inner-link'
-      - elsif @candidate.year == 2018
-        = link_to '更多候選人', year2018_candidates_path, class: 'inner-link'
+          - if @candidate.year == 2016
+            = link_to '了解更多共同政見', policies_2016_path, class: 'inner-link'
+          - elsif @candidate.year == 2018
+            = link_to '了解更多共同政見', policies_2018_path, class: 'inner-link'
+      .row
+        .main.col-md-12
+          - if @candidate.year == 2016
+            = link_to '更多候選人', year2016_candidates_path, class: 'inner-link'
+          - elsif @candidate.year == 2018
+            = link_to '更多候選人', year2018_candidates_path, class: 'inner-link'
