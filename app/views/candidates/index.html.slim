@@ -1,8 +1,8 @@
 section.main-container
-  .candidate-block.custom-wrap
+  .politics-block.custom-wrap
     .container
-      
-    .section.clearfix.object-non-visible.candidates.custom-block-01 data-animation-effect="fadeInUpSmall" data-effect-delay="300"
-      
-    .container.candidate-block
-      
+      .row
+        .main.col-md-12
+          h2.page-title 歷屆候選人
+          = link_to '2018 立委候選人', year2018_candidates_path, class: 'inner-link'
+          = link_to '2016 議員候選人', year2016_candidates_path, class: 'inner-link'
