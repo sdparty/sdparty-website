@@ -724,7 +724,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       kind: 'councilor',
       year: 2018,
       in_campaign: true,
-      constituency: '士林北投',
+      constituency: '大安文山',
       avatar: 'people10.jpg',
       image: 'candidate10.jpg',
       help_image: 'help10.png',
