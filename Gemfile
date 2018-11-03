@@ -61,6 +61,7 @@ gem 'lograge'
 gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 # gem "skylight"
+gem 'rb-readline'
 
 source 'https://rails-assets.org' do
   # gem 'rails-assets-jquery'
