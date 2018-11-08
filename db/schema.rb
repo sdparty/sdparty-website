@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180903153114) do
+ActiveRecord::Schema.define(version: 20181108032445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180903153114) do
     t.string "kind"
     t.integer "year"
     t.boolean "in_campaign"
+    t.string "policy_link"
   end
 
   create_table "ckeditor_assets", id: :serial, force: :cascade do |t|

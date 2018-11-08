@@ -32,6 +32,10 @@ section.main-container
               p.help-img
                 = link_to image_tag(@candidate.help_image, alt: ''), @candidate.help_link, target: '_blank'
     .container.candidate-block
+      - if @candidate.policy_link.present?
+        .row
+          .main.col-md-12
+            = link_to '了解更多個人政見', @candidate.policy_link, class: 'inner-link'
       .row
         .main.col-md-12
           - if @candidate.year == 2016
