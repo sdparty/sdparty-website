@@ -1,57 +1,59 @@
 h1 候選人管理
 #search_bar
   = search_form_for @q, url: admin_candidates_path do |f|
-    | 分類
-    = f.select :kind_eq, options_for_select([['全部', ''], ['新聞稿', 'press'], ['活動', 'activity'], ['議題', 'issue']], selected: @kind), id: "select"
-    | 標題
-    = f.search_field :title_or_content_cont, class: "input_08", id: "textfield"
+    | 參選種類
+    = f.select :kind_eq, options_for_select([['全部', ''], ['立法委員', 'legislator'], ['縣市長', 'mayor'], ['議員', 'councilor']], selected: @kind), id: "select"
+    | 姓名
+    = f.search_field :name_cont, class: "input_08", id: "textfield"
     = f.submit '搜尋', class: "button"
 table border="1" cellpadding="5" width="100%" 
   tr
     th 編號
-    th width="385"  標題
-    th 分類
-    th 發表日期
+    th width="385" 姓名
+    th 參選類型
+    th 年度
     th 操作
   - num = 0
-  - @candidates.each do |a|
+  - @candidates.each do |c|
     - num += 1
     - if num % 2 == 0
       tr
         td align="center" valign="top" width="39" = num
         td
-          = link_to a.title, admin_candidate_path(a)
+          = link_to c.name, admin_candidate_path(c)
         td align="center" width="99"
-          - if a.kind == 'press'
-            | 新聞稿
-          - elsif a.kind == 'activity'
-            | 活動
-          - if a.kind == 'issue'
-            | 議題
-        td align="center" width="127" = a.published_at.try(:strftime, '%Y-%m-%d')
+          - if c.kind == 'legislator'
+            | 立法委員
+          - elsif c.kind == 'mayor'
+            | 縣市長
+          - elsif c.kind == 'councilor'
+            | 議員
+          - else
+            | 未知
+        td align="center" width="127" = c.year
         td align="center" width="126" 
-          = link_to '編輯', edit_admin_candidate_path(a)
-          - unless a.kind == 'system'
-            | ｜
-            = link_to '刪除', admin_candidate_path(a), method: :delete, data: { confirm: '確認要刪除嗎？' }
+          = link_to '編輯', edit_admin_candidate_path(c)
+          | |
+          = link_to '刪除', admin_candidate_path(c), method: :delete, data: { confirm: '確認要刪除嗎？' }
     - else
       tr.even
         td align="center" valign="top" width="39" = num
         td
-          = link_to a.title, admin_candidate_path(a)
+          = link_to c.name, admin_candidate_path(c)
         td align="center" width="99"
-          - if a.kind == 'press'
-            | 新聞稿
-          - elsif a.kind == 'activity'
-            | 活動
-          - if a.kind == 'issue'
-            | 議題
-        td align="center" width="127" = a.published_at.strftime('%Y-%m-%d')
+          - if c.kind == 'legislator'
+            | 立法委員
+          - elsif c.kind == 'mayor'
+            | 縣市長
+          - elsif c.kind == 'councilor'
+            | 議員
+          - else
+            | 未知
+        td align="center" width="127" = c.year
         td align="center" width="126" 
-          = link_to '編輯', edit_admin_candidate_path(a)
-          - unless a.kind == 'system'
-            | ｜
-            = link_to '刪除', admin_candidate_path(a), method: :delete, data: { confirm: '確認要刪除嗎？' }
+          = link_to '編輯', edit_admin_candidate_path(c)
+          | |
+          = link_to '刪除', admin_candidate_path(c), method: :delete, data: { confirm: '確認要刪除嗎？' }
 
 #page
   = paginate @candidates

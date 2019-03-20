@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     #match 'update_banners',  to: 'banners#update_banners',  via: 'put'
     #match 'update_issues',   to: 'issues#update_issues',    via: 'put'
     resources :articles
+    resources :candidates
     resources :users, only: [:index, :update]
     resources :banners, except: [:show] do
       put :sort, on: :collection

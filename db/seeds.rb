@@ -651,7 +651,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       constituency: '士林北投',
       avatar: 'people06.jpg',
       image: 'candidate06.jpg',
-      help_image: 'help06.png',
+      help_image: '',
       fb_link: 'https://www.facebook.com/freeTAIPEI/',
       help_link: 'https://donate.spgateway.com/Jerry2018/jerry2018',
       policy_link: 'https://www.sdparty.tw/articles/364',
@@ -671,7 +671,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       constituency: '內湖南港',
       avatar: 'people07.jpg',
       image: 'candidate07.jpg',
-      help_image: 'help07.png',
+      help_image: '',
       fb_link: 'https://www.facebook.com/NewAgainChen/',
       help_link: 'https://donate.spgateway.com/Renew/1124',
       policy_link: 'https://chen-you-sin.jimdo.com/',
@@ -691,7 +691,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       constituency: '松山信義',
       avatar: 'people08.jpg',
       image: 'candidate08.jpg',
-      help_image: 'help08.png',
+      help_image: '',
       fb_link: 'https://www.facebook.com/taipei.yoyi/',
       help_link: 'https://donate.spgateway.com/taipei_yoyi/Donate2018',
       policy_link: 'https://councils.g0v.tw/candidates/intent_detail/e46a061d-a01a-4e07-89bf-9a6e63406e78/',
@@ -711,7 +711,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       constituency: '中正萬華',
       avatar: 'people09.jpg',
       image: 'candidate09.jpg',
-      help_image: 'help09.png',
+      help_image: '',
       fb_link: 'https://www.facebook.com/hsuhanyun/',
       help_link: 'https://donate.spgateway.com/hsuhanyun/withu',
       policy_link: 'https://www.sdparty.tw/articles/366',
@@ -731,7 +731,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
       constituency: '大安文山',
       avatar: 'people10.jpg',
       image: 'candidate10.jpg',
-      help_image: 'help10.png',
+      help_image: '',
       fb_link: 'https://www.facebook.com/miaopoya.sdp/',
       help_link: 'https://voteformiao.tw/',
       policy_link: 'https://voteformiao.tw/',
@@ -745,8 +745,24 @@ ActiveRecord::Base.connection.reset_pk_sequence!(Candidate.table_name)
   ]
 
   candidates.each do |c|
+    # avatar = c[:avatar]
+    # c.delete(:avatar)
+    # image = c[:image]
+    # c.delete(:image)
+    # help_image = c[:help_image]
+    # c.delete(:help_image)
+    # donate_image = c[:donate_image]
+    # c.delete(:donate_image)
     candidate = Candidate.new(c)
     candidate.id = c[:id]
+    # candidate.avatar = Rails.root.join("db/fixtures/#{avatar}").open unless avatar.blank?
+    # candidate.image = Rails.root.join("db/fixtures/#{image}").open unless image.blank?
+    # candidate.help_image = Rails.root.join("db/fixtures/#{help_image}").open unless help_image.blank?
+    # candidate.donate_image = Rails.root.join("db/fixtures/#{donate_image}").open unless donate_image.blank?
+    candidate.avatar = Rails.root.join("db/fixtures/#{c[:avatar]}").open unless c[:avatar].blank?
+    candidate.image = Rails.root.join("db/fixtures/#{c[:image]}").open unless c[:image].blank?
+    candidate.help_image = Rails.root.join("db/fixtures/#{c[:help_image]}").open unless c[:help_image].blank?
+    candidate.donate_image = Rails.root.join("db/fixtures/#{c[:donate_image]}").open unless c[:donate_image].blank?
     candidate.save
   end
 end

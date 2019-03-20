@@ -30,4 +30,12 @@
         = link_to '小額捐款', edit_admin_article_path(@fundraising_article)
   .side_block
     h4
+      | 候選人管理
+    ul
+      li
+        = link_to '候選人管理', admin_candidates_path
+      li
+        = link_to '新增候選人', new_admin_candidate_path
+  .side_block
+    h4
       = link_to '管理員設定', admin_users_path

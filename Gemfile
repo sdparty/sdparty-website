@@ -49,7 +49,7 @@ gem 'chosen-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
-gem 'unicode-display_width'
+gem 'unicode-display_width', ">= 1.3.3"
 gem 'jquery-datetimepicker-rails'
 gem "font-awesome-rails"
 gem 'fontello_rails_converter'

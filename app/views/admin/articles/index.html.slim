@@ -26,7 +26,7 @@ table border="1" cellpadding="5" width="100%"
             | 新聞稿
           - elsif a.kind == 'activity'
             | 活動
-          - if a.kind == 'issue'
+          - elsif a.kind == 'issue'
             | 議題
         td align="center" width="127" = a.published_at.try(:strftime, '%Y-%m-%d')
         td align="center" width="126" 

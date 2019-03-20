@@ -1,14 +1,22 @@
 = render 'shared/error_messages', object: f.object
 table border="1" cellpadding="5" width="100%" 
   tr
-    th width="95" ＊類型
+    th width="95" ＊參選類型
     td
       p
         = f.collection_radio_buttons :kind, [['legislator', '立法委員'] ,['mayor', '縣市長'], ['councilor', '議員']], :first, :last
   tr
-    th 子分類
+    th 參選年度
     td
-        = f.collection_radio_buttons :year, [[2016, '2016'] ,[2018, '2018'], :first, :last
+        = f.collection_radio_buttons :year, [[2016, '2016'] ,[2018, '2018']], :first, :last
+  tr
+    th ＊姓名
+    td
+      = f.input :name, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
+  tr
+    th ＊選區
+    td
+      = f.input :constituency, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
   tr
     th 是否發佈
     td
@@ -19,42 +27,68 @@ table border="1" cellpadding="5" width="100%"
         = f.input :published, as: :boolean, label: false
         | 是
   tr
-    th ＊發表日期
+    th 個人頭像
     td
-      - if @candidate.kind == 'system'
-        = f.input :published_at, as: :string, label: false, input_html: { class: "datetimepicker" }, required: true, disabled: true
-      - else
-        = f.input :published_at, as: :string, label: false, input_html: { class: "datetimepicker" }, required: true
-        em.s_note 如果設定日期是未來，則視為預約發布，時間到才會正式在前台顯示
+      = f.input :avatar, as: :file, label: false, input_html: { id: 'fileField2' }
+      = f.input :avatar_cache, as: :hidden
+      = f.input :remove_avatar, as:  :boolean, label: '移除圖片'
+      em.s_note 頭像會顯示在候選人列表。建議大小：600x600。
+      = image_tag(@candidate.avatar_url, alt:"", class: "banner-img") if @candidate.avatar?
   tr
-    th 小圖
+    th 個人頁面大圖
     td
-      - if @candidate.kind == 'system'
-        = f.input :image, as: :file, label: false, input_html: { id: 'fileField2' }, disabled: true
-        = f.input :image_cache, as: :hidden
-      - else
-        = f.input :image, as: :file, label: false, input_html: { id: 'fileField2' }
-        = f.input :image_cache, as: :hidden
-        = f.input :remove_image, as:  :boolean, label: '移除圖片'
-        em.s_note 本小圖會顯示在新聞稿、活動前台的文章列表的縮圖，但不會顯示在內文，內文要顯示的圖片請直接從「內容」上傳
-        = image_tag(@candidate.image_url, alt:"", class: "banner-img") if @candidate.image?
+      = f.input :image, as: :file, label: false, input_html: { id: 'fileField2' }
+      = f.input :image_cache, as: :hidden
+      = f.input :remove_image, as:  :boolean, label: '移除圖片'
+      em.s_note 圖片會顯示候選人頁面上方。建議大小：1273x460。
+      = image_tag(@candidate.image_url, alt:"", class: "banner-img") if @candidate.image?
   tr
-    th Youtube影片網址
-    td 
-      - if @candidate.kind == 'system'
-        = f.input :youtube_url, label: false, input_html: { id: 'textfield3', class: 'input_04' }, disabled: true
-      - else
-        = f.input :youtube_url, label: false, input_html: { id: 'textfield3', class: 'input_04' }
-  tr
-    th ＊標題
+    th 幫助圖片
     td
-      - if @candidate.kind == 'system'
-        = f.input :title, label: false, required: true, disabled: true, input_html: { id: 'textfield3', class: 'input_04' }
-      - else
-        = f.input :title, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
+      = f.input :help_image, as: :file, label: false, input_html: { id: 'fileField2' }
+      = f.input :help_image_cache, as: :hidden
+      = f.input :remove_help_image, as:  :boolean, label: '移除圖片'
+      em.s_note 個人頁面下方「幫助候選人」之圖片。建議大小：250x51，可用透明背景png。
+      = image_tag(@candidate.help_image_url, alt:"", class: "banner-img") if @candidate.help_image?
+  / tr
+  /   th 捐款圖片
+  /   td
+  /     = f.input :donate_image, as: :file, label: false, input_html: { id: 'fileField2' }
+  /     = f.input :donate_image_cache, as: :hidden
+  /     = f.input :remove_donate_image, as:  :boolean, label: '移除圖片'
+  /     em.s_note 捐款頁面之圖片。建議大小：1273x435
+  /     = image_tag(@candidate.donate_image_url, alt:"", class: "banner-img") if @candidate.donate_image?
+  / tr
+  /   th valign="top"  捐款表單程式碼
+  /   td
+  /     = f.input :donate_form, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
   tr
-    th valign="top"  ＊內容
+    th valign="top"  現職
     td
-      = f.input :content, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
+      = f.input :job, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
+  tr
+    th valign="top"  ＊學歷
+    td
+      = f.input :education, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
+  tr
+    th valign="top"  ＊經歷
+    td
+      = f.input :experience, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
+  tr
+    th valign="top"  描述
+    td
+      = f.input :description, as: :ckeditor, label: false, required: true, input_html: { class: 'ckeditor' }
+  tr
+    th ＊臉書連結
+    td
+      = f.input :fb_link, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
+  tr
+    th 幫助連結
+    td
+      = f.input :help_link, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
+  tr
+    th 個人政見
+    td
+      = f.input :policy_link, label: false, required: true, input_html: { id: 'textfield3', class: 'input_04' }
 .btn
   = f.submit '儲存', id: 'button', class: 'submit'

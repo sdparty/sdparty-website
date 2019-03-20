@@ -30,7 +30,10 @@ section.main-container
               - if @candidate.description.present?
                 = @candidate.description.html_safe
               p.help-img
-                = link_to image_tag(@candidate.help_image, alt: ''), @candidate.help_link, target: '_blank'
+                - if @candidate.help_image.blank?
+                  = link_to "幫助#{@candidate.name}", @candidate.help_link, target: '_blank'
+                - else
+                  = link_to image_tag(@candidate.help_image, alt: ''), @candidate.help_link, target: '_blank'
     .container.candidate-block
       - if @candidate.policy_link.present?
         .row
