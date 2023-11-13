@@ -42,6 +42,7 @@ gem 'ransack'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 gem 'meta-tags'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'social-share-button'
